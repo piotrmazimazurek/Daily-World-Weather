@@ -8,7 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,17 +23,30 @@ class MyApp extends StatelessWidget {
           title: const Text(
             "Flutter Test App",
           ),
-          backgroundColor: Color.fromARGB(255, 8, 8, 8),
+          backgroundColor: const Color.fromARGB(255, 8, 8, 8),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const CircleAvatar(
+                backgroundImage: AssetImage('images/dynia2.jpg'),
+                radius: 100,
+              ),
               Text(
                 'Flutter TEST APP',
                 style: GoogleFonts.lato(
                   textStyle: Theme.of(context).textTheme.headline4,
-                  fontSize: 48,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              Text(
+                'Appka na Halloween',
+                style: GoogleFonts.lato(
+                  textStyle: Theme.of(context).textTheme.headline4,
+                  fontSize: 18,
                   fontWeight: FontWeight.w700,
                   fontStyle: FontStyle.italic,
                 ),
