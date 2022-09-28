@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Flutter Test App",
+            "Generator Nazwy Potwora Halloween",
           ),
           backgroundColor: const Color.fromARGB(255, 8, 8, 8),
         ),
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                 radius: 100,
               ),
               Text(
-                'Flutter TEST APP',
+                'Dynia or not to Dynia. This is a Halloween Question.',
                 style: GoogleFonts.lato(
                   textStyle: Theme.of(context).textTheme.headline4,
                   fontSize: 24,
@@ -42,14 +42,21 @@ class MyApp extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
               Text(
-                'Appka na Halloween',
+                'Nie wiesz za kogo się przebrać ? A może już się przebrałeś i nikt Cię nierozpoznał ? Chcesz obrabować dzieci z cukierków albo mały spożywczak ale wstydzisz się zrobić to w swoim zwykłym wcieleniu? Nie szkodzi ! Wygeneruj sobie losową nazwe pod którą będziesz straszyć w Dzień Halloween !',
                 style: GoogleFonts.lato(
                   textStyle: Theme.of(context).textTheme.headline4,
-                  fontSize: 18,
+                  fontSize: 15,
                   fontWeight: FontWeight.w700,
                   fontStyle: FontStyle.italic,
                 ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Wygeneruj'),
               ),
             ],
           ),
