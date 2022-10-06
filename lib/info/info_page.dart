@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -9,7 +11,7 @@ class InfoPage extends StatelessWidget {
         image: null,
         title: 'Strona Testowa',
         body: 'Wygeneruj Nazwe',
-        footer: Text('Udanego Straszenia'),
+        footer: const Text('Udanego Straszenia'),
       ),
     ];
   }
