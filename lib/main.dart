@@ -13,11 +13,12 @@ class MyApp extends StatelessWidget {
   List<PageViewModel> getPages() {
     return [
       PageViewModel(
-        image: null,
-        title: 'Strona Testowa',
-        body: 'Wygeneruj Nazwe',
-        footer: Text('Udanego Straszenia'),
-      )
+          image: null,
+          title: 'Strona Testowa',
+          body: 'Wygeneruj Nazwe',
+          footer: Text('Udanego Straszenia'),
+          decoration:
+              PageDecoration(pageColor: Color.fromARGB(255, 153, 59, 30)))
     ];
   }
 
