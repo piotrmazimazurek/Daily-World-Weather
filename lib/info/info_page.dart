@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class InfoPage extends StatelessWidget {
   const InfoPage({
@@ -12,10 +11,8 @@ class InfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Generator Nazwy Potwora Halloween",
-        ),
-      ),
+          title: const Text("Za kogo przebierzesz sie na Halloween?"),
+          backgroundColor: const Color.fromARGB(255, 8, 8, 8)),
     );
   }
 }
