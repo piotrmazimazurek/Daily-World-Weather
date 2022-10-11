@@ -11,7 +11,7 @@ class InfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text("Za kogo przebierzesz sie na Halloween?"),
+          title: Text("GOOD ONE ! "),
           backgroundColor: const Color.fromARGB(255, 8, 8, 8)),
     );
   }

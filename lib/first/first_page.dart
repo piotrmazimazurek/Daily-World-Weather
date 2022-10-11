@@ -16,7 +16,7 @@ class FirstPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Za kogo przebierzesz sie na Halloween?",
+            "Who are You Gonna dress as ?",
           ),
           backgroundColor: Color.fromARGB(255, 8, 8, 8),
         ),
@@ -36,7 +36,7 @@ class FirstPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(15.0),
                   child: Text(
-                    '"Dynia or not to Dynia. This is a Halloween Question."- Pułkownik Serious Pumpkin',
+                    '"Pumpkin or not to Pumpkin. This is a Halloween Question"- Colonel Serious Pumpkin',
                     style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.headline4,
                       fontSize: 24,
@@ -51,7 +51,7 @@ class FirstPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    "Wylosuj swoje przebranie",
+                    "Check who are going to be your character for Halloween ! ",
                     style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.headline4,
                       fontSize: 20,
@@ -64,7 +64,7 @@ class FirstPage extends StatelessWidget {
                   controller: controller,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      hintText: "Wpisz swoje imie"),
+                      hintText: "Enter your name"),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -73,7 +73,7 @@ class FirstPage extends StatelessWidget {
                     );
                     controller.clear();
                   },
-                  child: Text('Wygeneruj'),
+                  child: Text('Generate'),
                 ),
               ],
             ),
