@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         colorScheme: ColorScheme.fromSwatch(),
         textTheme: GoogleFonts.emilysCandyTextTheme(),
-        scaffoldBackgroundColor: Colors.orange[100],
+        scaffoldBackgroundColor: Color.fromARGB(255, 133, 190, 190),
       ),
       home: FirstPage(),
     );

@@ -16,7 +16,7 @@ class FirstPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Who are You Gonna dress as ?",
+            "Heavy Cloud",
           ),
           backgroundColor: Color.fromARGB(255, 8, 8, 8),
         ),
@@ -27,7 +27,7 @@ class FirstPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage('images/dynia2.jpg'),
+                  backgroundImage: AssetImage('images/cloud2.jpg'),
                   radius: 100,
                 ),
                 SizedBox(
@@ -36,7 +36,7 @@ class FirstPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(15.0),
                   child: Text(
-                    '"Pumpkin or not to Pumpkin. This is a Halloween Question"- Colonel Serious Pumpkin',
+                    'Come Rain or Come Shine',
                     style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.headline4,
                       fontSize: 24,
@@ -51,7 +51,7 @@ class FirstPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    "Check who are going to be your character for Halloween ! ",
+                    "Check the weather and other features",
                     style: GoogleFonts.lato(
                       textStyle: Theme.of(context).textTheme.headline4,
                       fontSize: 20,
@@ -63,8 +63,7 @@ class FirstPage extends StatelessWidget {
                 TextField(
                   controller: controller,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: "Enter your name"),
+                      border: OutlineInputBorder(), hintText: "Enter The City"),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -73,7 +72,7 @@ class FirstPage extends StatelessWidget {
                     );
                     controller.clear();
                   },
-                  child: Text('Generate'),
+                  child: Text('Check'),
                 ),
               ],
             ),
