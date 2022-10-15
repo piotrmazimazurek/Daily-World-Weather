@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:dotestowania/first/first_page.dart';
+import 'package:dotestowania/app/first/first_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         colorScheme: ColorScheme.fromSwatch(),
         textTheme: GoogleFonts.emilysCandyTextTheme(),
-        scaffoldBackgroundColor: Color.fromARGB(255, 133, 190, 190),
+        scaffoldBackgroundColor: Color.fromARGB(255, 180, 221, 221),
       ),
       home: FirstPage(),
     );
