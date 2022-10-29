@@ -1,7 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dotestowania/app/core/enums.dart';
+import 'package:dotestowania/app/domain/models/weather_model.dart';
+import 'package:dotestowania/app/first/cubit/first_cubit.dart';
 import 'package:dotestowania/app/info/info_page.dart';
+import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FirstPage extends StatelessWidget {
