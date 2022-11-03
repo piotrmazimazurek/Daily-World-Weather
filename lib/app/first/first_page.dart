@@ -3,11 +3,13 @@
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/first/cubit/first_cubit.dart';
-import 'package:dotestowania/app/info/info_page.dart';
+import 'package:dotestowania/main.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../data/remote_data_sources/weather_remote_data_source.dart';
 
 class FirstPage extends StatelessWidget {
   FirstPage({
@@ -18,70 +20,56 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Heavy Cloud",
-          ),
-          backgroundColor: Color.fromARGB(255, 8, 8, 8),
+    return BlocProvider(
+      create: (context) => FirstCubit(
+        WeatherRepository(WeatherRemoteDataSource()),
+      ),
+      child: BlocListener<FirstCubit, FirstState>(
+        listener: (context, state) {
+          if (state.status == Status.error) {
+            final errorMessage =
+                state.errorMessage ?? 'Whoopsy...something went wrong';
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(errorMessage),
+              ),
+            );
+          }
+        },
+        child: BlocBuilder<FirstCubit, FirstState>(
+          builder: (context, state) {
+            return Scaffold(
+                appBar: AppBar(
+                  title: Text(
+                    "Heavy Cloud",
+                  ),
+                  backgroundColor: Color.fromARGB(255, 8, 8, 8),
+                ),
+                body: Center(
+                  child: SingleChildScrollView(
+                    reverse: true,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 350,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (_) => MainPage()),
+                            );
+                            controller.clear();
+                          },
+                          child: Text('Check Again'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ));
+          },
         ),
-        body: Center(
-          child: SingleChildScrollView(
-            reverse: true,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  backgroundImage: AssetImage('images/cloud2.jpg'),
-                  radius: 100,
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(15.0),
-                  child: Text(
-                    'Come Rain or Come Shine',
-                    style: GoogleFonts.lato(
-                      textStyle: Theme.of(context).textTheme.headline4,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    "Check the weather and other features",
-                    style: GoogleFonts.lato(
-                      textStyle: Theme.of(context).textTheme.headline4,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ),
-                TextField(
-                  controller: controller,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(), hintText: "Enter The City"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => InfoPage()),
-                    );
-                    controller.clear();
-                  },
-                  child: Text('Check'),
-                ),
-              ],
-            ),
-          ),
-        ));
+      ),
+    );
   }
 }
