@@ -16,7 +16,7 @@ class FirstPage extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final controller = TextEditingController();
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +38,7 @@ class FirstPage extends StatelessWidget {
         },
         child: BlocBuilder<FirstCubit, FirstState>(
           builder: (context, state) {
+            final weatherModel = state.model;
             return Scaffold(
                 appBar: AppBar(
                   title: Text(
@@ -52,16 +53,38 @@ class FirstPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: 350,
+                          height: 150,
+                        ),
+                        CircleAvatar(
+                          backgroundImage: AssetImage('images/cloud2.jpg'),
+                          radius: 65,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "Check the weather and other features",
+                            style: GoogleFonts.lato(
+                              textStyle: Theme.of(context).textTheme.headline4,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                        ),
+                        TextField(
+                          controller: _controller,
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: "Enter The City"),
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(builder: (_) => MainPage()),
-                            );
-                            controller.clear();
+                            context
+                                .read<FirstCubit>()
+                                .getWeatherModel(city: _controller.text);
+                            _controller.clear();
                           },
-                          child: Text('Check Again'),
+                          child: Text('Check'),
                         ),
                       ],
                     ),
