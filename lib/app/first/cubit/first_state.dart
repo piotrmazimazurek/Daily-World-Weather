@@ -1,6 +1,5 @@
 part of 'first_cubit.dart';
 
-@immutable
 class FirstState {
   const FirstState({
     this.model,
