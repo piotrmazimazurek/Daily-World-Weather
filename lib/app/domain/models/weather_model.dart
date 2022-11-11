@@ -1,15 +1,16 @@
 class WeatherModel {
-  const WeatherModel(
-      {required this.temperature,
-      required this.city,
-      required this.air_quality});
+  const WeatherModel({
+    required this.temperature,
+    required this.city,
+    required this.airquality,
+  });
 
   final double temperature;
   final String city;
-  final String air_quality;
+  final String airquality;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
-      : temperature = json['current']['temp.c'] + 0.0,
+      : temperature = json['current']['temp_c'] + 0.0,
         city = json['location']['name'],
-        air_quality = json['current']['air_quality'];
+        airquality = json['current']['air_quality'];
 }
