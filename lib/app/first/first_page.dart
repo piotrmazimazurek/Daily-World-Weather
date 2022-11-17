@@ -5,8 +5,9 @@ import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../data/remote_data_sources/weather_remote_data_source.dart';
+import 'package:shimmer/shimmer.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({
@@ -34,32 +35,39 @@ class FirstPage extends StatelessWidget {
         child: BlocBuilder<FirstCubit, FirstState>(
           builder: (context, state) {
             final weatherModel = state.model;
-            return Scaffold(
-                appBar: AppBar(
-                  title: const Text(
-                    "Heavy Cloud",
-                  ),
-                  backgroundColor: const Color.fromARGB(255, 8, 8, 8),
-                ),
-                body: Center(child: Builder(builder: (context) {
-                  if (state.status == Status.loading) {
-                    return const Text('Loading');
-                  }
-
-                  return SingleChildScrollView(
-                    reverse: true,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        if (weatherModel != null)
-                          FirstWeatherWidget(
-                            weatherModel: weatherModel,
-                          ),
-                        SecondWeatherWidget()
-                      ],
+            return Container(
+                constraints: const BoxConstraints.expand(),
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/heavyclouds.jpg"),
+                        fit: BoxFit.cover)),
+                child: Scaffold(
+                    backgroundColor: Colors.transparent,
+                    appBar: AppBar(
+                      title: const Text(
+                        "Black Moon",
+                      ),
+                      backgroundColor: const Color.fromARGB(255, 8, 8, 8),
                     ),
-                  );
-                })));
+                    body: Center(child: Builder(builder: (context) {
+                      if (state.status == Status.loading) {
+                        return const Text('Loading');
+                      }
+
+                      return SingleChildScrollView(
+                        reverse: true,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            if (weatherModel != null)
+                              FirstWeatherWidget(
+                                weatherModel: weatherModel,
+                              ),
+                            SecondWeatherWidget()
+                          ],
+                        ),
+                      );
+                    }))));
           },
         ),
       ),
@@ -105,7 +113,7 @@ class FirstWeatherWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline4,
                 ),
                 const SizedBox(height: 20),
-                Text('Air Quality(1-6 scale/Much Higher = More Unhealthy):',
+                Text('Air Quality (1-6 scale/Higher = Unhealthy):',
                     style: Theme.of(context).textTheme.subtitle1),
                 Text(
                   weatherModel.airquality.toString(),
@@ -133,38 +141,56 @@ class SecondWeatherWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 20,
+            height: 50,
           ),
-          const CircleAvatar(
-            backgroundImage: AssetImage('images/cloud2.jpg'),
-            radius: 65,
+          Shimmer.fromColors(
+            baseColor: const Color.fromARGB(255, 0, 0, 0),
+            highlightColor: const Color.fromARGB(255, 211, 211, 211),
+            child: const CircleAvatar(
+              backgroundImage: AssetImage('images/cloud2.jpg'),
+              radius: 50,
+            ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              "Check the weather and other features",
-              style: GoogleFonts.lato(
-                textStyle: Theme.of(context).textTheme.headline5,
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                fontStyle: FontStyle.italic,
+          const SizedBox(
+            height: 45,
+          ),
+          SizedBox(
+            width: 250.0,
+            child: DefaultTextStyle(
+              style: const TextStyle(
+                  fontSize: 30.0, color: Color.fromARGB(255, 0, 0, 0)),
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  WavyAnimatedText('Check Weather'),
+                  WavyAnimatedText('And Air Quality'),
+                ],
+                isRepeatingAnimation: true,
+                repeatForever: true,
+                onTap: () {
+                  ("Tap Event");
+                },
               ),
             ),
           ),
           TextField(
             controller: _controller,
             decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: "Enter The City"),
+                border: OutlineInputBorder(), hintText: "Enter Location"),
           ),
           ElevatedButton(
-            onPressed: () {
-              context
-                  .read<FirstCubit>()
-                  .getWeatherModel(city: _controller.text);
-              _controller.clear();
-            },
-            child: const Text('Check'),
-          )
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+              onPressed: () {
+                context
+                    .read<FirstCubit>()
+                    .getWeatherModel(city: _controller.text);
+                _controller.clear();
+              },
+              child: const Text(
+                'Check',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ))
         ],
       ),
     );
