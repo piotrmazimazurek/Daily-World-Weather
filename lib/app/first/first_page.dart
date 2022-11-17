@@ -83,21 +83,33 @@ class FirstWeatherWidget extends StatelessWidget {
             reverse: true,
             child: Column(
               children: [
+                Text('Temperature:',
+                    style: Theme.of(context).textTheme.subtitle2),
                 Text(
                   weatherModel.temperature.toString(),
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.headline3,
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 20,
                 ),
+                Text('City:', style: Theme.of(context).textTheme.subtitle2),
                 Text(
                   weatherModel.city,
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context).textTheme.headline3,
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 20),
+                Text('Condition:',
+                    style: Theme.of(context).textTheme.subtitle1),
+                Text(
+                  weatherModel.condition.toString(),
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                const SizedBox(height: 20),
+                Text('Air Quality(1-6 scale/Much Higher = More Unhealthy):',
+                    style: Theme.of(context).textTheme.subtitle1),
                 Text(
                   weatherModel.airquality.toString(),
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.headline4,
                 ),
               ],
             ));
@@ -121,7 +133,7 @@ class SecondWeatherWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 300,
+            height: 20,
           ),
           const CircleAvatar(
             backgroundImage: AssetImage('images/cloud2.jpg'),
@@ -132,7 +144,7 @@ class SecondWeatherWidget extends StatelessWidget {
             child: Text(
               "Check the weather and other features",
               style: GoogleFonts.lato(
-                textStyle: Theme.of(context).textTheme.headline4,
+                textStyle: Theme.of(context).textTheme.headline5,
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
                 fontStyle: FontStyle.italic,

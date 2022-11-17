@@ -3,7 +3,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
-
 part 'first_state.dart';
 
 class FirstCubit extends Cubit<FirstState> {
