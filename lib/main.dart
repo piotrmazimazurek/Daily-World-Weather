@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(),
         textTheme: GoogleFonts.latoTextTheme(),
-        scaffoldBackgroundColor: Color.fromARGB(255, 180, 221, 221),
       ),
       home: FirstPage(),
     );

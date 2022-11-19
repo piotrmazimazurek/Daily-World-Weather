@@ -1,10 +1,11 @@
+import 'dart:ui';
+
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/first/cubit/first_cubit.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../data/remote_data_sources/weather_remote_data_source.dart';
 import 'package:shimmer/shimmer.dart';
@@ -37,10 +38,12 @@ class FirstPage extends StatelessWidget {
             final weatherModel = state.model;
             return Container(
                 constraints: const BoxConstraints.expand(),
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("images/heavyclouds.jpg"),
-                        fit: BoxFit.cover)),
+                        image: const AssetImage("images/heavyclouds.jpg"),
+                        fit: BoxFit.cover,
+                        colorFilter: ColorFilter.mode(
+                            Colors.white.withOpacity(0.5), BlendMode.darken))),
                 child: Scaffold(
                     backgroundColor: Colors.transparent,
                     appBar: AppBar(
@@ -154,23 +157,25 @@ class SecondWeatherWidget extends StatelessWidget {
           const SizedBox(
             height: 45,
           ),
-          SizedBox(
-            width: 250.0,
-            child: DefaultTextStyle(
-              style: const TextStyle(
-                  fontSize: 30.0, color: Color.fromARGB(255, 0, 0, 0)),
-              child: AnimatedTextKit(
-                animatedTexts: [
-                  WavyAnimatedText('Check Weather'),
-                  WavyAnimatedText('And Air Quality'),
-                ],
-                isRepeatingAnimation: true,
-                repeatForever: true,
-                onTap: () {
-                  ("Tap Event");
-                },
-              ),
-            ),
+          AnimatedTextKit(
+            isRepeatingAnimation: true,
+            repeatForever: true,
+            animatedTexts: [
+              TyperAnimatedText('Check Weather',
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    backgroundColor: Colors.black,
+                  )),
+              TyperAnimatedText('And Air Quality',
+                  textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      backgroundColor: Colors.black)),
+            ],
+            onTap: () {
+              ("I am executing");
+            },
           ),
           TextField(
             controller: _controller,
