@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/first/cubit/first_cubit.dart';
@@ -146,16 +145,12 @@ class SecondWeatherWidget extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Shimmer.fromColors(
-            baseColor: const Color.fromARGB(255, 0, 0, 0),
-            highlightColor: const Color.fromARGB(255, 211, 211, 211),
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('images/cloud2.jpg'),
-              radius: 50,
-            ),
+          const CircleAvatar(
+            backgroundImage: AssetImage('images/Moon9.gif'),
+            radius: 55,
           ),
           const SizedBox(
-            height: 45,
+            height: 25,
           ),
           AnimatedTextKit(
             isRepeatingAnimation: true,
