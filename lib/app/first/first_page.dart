@@ -18,7 +18,7 @@ class FirstPage extends StatelessWidget {
       create: (context) => FirstCubit(
         WeatherRepository(WeatherRemoteDataSource()),
       ),
-      child: BlocListener<FirstCubit, FirstState>(
+      child: BlocConsumer<FirstCubit, FirstState>(
         listener: (context, state) {
           if (state.status == Status.error) {
             final errorMessage =
@@ -30,46 +30,44 @@ class FirstPage extends StatelessWidget {
             );
           }
         },
-        child: BlocBuilder<FirstCubit, FirstState>(
-          builder: (context, state) {
-            final weatherModel = state.model;
-            return Container(
-                constraints: const BoxConstraints.expand(),
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: const AssetImage("images/heavyclouds.jpg"),
-                        fit: BoxFit.cover,
-                        colorFilter: ColorFilter.mode(
-                            Colors.white.withOpacity(0.5), BlendMode.darken))),
-                child: Scaffold(
-                    backgroundColor: Colors.transparent,
-                    appBar: AppBar(
-                      title: const Text(
-                        "Black Moon",
-                      ),
-                      backgroundColor: const Color.fromARGB(255, 8, 8, 8),
+        builder: (context, state) {
+          final weatherModel = state.model;
+          return Container(
+              constraints: const BoxConstraints.expand(),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: const AssetImage("images/heavyclouds.jpg"),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                          Colors.white.withOpacity(0.5), BlendMode.darken))),
+              child: Scaffold(
+                  backgroundColor: Colors.transparent,
+                  appBar: AppBar(
+                    title: const Text(
+                      "The Eye of Moon",
                     ),
-                    body: Center(child: Builder(builder: (context) {
-                      if (state.status == Status.loading) {
-                        return const Text('Loading');
-                      }
+                    backgroundColor: const Color.fromARGB(255, 8, 8, 8),
+                  ),
+                  body: Center(child: Builder(builder: (context) {
+                    if (state.status == Status.loading) {
+                      return const Text('Loading');
+                    }
 
-                      return SingleChildScrollView(
-                        reverse: true,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            if (weatherModel != null)
-                              FirstWeatherWidget(
-                                weatherModel: weatherModel,
-                              ),
-                            SecondWeatherWidget()
-                          ],
-                        ),
-                      );
-                    }))));
-          },
-        ),
+                    return SingleChildScrollView(
+                      reverse: true,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (weatherModel != null)
+                            FirstWeatherWidget(
+                              weatherModel: weatherModel,
+                            ),
+                          SecondWeatherWidget()
+                        ],
+                      ),
+                    );
+                  }))));
+        },
       ),
     );
   }
