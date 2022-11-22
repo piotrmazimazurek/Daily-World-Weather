@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/first/cubit/first_cubit.dart';
@@ -7,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../data/remote_data_sources/weather_remote_data_source.dart';
-import 'package:shimmer/shimmer.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({
@@ -147,10 +145,10 @@ class SecondWeatherWidget extends StatelessWidget {
           ),
           const CircleAvatar(
             backgroundImage: AssetImage('images/Moon9.gif'),
-            radius: 55,
+            radius: 65,
           ),
           const SizedBox(
-            height: 25,
+            height: 22,
           ),
           AnimatedTextKit(
             isRepeatingAnimation: true,

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class WeatherModel {
   const WeatherModel(
       {required this.temperature,
