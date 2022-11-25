@@ -30,13 +30,7 @@ Using:
 
 Thank You For Visiting !
 
-<img src="https://user-images.githubusercontent.com/105658444/203585198-6aec4831-ad5e-41bf-819c-6b58966edcec.jpg" width=30% height=30%>,
-<img src="https://user-images.githubusercontent.com/105658444/203585260-8f0fd62e-f4f9-4fb3-852a-8236c1b93329.jpg" width=30% height=30%>,
-<img src="https://user-images.githubusercontent.com/105658444/203585267-cb75eac7-d5b2-4065-8302-850805388d0f.jpg" width=30% height=30%>,
 
-<div align="center">
-  <video src="https://user-images.githubusercontent.com/105658444/203585069-78a93685-a1b8-485f-8cbf-02507804870d.mp4" width=400/>
-<div/>
 
 
 
