@@ -7,8 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../data/remote_data_sources/weather_remote_data_source.dart';
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({
+class MainPage extends StatelessWidget {
+  const MainPage({
     Key? key,
   }) : super(key: key);
 
