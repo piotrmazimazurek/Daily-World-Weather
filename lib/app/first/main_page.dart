@@ -1,6 +1,6 @@
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
-import 'package:dotestowania/app/first/cubit/first_cubit.dart';
+import 'package:dotestowania/app/first/cubit/main_cubit.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,10 +15,10 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => FirstCubit(
+      create: (context) => MainCubit(
         WeatherRepository(WeatherRemoteDataSource()),
       ),
-      child: BlocConsumer<FirstCubit, FirstState>(
+      child: BlocConsumer<MainCubit, MainState>(
         listener: (context, state) {
           if (state.status == Status.error) {
             final errorMessage =
@@ -83,7 +83,7 @@ class FirstWeatherWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FirstCubit, FirstState>(
+    return BlocBuilder<MainCubit, MainState>(
       builder: (context, state) {
         return SingleChildScrollView(
             reverse: true,
@@ -177,7 +177,7 @@ class SecondWeatherWidget extends StatelessWidget {
               style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
               onPressed: () {
                 context
-                    .read<FirstCubit>()
+                    .read<MainCubit>()
                     .getWeatherModel(city: _controller.text);
                 _controller.clear();
               },
