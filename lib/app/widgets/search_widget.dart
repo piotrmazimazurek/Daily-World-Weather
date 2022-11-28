@@ -47,10 +47,13 @@ class SearchWidget extends StatelessWidget {
               ("I am executing");
             },
           ),
-          TextField(
-            controller: _controller,
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: "Enter Location"),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextField(
+              controller: _controller,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), hintText: "Enter Location"),
+            ),
           ),
           ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
