@@ -1,7 +1,7 @@
-part of 'main_cubit.dart';
+part of 'home_cubit.dart';
 
-class MainState {
-  const MainState({
+class HomeState {
+  const HomeState({
     this.model,
     this.status = Status.initial,
     this.errorMessage,

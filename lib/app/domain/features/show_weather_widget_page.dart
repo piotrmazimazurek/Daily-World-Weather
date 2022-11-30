@@ -1,5 +1,5 @@
 import 'package:dotestowania/app/domain/models/weather_model.dart';
-import 'package:dotestowania/app/main/cubit/main_cubit.dart';
+import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +13,7 @@ class ShowWeatherWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MainCubit, MainState>(
+    return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return SingleChildScrollView(
             reverse: true,

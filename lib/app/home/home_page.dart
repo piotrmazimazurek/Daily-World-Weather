@@ -1,24 +1,24 @@
 import 'package:dotestowania/app/core/enums.dart';
-import 'package:dotestowania/app/main/cubit/main_cubit.dart';
-import 'package:dotestowania/app/widgets/search_widget.dart';
-import 'package:dotestowania/app/widgets/show_weather_widget.dart';
+import 'package:dotestowania/app/home/cubit/home_cubit.dart';
+import 'package:dotestowania/app/domain/features/search_widget_page.dart';
+import 'package:dotestowania/app/domain/features/show_weather_widget_page.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/remote_data_sources/weather_remote_data_source.dart';
 
-class MainPage extends StatelessWidget {
-  const MainPage({
+class HomePage extends StatelessWidget {
+  const HomePage({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MainCubit(
+      create: (context) => HomeCubit(
         WeatherRepository(WeatherRemoteDataSource()),
       ),
-      child: BlocConsumer<MainCubit, MainState>(
+      child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {
           if (state.status == Status.error) {
             final errorMessage =

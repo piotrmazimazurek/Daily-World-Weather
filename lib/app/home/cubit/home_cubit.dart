@@ -3,28 +3,28 @@ import 'package:bloc/bloc.dart';
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
-part 'main_state.dart';
+part 'home_state.dart';
 
-class MainCubit extends Cubit<MainState> {
-  MainCubit(this._weatherRepository) : super(const MainState());
+class HomeCubit extends Cubit<HomeState> {
+  HomeCubit(this._weatherRepository) : super(const HomeState());
 
   final WeatherRepository _weatherRepository;
 
   Future<void> getWeatherModel({
     required String city,
   }) async {
-    emit(const MainState(status: Status.loading));
+    emit(const HomeState(status: Status.loading));
     try {
       final weatherModel = await _weatherRepository.getWeatherModel(city: city);
       emit(
-        MainState(
+        HomeState(
           model: weatherModel,
           status: Status.success,
         ),
       );
     } catch (error) {
       emit(
-        MainState(
+        HomeState(
           status: Status.error,
           errorMessage: error.toString(),
         ),

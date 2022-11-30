@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:dotestowania/app/main/main_page.dart';
+import 'package:dotestowania/app/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(),
         textTheme: GoogleFonts.latoTextTheme(),
       ),
-      home: MainPage(),
+      home: HomePage(),
     );
   }
 }
