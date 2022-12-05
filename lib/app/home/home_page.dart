@@ -1,7 +1,7 @@
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
-import 'package:dotestowania/app/domain/features/search_widget_page.dart';
-import 'package:dotestowania/app/domain/features/show_weather_widget_page.dart';
+import 'package:dotestowania/app/domain/features/search_page.dart';
+import 'package:dotestowania/app/domain/features/show_weather_page.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
