@@ -20,10 +20,6 @@ class SearchWidget extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          const CircleAvatar(
-            backgroundImage: AssetImage('images/Moon9.gif'),
-            radius: 65,
-          ),
           const SizedBox(
             height: 22,
           ),
