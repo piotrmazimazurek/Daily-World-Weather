@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
               constraints: const BoxConstraints.expand(),
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: const AssetImage("images/heavyclouds.jpg"),
+                      image: const AssetImage("images/world.jpg"),
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
                           Colors.white.withOpacity(0.5), BlendMode.darken))),
