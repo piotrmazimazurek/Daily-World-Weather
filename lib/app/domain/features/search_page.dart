@@ -48,7 +48,14 @@ class SearchWidget extends StatelessWidget {
             child: TextField(
               controller: _controller,
               decoration: const InputDecoration(
-                  border: OutlineInputBorder(), hintText: "Enter Location"),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(width: 3, color: Colors.white),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 3, color: Colors.white),
+                  ),
+                  hintText: "Enter Location",
+                  hintStyle: TextStyle(color: Colors.white)),
             ),
           ),
           ElevatedButton(
