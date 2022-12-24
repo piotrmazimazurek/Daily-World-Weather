@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(),
-        textTheme: GoogleFonts.latoTextTheme(),
+        textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme.apply(
+            bodyColor: Color.fromARGB(255, 255, 255, 255),
+            displayColor: Color.fromARGB(255, 255, 255, 255))),
       ),
       home: HomePage(),
     );
