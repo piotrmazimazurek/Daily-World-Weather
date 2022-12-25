@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   appBar: AppBar(
                     title: const Text(
-                      "The Eye of Moon",
+                      "Daily World Weather",
                     ),
                     backgroundColor: const Color.fromARGB(255, 8, 8, 8),
                   ),
@@ -52,6 +52,10 @@ class HomePage extends StatelessWidget {
                     if (state.status == Status.loading) {
                       return const Text('Loading');
                     }
+                    const CircleAvatar(
+                      backgroundImage: AssetImage('images/change.gif'),
+                      radius: 50,
+                    );
 
                     return SingleChildScrollView(
                       reverse: true,
