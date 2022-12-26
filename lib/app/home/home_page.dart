@@ -52,10 +52,6 @@ class HomePage extends StatelessWidget {
                     if (state.status == Status.loading) {
                       return const Text('Loading');
                     }
-                    const CircleAvatar(
-                      backgroundImage: AssetImage('images/change.gif'),
-                      radius: 50,
-                    );
 
                     return SingleChildScrollView(
                       reverse: true,
