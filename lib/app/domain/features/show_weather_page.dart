@@ -17,37 +17,57 @@ class ShowWeatherWidget extends StatelessWidget {
       builder: (context, state) {
         return SingleChildScrollView(
             reverse: true,
-            child: Column(
-              children: [
-                Text('Temperature:',
-                    style: Theme.of(context).textTheme.subtitle2),
-                Text(
-                  weatherModel.temperature.toString(),
-                  style: Theme.of(context).textTheme.headline3,
+            child: Container(
+              height: 400,
+              width: 400,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.white60, Colors.white10],
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text('City:', style: Theme.of(context).textTheme.subtitle2),
-                Text(
-                  weatherModel.city,
-                  style: Theme.of(context).textTheme.headline3,
-                ),
-                const SizedBox(height: 20),
-                Text('Condition:',
-                    style: Theme.of(context).textTheme.subtitle1),
-                Text(
-                  weatherModel.condition.toString(),
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                const SizedBox(height: 20),
-                Text('Air Quality (1-6 scale/Higher = Unhealthy):',
-                    style: Theme.of(context).textTheme.subtitle1),
-                Text(
-                  weatherModel.airquality.toString(),
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-              ],
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all(width: 3, color: Colors.white30),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.7),
+                    blurRadius: 20,
+                    spreadRadius: 5,
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Text('Temperature:',
+                      style: Theme.of(context).textTheme.subtitle2),
+                  Text(
+                    weatherModel.temperature.toString(),
+                    style: Theme.of(context).textTheme.headline3,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text('City:', style: Theme.of(context).textTheme.subtitle2),
+                  Text(
+                    weatherModel.city,
+                    style: Theme.of(context).textTheme.headline3,
+                  ),
+                  const SizedBox(height: 20),
+                  Text('Condition:',
+                      style: Theme.of(context).textTheme.subtitle1),
+                  Text(
+                    weatherModel.condition.toString(),
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  const SizedBox(height: 20),
+                  Text('Air Quality (1-6 scale/Higher = Unhealthy):',
+                      style: Theme.of(context).textTheme.subtitle1),
+                  Text(
+                    weatherModel.airquality.toString(),
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ],
+              ),
             ));
       },
     );
