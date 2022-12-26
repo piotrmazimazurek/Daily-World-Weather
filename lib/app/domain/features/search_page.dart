@@ -20,6 +20,34 @@ class SearchWidget extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
+          Container(
+              padding: const EdgeInsets.all(16.0),
+              width: 150,
+              height: 150,
+              decoration: const BoxDecoration(
+                border: Border(
+                  left: BorderSide(
+                    color: Colors.black,
+                    width: 25.0,
+                  ),
+                  right: BorderSide(
+                    color: Colors.black,
+                    width: 25.0,
+                  ),
+                  top: BorderSide(
+                    color: Color.fromARGB(255, 255, 245, 245),
+                    width: 20.0,
+                  ),
+                  bottom: BorderSide(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    width: 8.0,
+                  ),
+                ),
+              ),
+              child: const CircleAvatar(
+                backgroundImage: AssetImage('images/change.gif'),
+                radius: 130,
+              )),
           const SizedBox(
             height: 22,
           ),
