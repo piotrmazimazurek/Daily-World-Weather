@@ -21,7 +21,7 @@ class SearchWidget extends StatelessWidget {
             height: 50,
           ),
           Container(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(9.0),
               width: 150,
               height: 150,
               decoration: const BoxDecoration(
@@ -75,19 +75,26 @@ class SearchWidget extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: TextField(
               controller: _controller,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: Colors.white),
+                    borderRadius: BorderRadius.circular(50.0),
+                    borderSide: const BorderSide(width: 2, color: Colors.white),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: Colors.white),
+                    borderRadius: BorderRadius.circular(50.0),
+                    borderSide: const BorderSide(width: 2, color: Colors.white),
                   ),
                   hintText: "Enter Location",
-                  hintStyle: TextStyle(color: Colors.white)),
+                  hintStyle: const TextStyle(color: Colors.white)),
             ),
           ),
           ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                shape: const StadiumBorder(),
+                side: const BorderSide(
+                    color: Color.fromARGB(255, 255, 255, 255), width: 2),
+              ),
               onPressed: () {
                 context
                     .read<HomeCubit>()
