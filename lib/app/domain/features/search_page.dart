@@ -22,8 +22,8 @@ class SearchWidget extends StatelessWidget {
           ),
           Container(
               padding: const EdgeInsets.all(9.0),
-              width: 150,
-              height: 150,
+              width: 100,
+              height: 100,
               decoration: const BoxDecoration(
                 border: Border(
                   left: BorderSide(
@@ -45,8 +45,8 @@ class SearchWidget extends StatelessWidget {
                 ),
               ),
               child: const CircleAvatar(
-                backgroundImage: AssetImage('images/change.gif'),
-                radius: 130,
+                backgroundImage: AssetImage('images/world.jpg'),
+                radius: 150,
               )),
           const SizedBox(
             height: 22,

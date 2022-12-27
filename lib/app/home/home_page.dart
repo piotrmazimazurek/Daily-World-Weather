@@ -35,11 +35,15 @@ class HomePage extends StatelessWidget {
           return Container(
               constraints: const BoxConstraints.expand(),
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: const AssetImage("images/world.jpg"),
-                      fit: BoxFit.cover,
-                      colorFilter: ColorFilter.mode(
-                          Colors.white.withOpacity(0.5), BlendMode.darken))),
+                image: DecorationImage(
+                  image: const AssetImage("images/world.jpg"),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.white.withOpacity(1.0),
+                    BlendMode.dst,
+                  ),
+                ),
+              ),
               child: Scaffold(
                   backgroundColor: Colors.transparent,
                   appBar: AppBar(
