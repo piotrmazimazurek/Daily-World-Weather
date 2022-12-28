@@ -62,11 +62,31 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          if (weatherModel == null) SearchWidget(),
                           if (weatherModel != null)
                             ShowWeatherWidget(
                               weatherModel: weatherModel,
                             ),
-                          SearchWidget()
+                          if (weatherModel != null)
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                shape: const StadiumBorder(),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 2),
+                              ),
+                              onPressed: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => const HomePage())),
+                              child: const Text(
+                                'Back',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
                         ],
                       ),
                     );
