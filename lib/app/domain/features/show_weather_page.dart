@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class ShowWeatherWidget extends StatelessWidget {
         return SingleChildScrollView(
             reverse: true,
             child: Container(
-              height: 500,
+              height: 400,
               width: 400,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
@@ -39,11 +40,7 @@ class ShowWeatherWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Image.asset(
-                    weatherModel.icon,
-                    bundle: PlatformAssetBundle(),
-                    scale: 2.0,
-                  ),
+                  Image.asset(weatherModel.icon),
                   Text('Temperature:',
                       style: Theme.of(context).textTheme.subtitle2),
                   Text(

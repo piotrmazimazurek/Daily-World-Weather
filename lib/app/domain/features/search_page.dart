@@ -75,17 +75,25 @@ class SearchWidget extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: TextField(
               controller: _controller,
+              cursorColor: Colors.black,
               decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50.0),
-                    borderSide: const BorderSide(width: 2, color: Colors.white),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50.0),
-                    borderSide: const BorderSide(width: 2, color: Colors.white),
-                  ),
-                  hintText: "Enter Location",
-                  hintStyle: const TextStyle(color: Colors.white)),
+                fillColor: const Color.fromARGB(255, 117, 112, 112),
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(50.0),
+                  borderSide: const BorderSide(width: 2, color: Colors.white),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(50.0),
+                  borderSide: const BorderSide(width: 2, color: Colors.white),
+                ),
+                hintText: "Enter Location",
+                hintStyle: const TextStyle(color: Colors.white, fontSize: 16),
+                suffixIcon: const Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
+              ),
             ),
           ),
           ElevatedButton(
@@ -105,6 +113,7 @@ class SearchWidget extends StatelessWidget {
                 'Check',
                 style: TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
+                  fontSize: 16,
                 ),
               ))
         ],
