@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
@@ -39,12 +38,9 @@ class ShowWeatherWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     backgroundColor: Colors.black,
                     radius: 50,
-                    child: Image.network(
-                      weatherModel.icon,
-                    ),
                   ),
                   Text('Temperature:',
                       style: Theme.of(context).textTheme.subtitle2),
