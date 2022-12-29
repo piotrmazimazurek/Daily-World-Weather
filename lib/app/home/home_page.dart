@@ -47,6 +47,7 @@ class HomePage extends StatelessWidget {
               child: Scaffold(
                   backgroundColor: Colors.transparent,
                   appBar: AppBar(
+                    automaticallyImplyLeading: false,
                     title: const Text(
                       "Daily World Weather",
                     ),
