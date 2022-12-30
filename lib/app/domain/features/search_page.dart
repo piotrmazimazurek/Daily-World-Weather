@@ -2,6 +2,7 @@ import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:rive/rive.dart';
 
 class SearchWidget extends StatelessWidget {
   SearchWidget({
@@ -12,112 +13,84 @@ class SearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      reverse: true,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          Container(
-              padding: const EdgeInsets.all(9.0),
-              width: 100,
-              height: 100,
-              decoration: const BoxDecoration(
-                border: Border(
-                  left: BorderSide(
-                    color: Colors.black,
-                    width: 25.0,
-                  ),
-                  right: BorderSide(
-                    color: Colors.black,
-                    width: 25.0,
-                  ),
-                  top: BorderSide(
-                    color: Color.fromARGB(255, 255, 245, 245),
-                    width: 20.0,
-                  ),
-                  bottom: BorderSide(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    width: 8.0,
-                  ),
-                ),
-              ),
-              child: const CircleAvatar(
-                backgroundImage: AssetImage('images/world.jpg'),
-                radius: 150,
-              )),
-          const SizedBox(
-            height: 22,
-          ),
-          AnimatedTextKit(
-            isRepeatingAnimation: true,
-            repeatForever: true,
-            animatedTexts: [
-              TyperAnimatedText('Check Weather',
-                  textStyle: const TextStyle(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const SizedBox(
+          height: 50,
+        ),
+        const SizedBox(
+          height: 22,
+        ),
+        const SizedBox(
+          height: 150,
+          width: 150,
+          child: RiveAnimation.asset('assets/rivetest.riv'),
+        ),
+        AnimatedTextKit(
+          isRepeatingAnimation: true,
+          repeatForever: true,
+          animatedTexts: [
+            TyperAnimatedText('Check Weather',
+                textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                  backgroundColor: Colors.black,
+                )),
+            TyperAnimatedText('And Air Quality',
+                textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 25,
-                    backgroundColor: Colors.black,
-                  )),
-              TyperAnimatedText('And Air Quality',
-                  textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      backgroundColor: Colors.black)),
-            ],
-            onTap: () {
-              ("I am executing");
-            },
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: TextField(
-              controller: _controller,
-              cursorColor: Colors.black,
-              decoration: InputDecoration(
-                fillColor: const Color.fromARGB(255, 117, 112, 112),
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(50.0),
-                  borderSide: const BorderSide(width: 2, color: Colors.white),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(50.0),
-                  borderSide: const BorderSide(width: 2, color: Colors.white),
-                ),
-                hintText: "Enter Location",
-                hintStyle: const TextStyle(color: Colors.white, fontSize: 16),
-                suffixIcon: const Icon(
-                  Icons.search,
-                  color: Colors.white,
-                ),
+                    backgroundColor: Colors.black)),
+          ],
+          onTap: () {
+            ("I am executing");
+          },
+        ),
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: TextField(
+            controller: _controller,
+            cursorColor: Colors.black,
+            decoration: InputDecoration(
+              fillColor: const Color.fromARGB(255, 117, 112, 112),
+              filled: true,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(50.0),
+                borderSide: const BorderSide(width: 2, color: Colors.white),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(50.0),
+                borderSide: const BorderSide(width: 2, color: Colors.white),
+              ),
+              hintText: "Enter Location",
+              hintStyle: const TextStyle(color: Colors.white, fontSize: 16),
+              suffixIcon: const Icon(
+                Icons.search,
+                color: Colors.white,
               ),
             ),
           ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black,
-                shape: const StadiumBorder(),
-                side: const BorderSide(
-                    color: Color.fromARGB(255, 255, 255, 255), width: 2),
+        ),
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+              shape: const StadiumBorder(),
+              side: const BorderSide(
+                  color: Color.fromARGB(255, 255, 255, 255), width: 2),
+            ),
+            onPressed: () {
+              context.read<HomeCubit>().getWeatherModel(city: _controller.text);
+              _controller.clear();
+            },
+            child: const Text(
+              'Check',
+              style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255),
+                fontSize: 16,
               ),
-              onPressed: () {
-                context
-                    .read<HomeCubit>()
-                    .getWeatherModel(city: _controller.text);
-                _controller.clear();
-              },
-              child: const Text(
-                'Check',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  fontSize: 16,
-                ),
-              ))
-        ],
-      ),
+            ))
+      ],
     );
   }
 }
