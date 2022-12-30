@@ -18,8 +18,9 @@ class ShowWeatherWidget extends StatelessWidget {
         return SingleChildScrollView(
             reverse: true,
             child: Container(
-              height: 500,
-              width: 400,
+              constraints: const BoxConstraints(
+                maxHeight: double.infinity,
+              ),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   begin: Alignment.topLeft,
@@ -64,8 +65,11 @@ class ShowWeatherWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline4,
                   ),
                   const SizedBox(height: 20),
-                  Text('Air Quality (1-6 scale/Higher = Unhealthy):',
-                      style: Theme.of(context).textTheme.subtitle1),
+                  Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text('Air Quality (1-6 scale/Higher = Unhealthy):',
+                        style: Theme.of(context).textTheme.subtitle1),
+                  ),
                   Text(
                     weatherModel.airquality.toString(),
                     style: Theme.of(context).textTheme.headline4,
