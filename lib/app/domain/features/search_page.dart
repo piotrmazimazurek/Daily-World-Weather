@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,8 +25,8 @@ class SearchWidget extends StatelessWidget {
           height: 22,
         ),
         const SizedBox(
-          height: 150,
-          width: 150,
+          height: 160,
+          width: 160,
           child: RiveAnimation.asset('assets/rivetest.riv'),
         ),
         AnimatedTextKit(
