@@ -13,7 +13,7 @@ class WeatherModel {
   final int airquality;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
-      : icon = json['current']['condition']['icon'],
+      : icon = json['current']['condition']['code'],
         temperature = json['current']['temp_c'] + 0.0,
         city = json['location']['name'],
         condition = json['current']['condition']['text'],

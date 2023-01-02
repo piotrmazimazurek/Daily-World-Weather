@@ -4,7 +4,6 @@ import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rive/rive.dart' hide LinearGradient;
 
 class ShowWeatherWidget extends StatelessWidget {
   const ShowWeatherWidget({
@@ -40,10 +39,8 @@ class ShowWeatherWidget extends StatelessWidget {
           ),
           child: Column(
             children: [
-              const SizedBox(
-                height: 120,
-                width: 120,
-                child: RiveAnimation.asset('assets/rivetest.riv'),
+              Image.network(
+                'http://cdn.weatherapi.com/weather/64x64/day/116.png',
               ),
               Text('Temperature:',
                   style: Theme.of(context).textTheme.subtitle2),
