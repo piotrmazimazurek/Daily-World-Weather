@@ -40,7 +40,8 @@ class ShowWeatherWidget extends StatelessWidget {
           child: Column(
             children: [
               Image.network(
-                'http://cdn.weatherapi.com/weather/64x64/day/116.png',
+                weatherModel.icon_url,
+                scale: 0.7,
               ),
               Text('Temperature:',
                   style: Theme.of(context).textTheme.subtitle2),
