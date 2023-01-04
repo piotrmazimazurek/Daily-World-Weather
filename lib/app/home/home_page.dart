@@ -5,6 +5,7 @@ import 'package:dotestowania/app/domain/features/show_weather_page.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import '../../data/remote_data_sources/weather_remote_data_source.dart';
 
 class HomePage extends StatelessWidget {
@@ -47,6 +48,15 @@ class HomePage extends StatelessWidget {
               child: Scaffold(
                   backgroundColor: Colors.transparent,
                   appBar: AppBar(
+                    actions: [
+                      Switch.adaptive(
+                          value: true,
+                          onChanged: (value) {
+                            Get.changeTheme(Get.isDarkMode
+                                ? ThemeData.light()
+                                : ThemeData.dark());
+                          })
+                    ],
                     automaticallyImplyLeading: false,
                     title: const Text(
                       "Daily World Weather",
