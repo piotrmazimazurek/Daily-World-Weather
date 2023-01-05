@@ -5,13 +5,24 @@ import 'package:dotestowania/app/domain/features/show_weather_page.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import '../../data/remote_data_sources/weather_remote_data_source.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  bool isSwitchOn = true;
+
+  Color _textColor = const Color.fromARGB(255, 255, 255, 255);
+  Color _appBarColor = Colors.black87;
+  Color _scaffoldBgcolor = Colors.white;
 
   @override
   Widget build(BuildContext context) {
@@ -46,22 +57,61 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               child: Scaffold(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: _scaffoldBgcolor,
                   appBar: AppBar(
                     actions: [
-                      Switch.adaptive(
-                          value: true,
-                          onChanged: (value) {
-                            Get.changeTheme(Get.isDarkMode
-                                ? ThemeData.light()
-                                : ThemeData.dark());
-                          })
+                      FlutterSwitch(
+                        showOnOff: true,
+                        width: 90.0,
+                        height: 50.0,
+                        toggleSize: 45.0,
+                        value: isSwitchOn,
+                        borderRadius: 30.0,
+                        padding: 2.0,
+                        activeToggleColor:
+                            const Color.fromARGB(255, 117, 112, 112),
+                        inactiveToggleColor: const Color(0xFF2F363D),
+                        activeSwitchBorder: Border.all(
+                          color: const Color.fromARGB(188, 117, 112, 112),
+                          width: 6.0,
+                        ),
+                        inactiveSwitchBorder: Border.all(
+                          color: const Color(0xFFD1D5DA),
+                          width: 6.0,
+                        ),
+                        activeColor: const Color.fromARGB(255, 10, 10, 10),
+                        inactiveColor: Colors.white,
+                        activeIcon: const Icon(
+                          Icons.nightlight_round,
+                          color: Color(0xFFF8E3A1),
+                        ),
+                        inactiveIcon: const Icon(
+                          Icons.wb_sunny,
+                          color: Color(0xFFFFDF5D),
+                        ),
+                        onToggle: (value) {
+                          setState(() {
+                            isSwitchOn = value;
+
+                            if (value) {
+                              _textColor = Colors.white;
+                              _appBarColor = Colors.black87;
+                              _scaffoldBgcolor = Colors.transparent;
+                            } else {
+                              _textColor = Colors.black87;
+                              _appBarColor = Colors.white60;
+                              _scaffoldBgcolor = Colors.white54;
+                            }
+                          });
+                        },
+                      ),
                     ],
                     automaticallyImplyLeading: false,
-                    title: const Text(
+                    title: Text(
                       "Daily World Weather",
+                      style: TextStyle(color: _textColor, fontSize: 21),
                     ),
-                    backgroundColor: const Color.fromARGB(255, 8, 8, 8),
+                    backgroundColor: _appBarColor,
                   ),
                   body: Center(child: Builder(builder: (context) {
                     if (state.status == Status.loading) {
