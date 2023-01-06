@@ -20,9 +20,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool isSwitchOn = true;
 
-  Color _textColor = const Color.fromARGB(255, 255, 255, 255);
-  Color _appBarColor = Colors.black87;
-  Color _scaffoldBgcolor = Colors.white;
+  Color textColor = const Color.fromARGB(255, 255, 255, 255);
+  Color appBarColor = Colors.black87;
+  Color scaffoldBgcolor = Colors.transparent;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               child: Scaffold(
-                  backgroundColor: _scaffoldBgcolor,
+                  backgroundColor: scaffoldBgcolor,
                   appBar: AppBar(
                     actions: [
                       FlutterSwitch(
@@ -68,6 +68,10 @@ class _HomePageState extends State<HomePage> {
                         value: isSwitchOn,
                         borderRadius: 30.0,
                         padding: 2.0,
+                        inactiveTextColor: Colors.black,
+                        activeTextColor: Colors.white,
+                        activeTextFontWeight: FontWeight.w400,
+                        inactiveTextFontWeight: FontWeight.w400,
                         activeToggleColor:
                             const Color.fromARGB(255, 117, 112, 112),
                         inactiveToggleColor: const Color(0xFF2F363D),
@@ -94,13 +98,15 @@ class _HomePageState extends State<HomePage> {
                             isSwitchOn = value;
 
                             if (value) {
-                              _textColor = Colors.white;
-                              _appBarColor = Colors.black87;
-                              _scaffoldBgcolor = Colors.transparent;
+                              textColor = Colors.white;
+                              appBarColor = Colors.black87;
+                              scaffoldBgcolor = Colors.transparent;
                             } else {
-                              _textColor = Colors.black87;
-                              _appBarColor = Colors.white60;
-                              _scaffoldBgcolor = Colors.white54;
+                              textColor = Colors.black87;
+                              appBarColor =
+                                  const Color.fromARGB(197, 255, 255, 255);
+                              scaffoldBgcolor =
+                                  const Color.fromARGB(169, 255, 255, 255);
                             }
                           });
                         },
@@ -109,9 +115,9 @@ class _HomePageState extends State<HomePage> {
                     automaticallyImplyLeading: false,
                     title: Text(
                       "Daily World Weather",
-                      style: TextStyle(color: _textColor, fontSize: 21),
+                      style: TextStyle(color: textColor, fontSize: 21),
                     ),
-                    backgroundColor: _appBarColor,
+                    backgroundColor: appBarColor,
                   ),
                   body: Center(child: Builder(builder: (context) {
                     if (state.status == Status.loading) {
