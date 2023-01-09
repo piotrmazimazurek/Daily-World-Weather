@@ -30,7 +30,8 @@ Using:
 
 Thank You For Visiting !
 
-<img src="https://user-images.githubusercontent.com/105658444/211271550-9c0c050e-8f40-4c3c-baed-c80e4ff0846c.gif" width=50% height=50%>,
+
+
 
 <img src="https://user-images.githubusercontent.com/105658444/211217765-f087920b-915c-4f48-9134-276e17cb2f72.jpg" width=30% height=30%>,
 <img src="https://user-images.githubusercontent.com/105658444/211217768-213495c9-ad5c-4f4f-ba23-16c052298b5b.jpg" width=30% height=30%>,
