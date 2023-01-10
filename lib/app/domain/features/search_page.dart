@@ -39,7 +39,7 @@ class SearchWidget extends StatelessWidget {
                   fontSize: 25,
                   backgroundColor: Colors.black,
                 )),
-            TyperAnimatedText('And Air Quality',
+            TyperAnimatedText('And Weather Conditions',
                 textStyle: const TextStyle(
                     color: Colors.white,
                     fontSize: 25,

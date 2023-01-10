@@ -6,18 +6,18 @@ class WeatherModel {
       required this.temperature,
       required this.city,
       required this.condition,
-      required this.airquality});
+      required this.pressure});
 
   final String icon_url;
   final double temperature;
   final String city;
   final String condition;
-  final int airquality;
+  final double pressure;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
       : icon_url = "http:" + json['current']['condition']['icon'],
         temperature = json['current']['temp_c'] + 0.0,
         city = json['location']['name'],
         condition = json['current']['condition']['text'],
-        airquality = json['current']['air_quality']['us-epa-index'];
+        pressure = json['current']['pressure_mb'];
 }

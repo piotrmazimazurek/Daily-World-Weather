@@ -66,11 +66,11 @@ class ShowWeatherWidget extends StatelessWidget {
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(9.0),
-                child: Text('Air Quality (1 to 6 scale/Higher = Unhealthy):',
+                child: Text('Pressure [1013,25 hPa = Most Healthy]:',
                     style: Theme.of(context).textTheme.subtitle1),
               ),
               Text(
-                weatherModel.airquality.toString(),
+                weatherModel.pressure.toString(),
                 style: Theme.of(context).textTheme.headline4,
               ),
             ],
