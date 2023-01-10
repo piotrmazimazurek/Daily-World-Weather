@@ -1,6 +1,6 @@
 Welcome !
 
-Introducing my new app 'The Eye Of Moon" which is simple but smart weather app checking not only standard features but also carring for your health and condition!
+Introducing my new app which is simple but smart weather app checking not only standard features but also carring for your health and condition!
 
 ✔ Enter your location
 
