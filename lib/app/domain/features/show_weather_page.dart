@@ -43,7 +43,7 @@ class ShowWeatherWidget extends StatelessWidget {
                 weatherModel.icon_url,
                 scale: 0.7,
               ),
-              Text('Temperature:',
+              Text('Temperature (°C):',
                   style: Theme.of(context).textTheme.subtitle2),
               Text(
                 weatherModel.temperature.toString(),
@@ -57,22 +57,40 @@ class ShowWeatherWidget extends StatelessWidget {
                 weatherModel.city,
                 style: Theme.of(context).textTheme.headline3,
               ),
+              Text(
+                weatherModel.country.toString(),
+                style: Theme.of(context).textTheme.headline5,
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Text('[Local Time & Date]:',
+                  style: Theme.of(context).textTheme.overline),
+              Text(
+                weatherModel.localtime.toString(),
+                style: Theme.of(context).textTheme.overline,
+              ),
               const SizedBox(height: 20),
               Text('Condition:', style: Theme.of(context).textTheme.subtitle1),
               Text(
                 weatherModel.condition.toString(),
                 style: Theme.of(context).textTheme.headline4,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.all(9.0),
                 child: Text('Pressure [1013,25 hPa = Most Healthy]:',
                     style: Theme.of(context).textTheme.subtitle1),
               ),
-              Text(
-                weatherModel.pressure.toString(),
-                style: Theme.of(context).textTheme.headline4,
+              Text(weatherModel.pressure.toString(),
+                  style: Theme.of(context).textTheme.headline4),
+              Padding(
+                padding: const EdgeInsets.all(9.0),
+                child: Text('Air Quality [1-6 scale/Higher=Unhealthy]:',
+                    style: Theme.of(context).textTheme.subtitle1),
               ),
+              Text(weatherModel.airquality.toString(),
+                  style: Theme.of(context).textTheme.headline4),
             ],
           ),
         );
