@@ -49,8 +49,12 @@ class ShowWeatherWidget extends StatelessWidget {
                 weatherModel.temperature.toString(),
                 style: Theme.of(context).textTheme.headline3,
               ),
-              const SizedBox(
-                height: 20,
+              const Divider(
+                height: 10,
+                thickness: 2,
+                color: Colors.white12,
+                indent: 40,
+                endIndent: 40,
               ),
               Text('City:', style: Theme.of(context).textTheme.subtitle2),
               Text(
@@ -70,13 +74,25 @@ class ShowWeatherWidget extends StatelessWidget {
                 weatherModel.localtime.toString(),
                 style: Theme.of(context).textTheme.overline,
               ),
-              const SizedBox(height: 20),
+              const Divider(
+                height: 10,
+                thickness: 2,
+                color: Colors.white12,
+                indent: 40,
+                endIndent: 40,
+              ),
               Text('Condition:', style: Theme.of(context).textTheme.subtitle1),
               Text(
                 weatherModel.condition.toString(),
                 style: Theme.of(context).textTheme.headline4,
               ),
-              const SizedBox(height: 15),
+              const Divider(
+                height: 10,
+                thickness: 2,
+                color: Colors.white12,
+                indent: 40,
+                endIndent: 40,
+              ),
               Padding(
                 padding: const EdgeInsets.all(9.0),
                 child: Text('Pressure [1013,25 hPa = Most Healthy]:',
@@ -84,6 +100,13 @@ class ShowWeatherWidget extends StatelessWidget {
               ),
               Text(weatherModel.pressure.toString(),
                   style: Theme.of(context).textTheme.headline4),
+              const Divider(
+                height: 10,
+                thickness: 2,
+                color: Colors.white12,
+                indent: 40,
+                endIndent: 40,
+              ),
               Padding(
                 padding: const EdgeInsets.all(9.0),
                 child: Text('Air Quality [1-6 scale/Higher=Unhealthy]:',
