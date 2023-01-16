@@ -1,4 +1,5 @@
 import 'package:dotestowania/app/core/enums.dart';
+import 'package:dotestowania/app/domain/features/forecast_weather_page.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:dotestowania/app/domain/features/search_page.dart';
 import 'package:dotestowania/app/domain/features/show_weather_page.dart';
@@ -59,6 +60,7 @@ class _HomePageState extends State<HomePage> {
               child: Scaffold(
                   backgroundColor: scaffoldBgcolor,
                   appBar: AppBar(
+                    automaticallyImplyLeading: false,
                     actions: [
                       FlutterSwitch(
                         showOnOff: true,
@@ -112,7 +114,6 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                     ],
-                    automaticallyImplyLeading: false,
                     title: Text(
                       "Daily World Weather",
                       style: TextStyle(color: textColor, fontSize: 21),
@@ -148,6 +149,29 @@ class _HomePageState extends State<HomePage> {
                                       builder: (context) => const HomePage())),
                               child: const Text(
                                 'Back',
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          if (weatherModel != null)
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                shape: const StadiumBorder(),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 2),
+                              ),
+                              onPressed: () =>
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ForecastWeatherWidget(
+                                  weatherModel: weatherModel,
+                                ),
+                              )),
+                              child: const Text(
+                                'Next Days Forecast',
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 255, 255, 255),
                                   fontSize: 16,
