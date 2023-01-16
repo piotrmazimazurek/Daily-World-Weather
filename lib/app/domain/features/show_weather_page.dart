@@ -57,9 +57,12 @@ class ShowWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('City:', style: Theme.of(context).textTheme.subtitle2),
-              Text(
-                weatherModel.city,
-                style: Theme.of(context).textTheme.headline3,
+              Padding(
+                padding: const EdgeInsets.all(9.0),
+                child: Text(
+                  weatherModel.city,
+                  style: Theme.of(context).textTheme.headline3,
+                ),
               ),
               Text(
                 weatherModel.country.toString(),
@@ -82,9 +85,12 @@ class ShowWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('Condition:', style: Theme.of(context).textTheme.subtitle1),
-              Text(
-                weatherModel.condition.toString(),
-                style: Theme.of(context).textTheme.headline4,
+              Padding(
+                padding: const EdgeInsets.all(9.0),
+                child: Text(
+                  weatherModel.condition.toString(),
+                  style: Theme.of(context).textTheme.headline4,
+                ),
               ),
               const Divider(
                 height: 10,
