@@ -43,11 +43,23 @@ class ShowWeatherWidget extends StatelessWidget {
                 weatherModel.icon_url,
                 scale: 0.7,
               ),
-              Text('Temperature (°C):',
+              Text('Temperature (°C / °F):',
                   style: Theme.of(context).textTheme.subtitle2),
-              Text(
-                weatherModel.temperature.toString(),
-                style: Theme.of(context).textTheme.headline3,
+              RichText(
+                text: TextSpan(children: <TextSpan>[
+                  TextSpan(
+                      text: weatherModel.temperature_c.toString(),
+                      style: Theme.of(context).textTheme.headline3),
+                  TextSpan(
+                      text: ' °C / ',
+                      style: Theme.of(context).textTheme.headline3),
+                  TextSpan(
+                      text: weatherModel.temperature_f.toString(),
+                      style: Theme.of(context).textTheme.headline3),
+                  TextSpan(
+                      text: ' °F',
+                      style: Theme.of(context).textTheme.headline3),
+                ]),
               ),
               const Divider(
                 height: 10,
