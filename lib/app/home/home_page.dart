@@ -60,6 +60,11 @@ class _HomePageState extends State<HomePage> {
               child: Scaffold(
                   backgroundColor: scaffoldBgcolor,
                   appBar: AppBar(
+                    title: Text(
+                      "Daily World Weather",
+                      style: TextStyle(color: textColor, fontSize: 21),
+                    ),
+                    backgroundColor: appBarColor,
                     automaticallyImplyLeading: false,
                     actions: [
                       FlutterSwitch(
@@ -114,11 +119,6 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                     ],
-                    title: Text(
-                      "Daily World Weather",
-                      style: TextStyle(color: textColor, fontSize: 21),
-                    ),
-                    backgroundColor: appBarColor,
                   ),
                   body: Center(child: Builder(builder: (context) {
                     if (state.status == Status.loading) {
@@ -166,9 +166,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               onPressed: () =>
                                   Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ForecastWeatherWidget(
-                                  weatherModel: weatherModel,
-                                ),
+                                builder: (context) => const HomePage(),
                               )),
                               child: const Text(
                                 'Next Days Forecast',
