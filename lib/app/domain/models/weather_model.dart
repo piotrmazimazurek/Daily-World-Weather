@@ -10,7 +10,9 @@ class WeatherModel {
       required this.pressure,
       required this.airquality,
       required this.localtime,
-      required this.country});
+      required this.country,
+      required this.sunriseday0,
+      required this.sunsetday0});
 
   final String icon_url;
   final double temperature_c;
@@ -21,6 +23,8 @@ class WeatherModel {
   final int airquality;
   final String localtime;
   final String country;
+  final String sunriseday0;
+  final String sunsetday0;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
       : icon_url = "http:" + json['current']['condition']['icon'],
@@ -31,5 +35,7 @@ class WeatherModel {
         airquality = json['current']['air_quality']['us-epa-index'],
         pressure = json['current']['pressure_mb'],
         localtime = json['location']['localtime'],
-        country = json['location']['country'];
+        country = json['location']['country'],
+        sunriseday0 = json['forecast']['forecastday'][0]['astro']['sunrise'],
+        sunsetday0 = json['forecast']['forecastday'][0]['astro']['sunset'];
 }
