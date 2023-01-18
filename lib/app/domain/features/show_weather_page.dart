@@ -61,6 +61,16 @@ class ShowWeatherWidget extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline3),
                 ]),
               ),
+              RichText(
+                text: TextSpan(children: <TextSpan>[
+                  TextSpan(
+                      text: ' Condition : ',
+                      style: Theme.of(context).textTheme.headlineSmall),
+                  TextSpan(
+                      text: weatherModel.condition.toString(),
+                      style: Theme.of(context).textTheme.headlineSmall),
+                ]),
+              ),
               const Divider(
                 height: 10,
                 thickness: 2,
@@ -69,12 +79,9 @@ class ShowWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('City:', style: Theme.of(context).textTheme.subtitle2),
-              Padding(
-                padding: const EdgeInsets.all(9.0),
-                child: Text(
-                  weatherModel.city,
-                  style: Theme.of(context).textTheme.headline3,
-                ),
+              Text(
+                weatherModel.city,
+                style: Theme.of(context).textTheme.headline3,
               ),
               Text(
                 weatherModel.country.toString(),
@@ -83,25 +90,18 @@ class ShowWeatherWidget extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              Text('[Local Time & Date]:',
-                  style: Theme.of(context).textTheme.overline),
-              Text(
-                weatherModel.localtime.toString(),
-                style: Theme.of(context).textTheme.overline,
-              ),
-              const Divider(
-                height: 10,
-                thickness: 2,
-                color: Colors.white12,
-                indent: 40,
-                endIndent: 40,
-              ),
-              Text('Condition:', style: Theme.of(context).textTheme.subtitle1),
               Padding(
-                padding: const EdgeInsets.all(9.0),
-                child: Text(
-                  weatherModel.condition.toString(),
-                  style: Theme.of(context).textTheme.headline4,
+                padding: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('[Local Time & Date] : ',
+                        style: Theme.of(context).textTheme.overline),
+                    Text(
+                      weatherModel.localtime.toString(),
+                      style: Theme.of(context).textTheme.overline,
+                    ),
+                  ],
                 ),
               ),
               const Divider(
@@ -111,13 +111,23 @@ class ShowWeatherWidget extends StatelessWidget {
                 indent: 40,
                 endIndent: 40,
               ),
+              Text(' Sunrise / Sunset :',
+                  style: Theme.of(context).textTheme.subtitle1),
               Padding(
-                padding: const EdgeInsets.all(9.0),
-                child: Text('Pressure [1013,25 hPa = Most Healthy]:',
-                    style: Theme.of(context).textTheme.subtitle1),
+                padding: const EdgeInsets.all(5.0),
+                child: RichText(
+                    text: TextSpan(children: <TextSpan>[
+                  TextSpan(
+                      text: weatherModel.sunriseday0.toString(),
+                      style: Theme.of(context).textTheme.headlineSmall),
+                  TextSpan(
+                      text: ' 🌞 / 🌛 ',
+                      style: Theme.of(context).textTheme.headlineSmall),
+                  TextSpan(
+                      text: weatherModel.sunsetday0.toString(),
+                      style: Theme.of(context).textTheme.headlineSmall),
+                ])),
               ),
-              Text(weatherModel.pressure.toString(),
-                  style: Theme.of(context).textTheme.headline4),
               const Divider(
                 height: 10,
                 thickness: 2,
@@ -125,13 +135,21 @@ class ShowWeatherWidget extends StatelessWidget {
                 indent: 40,
                 endIndent: 40,
               ),
-              Padding(
-                padding: const EdgeInsets.all(9.0),
-                child: Text('Air Quality [1-6 scale/Higher=Unhealthy]:',
-                    style: Theme.of(context).textTheme.subtitle1),
+              Text('Pressure [1013,25 hPa = Most Healthy]:',
+                  style: Theme.of(context).textTheme.subtitle1),
+              Text(weatherModel.pressure.toString(),
+                  style: Theme.of(context).textTheme.headline5),
+              const Divider(
+                height: 10,
+                thickness: 2,
+                color: Colors.white12,
+                indent: 40,
+                endIndent: 40,
               ),
+              Text('Air Quality [1-6 scale/Higher=Unhealthy]:',
+                  style: Theme.of(context).textTheme.subtitle1),
               Text(weatherModel.airquality.toString(),
-                  style: Theme.of(context).textTheme.headline4),
+                  style: Theme.of(context).textTheme.headline5),
             ],
           ),
         );
