@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   onPressed: () => Navigator.of(context)
                                       .push(MaterialPageRoute(
-                                    builder: (context) => MainBackgroundWidget(
+                                    builder: (context) => ForecastWeatherWidget(
                                       weatherModel: weatherModel,
                                     ),
                                   )),
