@@ -174,7 +174,9 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   onPressed: () => Navigator.of(context)
                                       .push(MaterialPageRoute(
-                                    builder: (context) => const HomePage(),
+                                    builder: (context) => MainBackgroundWidget(
+                                      weatherModel: weatherModel,
+                                    ),
                                   )),
                                   child: const Text(
                                     'Next Days Forecast',
