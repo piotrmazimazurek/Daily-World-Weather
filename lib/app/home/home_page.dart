@@ -136,45 +136,55 @@ class _HomePageState extends State<HomePage> {
                               weatherModel: weatherModel,
                             ),
                           if (weatherModel != null)
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.black,
-                                shape: const StadiumBorder(),
-                                side: const BorderSide(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    width: 2),
-                              ),
-                              onPressed: () => Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (context) => const HomePage())),
-                              child: const Text(
-                                'Back',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 16,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black,
+                                    shape: const StadiumBorder(),
+                                    side: const BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        width: 2),
+                                  ),
+                                  onPressed: () => Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const HomePage())),
+                                  child: const Text(
+                                    'Back To Search',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 16,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          if (weatherModel != null)
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.black,
-                                shape: const StadiumBorder(),
-                                side: const BorderSide(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    width: 2),
-                              ),
-                              onPressed: () =>
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const HomePage(),
-                              )),
-                              child: const Text(
-                                'Next Days Forecast',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 16,
+                                const SizedBox(
+                                  width: 10,
                                 ),
-                              ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black,
+                                    shape: const StadiumBorder(),
+                                    side: const BorderSide(
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
+                                        width: 2),
+                                  ),
+                                  onPressed: () => Navigator.of(context)
+                                      .push(MaterialPageRoute(
+                                    builder: (context) => const HomePage(),
+                                  )),
+                                  child: const Text(
+                                    'Next Days Forecast',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                         ],
                       ),
