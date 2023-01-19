@@ -218,7 +218,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                     ),
                                     decoration: BoxDecoration(
                                       gradient: const LinearGradient(
-                                        begin: Alignment.topLeft,
+                                        begin: Alignment.topRight,
                                         end: Alignment.bottomCenter,
                                         colors: [
                                           Colors.white60,
@@ -307,7 +307,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                   Border.all(width: 3, color: Colors.white30),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.5),
+                                  color: Colors.black.withOpacity(0.8),
                                   blurRadius: 20,
                                   spreadRadius: 5,
                                 ),
