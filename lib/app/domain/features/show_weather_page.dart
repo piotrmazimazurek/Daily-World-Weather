@@ -121,7 +121,7 @@ class ShowWeatherWidget extends StatelessWidget {
                       text: weatherModel.sunriseday0.toString(),
                       style: Theme.of(context).textTheme.headlineSmall),
                   TextSpan(
-                      text: ' 🌞 / 🌛 ',
+                      text: ' / ',
                       style: Theme.of(context).textTheme.headlineSmall),
                   TextSpan(
                       text: weatherModel.sunsetday0.toString(),
