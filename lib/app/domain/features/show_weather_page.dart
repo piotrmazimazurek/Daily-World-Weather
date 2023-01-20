@@ -5,8 +5,8 @@ import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ShowWeatherWidget extends StatelessWidget {
-  const ShowWeatherWidget({
+class CurrentWeatherWidget extends StatelessWidget {
+  const CurrentWeatherWidget({
     Key? key,
     required this.weatherModel,
   }) : super(key: key);
