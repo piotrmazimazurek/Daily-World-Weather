@@ -4,7 +4,7 @@ import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:dotestowania/app/domain/features/search_page.dart';
-import 'package:dotestowania/app/domain/features/currentweather_page.dart';
+import 'package:dotestowania/app/domain/features/current_weather_page.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
