@@ -112,7 +112,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text(' Sunrise / Sunset :',
-                  style: Theme.of(context).textTheme.subtitle1),
+                  style: Theme.of(context).textTheme.headline6),
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: RichText(
@@ -136,7 +136,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('Pressure [1013,25 hPa = Most Healthy]:',
-                  style: Theme.of(context).textTheme.subtitle1),
+                  style: Theme.of(context).textTheme.overline),
               Text(weatherModel.pressure.toString(),
                   style: Theme.of(context).textTheme.headline5),
               const Divider(
@@ -147,7 +147,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('Air Quality [1-6 scale/Higher=Unhealthy]:',
-                  style: Theme.of(context).textTheme.subtitle1),
+                  style: Theme.of(context).textTheme.overline),
               Text(weatherModel.airquality.toString(),
                   style: Theme.of(context).textTheme.headline5),
             ],
