@@ -4,7 +4,7 @@ import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:dotestowania/app/domain/features/search_page.dart';
-import 'package:dotestowania/app/domain/features/show_weather_page.dart';
+import 'package:dotestowania/app/domain/features/currentweather_page.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -73,7 +73,6 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                     style: TextStyle(color: textColor, fontSize: 21),
                   ),
                   backgroundColor: appBarColor,
-                  automaticallyImplyLeading: false,
                   actions: [
                     FlutterSwitch(
                       showOnOff: true,
@@ -842,25 +841,6 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.black,
-                                shape: const StadiumBorder(),
-                                side: const BorderSide(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    width: 2),
-                              ),
-                              onPressed: () => Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (context) => const HomePage())),
-                              child: const Text(
-                                "Back To Today's Weather",
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
                             Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: ElevatedButton(
@@ -876,10 +856,10 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                   builder: (context) => const HomePage(),
                                 )),
                                 child: const Text(
-                                  'Search New Location',
+                                  'Check New Location',
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 12,
+                                    fontSize: 14,
                                   ),
                                 ),
                               ),
