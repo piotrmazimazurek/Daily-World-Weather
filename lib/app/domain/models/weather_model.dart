@@ -1,18 +1,23 @@
 // ignore_for_file: prefer_interpolation_to_compose_strings, non_constant_identifier_names
 
 class WeatherModel {
-  const WeatherModel(
-      {required this.icon_url,
-      required this.temperature_c,
-      required this.temperature_f,
-      required this.city,
-      required this.condition,
-      required this.pressure,
-      required this.airquality,
-      required this.localtime,
-      required this.country,
-      required this.sunriseday0,
-      required this.sunsetday0});
+  const WeatherModel({
+    required this.icon_url,
+    required this.temperature_c,
+    required this.temperature_f,
+    required this.city,
+    required this.condition,
+    required this.pressure,
+    required this.airquality,
+    required this.localtime,
+    required this.country,
+    required this.sunriseday0,
+    required this.sunsetday0,
+    required this.sunrise_day1,
+    required this.sunset_day1,
+    required this.maxtemp_c_day1,
+    required this.maxtemp_f_day1,
+  });
 
   final String icon_url;
   final double temperature_c;
@@ -25,11 +30,19 @@ class WeatherModel {
   final String country;
   final String sunriseday0;
   final String sunsetday0;
+  final String sunrise_day1;
+  final String sunset_day1;
+  final double maxtemp_c_day1;
+  final double maxtemp_f_day1;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
       : icon_url = "http:" + json['current']['condition']['icon'],
         temperature_c = json['current']['temp_c'] + 0.0,
         temperature_f = json['current']['temp_f'] + 0.0,
+        maxtemp_c_day1 =
+            json['forecast']['forecastday']['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day1 =
+            json['forecast']['forecastday']['day']['maxtemp_f'] + 0.0,
         city = json['location']['name'],
         condition = json['current']['condition']['text'],
         airquality = json['current']['air_quality']['us-epa-index'],
@@ -37,5 +50,7 @@ class WeatherModel {
         localtime = json['location']['localtime'],
         country = json['location']['country'],
         sunriseday0 = json['forecast']['forecastday'][0]['astro']['sunrise'],
-        sunsetday0 = json['forecast']['forecastday'][0]['astro']['sunset'];
+        sunsetday0 = json['forecast']['forecastday'][0]['astro']['sunset'],
+        sunrise_day1 = json['forecast']['forecastday'][1]['astro']['sunrise'],
+        sunset_day1 = json['forecast']['forecastday'][1]['astro']['sunset'];
 }
