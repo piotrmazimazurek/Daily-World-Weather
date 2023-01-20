@@ -40,9 +40,9 @@ class WeatherModel {
         temperature_c = json['current']['temp_c'] + 0.0,
         temperature_f = json['current']['temp_f'] + 0.0,
         maxtemp_c_day1 =
-            json['forecast']['forecastday']['day']['maxtemp_c'] + 0.0,
+            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
         maxtemp_f_day1 =
-            json['forecast']['forecastday']['day']['maxtemp_f'] + 0.0,
+            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
         city = json['location']['name'],
         condition = json['current']['condition']['text'],
         airquality = json['current']['air_quality']['us-epa-index'],

@@ -186,7 +186,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   TextSpan(children: <TextSpan>[
                                                 TextSpan(
                                                     text: widget.weatherModel
-                                                        .temperature_c
+                                                        .maxtemp_c_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -198,7 +198,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                         .headlineSmall),
                                                 TextSpan(
                                                     text: widget.weatherModel
-                                                        .temperature_f
+                                                        .maxtemp_f_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -264,7 +264,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       const EdgeInsets.all(3.0),
                                                   child: Text(
                                                     widget.weatherModel
-                                                        .sunriseday0
+                                                        .sunrise_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -288,8 +288,8 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   padding:
                                                       const EdgeInsets.all(3.0),
                                                   child: Text(
-                                                    widget
-                                                        .weatherModel.sunsetday0
+                                                    widget.weatherModel
+                                                        .sunset_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
