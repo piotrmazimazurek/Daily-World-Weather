@@ -10,6 +10,10 @@ class WeatherModel {
     required this.pressure,
     required this.airquality,
     required this.localtime,
+    required this.weekday2,
+    required this.weekday3,
+    required this.weekday4,
+    required this.weekday5,
     required this.country,
     required this.sunriseday0,
     required this.sunsetday0,
@@ -43,6 +47,10 @@ class WeatherModel {
   final double pressure;
   final int airquality;
   final String localtime;
+  final String weekday2;
+  final String weekday3;
+  final String weekday4;
+  final String weekday5;
   final String country;
   final String sunriseday0;
   final String sunsetday0;
@@ -96,6 +104,10 @@ class WeatherModel {
         airquality = json['current']['air_quality']['us-epa-index'],
         pressure = json['current']['pressure_mb'],
         localtime = json['location']['localtime'],
+        weekday2 = json['forecast']['forecastday'][2]['date'],
+        weekday3 = json['forecast']['forecastday'][3]['date'],
+        weekday4 = json['forecast']['forecastday'][4]['date'],
+        weekday5 = json['forecast']['forecastday'][5]['date'],
         country = json['location']['country'],
         sunriseday0 = json['forecast']['forecastday'][0]['astro']['sunrise'],
         sunsetday0 = json['forecast']['forecastday'][0]['astro']['sunset'],
