@@ -27,6 +27,10 @@ class WeatherModel {
     required this.sunset_day4,
     required this.sunrise_day5,
     required this.sunset_day5,
+    required this.sunrise_day6,
+    required this.sunset_day6,
+    required this.sunrise_day7,
+    required this.sunset_day7,
     required this.maxtemp_c_day1,
     required this.maxtemp_f_day1,
     required this.maxtemp_c_day2,
@@ -64,6 +68,10 @@ class WeatherModel {
   final String sunset_day4;
   final String sunrise_day5;
   final String sunset_day5;
+  final String sunrise_day6;
+  final String sunset_day6;
+  final String sunrise_day7;
+  final String sunset_day7;
   final double maxtemp_c_day1;
   final double maxtemp_f_day1;
   final double maxtemp_c_day2;
@@ -120,5 +128,9 @@ class WeatherModel {
         sunrise_day4 = json['forecast']['forecastday'][4]['astro']['sunrise'],
         sunset_day4 = json['forecast']['forecastday'][4]['astro']['sunset'],
         sunrise_day5 = json['forecast']['forecastday'][5]['astro']['sunrise'],
-        sunset_day5 = json['forecast']['forecastday'][5]['astro']['sunset'];
+        sunset_day5 = json['forecast']['forecastday'][5]['astro']['sunset'],
+        sunrise_day6 = json['forecast']['forecastday'][6]['astro']['sunrise'],
+        sunset_day6 = json['forecast']['forecastday'][6]['astro']['sunset'],
+        sunrise_day7 = json['forecast']['forecastday'][7]['astro']['sunrise'],
+        sunset_day7 = json['forecast']['forecastday'][7]['astro']['sunset'];
 }
