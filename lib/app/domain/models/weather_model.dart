@@ -57,25 +57,25 @@ class WeatherModel {
         temperature_f = json['current']['temp_f'] + 0.0,
         maxtemp_c_day1 =
             json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
-        maxtemp_f_day2 =
+        maxtemp_f_day1 =
             json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
         city = json['location']['name'],
         maxtemp_c_day2 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
-        maxtemp_f_day3 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
+            json['forecast']['forecastday'][2]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day2 =
+            json['forecast']['forecastday'][2]['day']['maxtemp_f'] + 0.0,
         maxtemp_c_day3 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
-        maxtemp_f_day1 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
+            json['forecast']['forecastday'][3]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day3 =
+            json['forecast']['forecastday'][3]['day']['maxtemp_f'] + 0.0,
         maxtemp_c_day4 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
+            json['forecast']['forecastday'][4]['day']['maxtemp_c'] + 0.0,
         maxtemp_f_day4 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
+            json['forecast']['forecastday'][4]['day']['maxtemp_f'] + 0.0,
         maxtemp_c_day5 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
+            json['forecast']['forecastday'][5]['day']['maxtemp_c'] + 0.0,
         maxtemp_f_day5 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
+            json['forecast']['forecastday'][5]['day']['maxtemp_f'] + 0.0,
         condition = json['current']['condition']['text'],
         airquality = json['current']['air_quality']['us-epa-index'],
         pressure = json['current']['pressure_mb'],
