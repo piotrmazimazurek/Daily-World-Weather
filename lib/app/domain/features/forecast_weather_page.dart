@@ -179,8 +179,12 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             widget.weatherModel.icon_url,
                                             scale: 0.9,
                                           ),
+                                          Text('Max Temperature :',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .overline),
                                           Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(3.0),
                                             child: RichText(
                                               text:
                                                   TextSpan(children: <TextSpan>[
