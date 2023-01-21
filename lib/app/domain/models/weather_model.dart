@@ -17,6 +17,14 @@ class WeatherModel {
     required this.sunset_day1,
     required this.maxtemp_c_day1,
     required this.maxtemp_f_day1,
+    required this.maxtemp_c_day2,
+    required this.maxtemp_f_day2,
+    required this.maxtemp_c_day3,
+    required this.maxtemp_f_day3,
+    required this.maxtemp_c_day4,
+    required this.maxtemp_f_day4,
+    required this.maxtemp_c_day5,
+    required this.maxtemp_f_day5,
   });
 
   final String icon_url;
@@ -34,6 +42,14 @@ class WeatherModel {
   final String sunset_day1;
   final double maxtemp_c_day1;
   final double maxtemp_f_day1;
+  final double maxtemp_c_day2;
+  final double maxtemp_f_day2;
+  final double maxtemp_c_day3;
+  final double maxtemp_f_day3;
+  final double maxtemp_c_day4;
+  final double maxtemp_f_day4;
+  final double maxtemp_f_day5;
+  final double maxtemp_c_day5;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
       : icon_url = "http:" + json['current']['condition']['icon'],
@@ -41,9 +57,25 @@ class WeatherModel {
         temperature_f = json['current']['temp_f'] + 0.0,
         maxtemp_c_day1 =
             json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
-        maxtemp_f_day1 =
+        maxtemp_f_day2 =
             json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
         city = json['location']['name'],
+        maxtemp_c_day2 =
+            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day3 =
+            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
+        maxtemp_c_day3 =
+            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day1 =
+            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
+        maxtemp_c_day4 =
+            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day4 =
+            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
+        maxtemp_c_day5 =
+            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day5 =
+            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
         condition = json['current']['condition']['text'],
         airquality = json['current']['air_quality']['us-epa-index'],
         pressure = json['current']['pressure_mb'],
