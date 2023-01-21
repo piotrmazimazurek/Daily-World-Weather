@@ -14,6 +14,8 @@ class WeatherModel {
     required this.weekday3,
     required this.weekday4,
     required this.weekday5,
+    required this.weekday6,
+    required this.weekday7,
     required this.country,
     required this.sunriseday0,
     required this.sunsetday0,
@@ -59,6 +61,8 @@ class WeatherModel {
   final String weekday3;
   final String weekday4;
   final String weekday5;
+  final String weekday6;
+  final String weekday7;
   final String country;
   final String sunriseday0;
   final String sunsetday0;
@@ -132,6 +136,8 @@ class WeatherModel {
         weekday3 = json['forecast']['forecastday'][3]['date'],
         weekday4 = json['forecast']['forecastday'][4]['date'],
         weekday5 = json['forecast']['forecastday'][5]['date'],
+        weekday6 = json['forecast']['forecastday'][6]['date'],
+        weekday7 = json['forecast']['forecastday'][7]['date'],
         country = json['location']['country'],
         sunriseday0 = json['forecast']['forecastday'][0]['astro']['sunrise'],
         sunsetday0 = json['forecast']['forecastday'][0]['astro']['sunset'],
