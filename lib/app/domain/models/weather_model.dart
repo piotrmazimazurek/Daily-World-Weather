@@ -41,6 +41,10 @@ class WeatherModel {
     required this.maxtemp_f_day4,
     required this.maxtemp_c_day5,
     required this.maxtemp_f_day5,
+    required this.maxtemp_c_day6,
+    required this.maxtemp_f_day6,
+    required this.maxtemp_c_day7,
+    required this.maxtemp_f_day7,
   });
 
   final String icon_url;
@@ -82,6 +86,10 @@ class WeatherModel {
   final double maxtemp_f_day4;
   final double maxtemp_f_day5;
   final double maxtemp_c_day5;
+  final double maxtemp_f_day6;
+  final double maxtemp_c_day6;
+  final double maxtemp_f_day7;
+  final double maxtemp_c_day7;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
       : icon_url = "http:" + json['current']['condition']['icon'],
@@ -108,6 +116,14 @@ class WeatherModel {
             json['forecast']['forecastday'][5]['day']['maxtemp_c'] + 0.0,
         maxtemp_f_day5 =
             json['forecast']['forecastday'][5]['day']['maxtemp_f'] + 0.0,
+        maxtemp_c_day6 =
+            json['forecast']['forecastday'][6]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day6 =
+            json['forecast']['forecastday'][6]['day']['maxtemp_f'] + 0.0,
+        maxtemp_c_day7 =
+            json['forecast']['forecastday'][7]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day7 =
+            json['forecast']['forecastday'][7]['day']['maxtemp_f'] + 0.0,
         condition = json['current']['condition']['text'],
         airquality = json['current']['air_quality']['us-epa-index'],
         pressure = json['current']['pressure_mb'],
