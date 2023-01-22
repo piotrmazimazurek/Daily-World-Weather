@@ -2,16 +2,20 @@
 
 class WeatherModel {
   const WeatherModel({
-    required this.icon_url,
+    required this.icon_url_day0,
+    required this.icon_url_day1,
+    required this.icon_url_day2,
     required this.temperature_c,
     required this.temperature_f,
     required this.city,
-    required this.condition,
+    required this.condition_day0,
+    required this.condition_day1,
+    required this.condition_day2,
     required this.pressure,
     required this.airquality,
-    required this.localtime,
+    required this.weekday0,
+    required this.weekday1,
     required this.weekday2,
-    required this.weekday3,
     required this.country,
     required this.sunriseday0,
     required this.sunsetday0,
@@ -25,16 +29,20 @@ class WeatherModel {
     required this.maxtemp_f_day2,
   });
 
-  final String icon_url;
+  final String icon_url_day0;
+  final String icon_url_day1;
+  final String icon_url_day2;
   final double temperature_c;
   final double temperature_f;
   final String city;
-  final String condition;
+  final String condition_day0;
+  final String condition_day1;
+  final String condition_day2;
   final double pressure;
   final int airquality;
-  final String localtime;
+  final String weekday0;
+  final String weekday1;
   final String weekday2;
-  final String weekday3;
 
   final String country;
   final String sunriseday0;
@@ -50,7 +58,11 @@ class WeatherModel {
   final double maxtemp_f_day2;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
-      : icon_url = "http:" + json['current']['condition']['icon'],
+      : icon_url_day0 = "http:" + json['current']['condition']['icon'],
+        icon_url_day1 = "http:" +
+            json['forecast']['forecastday'][1]['day']['condition']['icon'],
+        icon_url_day2 = "http:" +
+            json['forecast']['forecastday'][2]['day']['condition']['icon'],
         temperature_c = json['current']['temp_c'] + 0.0 ?? "Unknown data",
         temperature_f = json['current']['temp_f'] + 0.0 ?? "Unknown data",
         maxtemp_c_day1 =
@@ -66,13 +78,19 @@ class WeatherModel {
         maxtemp_f_day2 =
             json['forecast']['forecastday'][2]['day']['maxtemp_f'] + 0.0 ??
                 "Unknown data",
-        condition = json['current']['condition']['text'] ?? "Unknown data",
+        condition_day0 = json['current']['condition']['text'] ?? "Unknown data",
+        condition_day1 = json['forecast']['forecastday'][1]['day']['condition']
+                ['text'] ??
+            "Unknown data",
+        condition_day2 = json['forecast']['forecastday'][2]['day']['condition']
+                ['text'] ??
+            "Unknown data",
         airquality =
             json['current']['air_quality']['us-epa-index'] ?? "Unknown data",
         pressure = json['current']['pressure_mb'] ?? "Unknown data",
-        localtime = json['location']['localtime'] ?? "Unknown data",
-        weekday2 = json['forecast']['forecastday'][1]['date'] ?? "Unknown data",
-        weekday3 = json['forecast']['forecastday'][2]['date'] ?? "Unknown data",
+        weekday0 = json['location']['localtime'] ?? "Unknown data",
+        weekday1 = json['forecast']['forecastday'][1]['date'] ?? "Unknown data",
+        weekday2 = json['forecast']['forecastday'][2]['date'] ?? "Unknown data",
         country = json['location']['country'] ?? "Unknown data",
         sunriseday0 = json['forecast']['forecastday'][0]['astro']['sunrise'] ??
             "Unknown data",
