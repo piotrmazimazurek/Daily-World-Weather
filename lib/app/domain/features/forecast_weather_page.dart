@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, unused_import
 
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
@@ -176,7 +176,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     .titleSmall),
                                           ),
                                           Image.network(
-                                            widget.weatherModel.icon_url,
+                                            widget.weatherModel.icon_url_day1,
                                             scale: 0.9,
                                           ),
                                           Text('Max Temperature :',
@@ -190,7 +190,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   TextSpan(children: <TextSpan>[
                                                 TextSpan(
                                                     text: widget.weatherModel
-                                                        .temperature_c
+                                                        .maxtemp_c_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -202,7 +202,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                         .headlineSmall),
                                                 TextSpan(
                                                     text: widget.weatherModel
-                                                        .temperature_f
+                                                        .maxtemp_f_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -268,7 +268,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       const EdgeInsets.all(3.0),
                                                   child: Text(
                                                     widget.weatherModel
-                                                        .temperature_c
+                                                        .sunrise_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -293,7 +293,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       const EdgeInsets.all(3.0),
                                                   child: Text(
                                                     widget.weatherModel
-                                                        .temperature_f
+                                                        .sunset_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -349,7 +349,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                widget.weatherModel.localtime
+                                                widget.weatherModel.weekday1
                                                     .toString(),
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -373,7 +373,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     TextSpan(
                                                         text: widget
                                                             .weatherModel
-                                                            .temperature_c
+                                                            .maxtemp_c_day1
                                                             .toString(),
                                                         style: Theme.of(context)
                                                             .textTheme
@@ -386,7 +386,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     TextSpan(
                                                         text: widget
                                                             .weatherModel
-                                                            .temperature_f
+                                                            .maxtemp_f_day1
                                                             .toString(),
                                                         style: Theme.of(context)
                                                             .textTheme
@@ -413,7 +413,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       TextSpan(
                                                           text: widget
                                                               .weatherModel
-                                                              .sunriseday0
+                                                              .sunrise_day1
                                                               .toString(),
                                                           style:
                                                               Theme.of(context)
@@ -428,7 +428,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       TextSpan(
                                                           text: widget
                                                               .weatherModel
-                                                              .sunsetday0
+                                                              .sunset_day1
                                                               .toString(),
                                                           style:
                                                               Theme.of(context)
@@ -440,7 +440,8 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             Column(
                                               children: [
                                                 Image.network(
-                                                  widget.weatherModel.icon_url,
+                                                  widget.weatherModel
+                                                      .icon_url_day1,
                                                   scale: 1.0,
                                                 ),
                                                 Text(' Condition : ',
@@ -448,8 +449,8 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                         .textTheme
                                                         .overline),
                                                 Text(
-                                                    widget
-                                                        .weatherModel.condition
+                                                    widget.weatherModel
+                                                        .condition_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -471,7 +472,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                widget.weatherModel.localtime
+                                                widget.weatherModel.weekday1
                                                     .toString(),
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -495,7 +496,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     TextSpan(
                                                         text: widget
                                                             .weatherModel
-                                                            .temperature_c
+                                                            .maxtemp_c_day1
                                                             .toString(),
                                                         style: Theme.of(context)
                                                             .textTheme
@@ -508,7 +509,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     TextSpan(
                                                         text: widget
                                                             .weatherModel
-                                                            .temperature_f
+                                                            .maxtemp_f_day1
                                                             .toString(),
                                                         style: Theme.of(context)
                                                             .textTheme
@@ -535,7 +536,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       TextSpan(
                                                           text: widget
                                                               .weatherModel
-                                                              .sunriseday0
+                                                              .sunrise_day2
                                                               .toString(),
                                                           style:
                                                               Theme.of(context)
@@ -550,7 +551,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       TextSpan(
                                                           text: widget
                                                               .weatherModel
-                                                              .sunsetday0
+                                                              .sunset_day2
                                                               .toString(),
                                                           style:
                                                               Theme.of(context)
@@ -562,7 +563,8 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             Column(
                                               children: [
                                                 Image.network(
-                                                  widget.weatherModel.icon_url,
+                                                  widget.weatherModel
+                                                      .icon_url_day2,
                                                   scale: 1.0,
                                                 ),
                                                 Text(' Condition : ',
@@ -570,8 +572,8 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                         .textTheme
                                                         .overline),
                                                 Text(
-                                                    widget
-                                                        .weatherModel.condition
+                                                    widget.weatherModel
+                                                        .condition_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -593,7 +595,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                widget.weatherModel.localtime
+                                                widget.weatherModel.weekday2
                                                     .toString(),
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -617,7 +619,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     TextSpan(
                                                         text: widget
                                                             .weatherModel
-                                                            .temperature_c
+                                                            .maxtemp_c_day2
                                                             .toString(),
                                                         style: Theme.of(context)
                                                             .textTheme
@@ -630,7 +632,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     TextSpan(
                                                         text: widget
                                                             .weatherModel
-                                                            .temperature_f
+                                                            .maxtemp_f_day2
                                                             .toString(),
                                                         style: Theme.of(context)
                                                             .textTheme
@@ -657,7 +659,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       TextSpan(
                                                           text: widget
                                                               .weatherModel
-                                                              .sunriseday0
+                                                              .sunrise_day2
                                                               .toString(),
                                                           style:
                                                               Theme.of(context)
@@ -672,7 +674,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                       TextSpan(
                                                           text: widget
                                                               .weatherModel
-                                                              .sunsetday0
+                                                              .sunset_day2
                                                               .toString(),
                                                           style:
                                                               Theme.of(context)
@@ -684,7 +686,8 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             Column(
                                               children: [
                                                 Image.network(
-                                                  widget.weatherModel.icon_url,
+                                                  widget.weatherModel
+                                                      .icon_url_day2,
                                                   scale: 1.0,
                                                 ),
                                                 Text(' Condition : ',
@@ -692,8 +695,8 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                         .textTheme
                                                         .overline),
                                                 Text(
-                                                    widget
-                                                        .weatherModel.condition
+                                                    widget.weatherModel
+                                                        .condition_day2
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -717,7 +720,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                 padding:
                                                     const EdgeInsets.all(8.0),
                                                 child: Text(
-                                                  widget.weatherModel.localtime
+                                                  widget.weatherModel.weekday2
                                                       .toString(),
                                                   style: Theme.of(context)
                                                       .textTheme
@@ -811,8 +814,8 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                               Column(
                                                 children: [
                                                   Image.network(
-                                                    widget
-                                                        .weatherModel.icon_url,
+                                                    widget.weatherModel
+                                                        .icon_url_day2,
                                                     scale: 1.0,
                                                   ),
                                                   Text(' Condition : ',
@@ -821,7 +824,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                           .overline),
                                                   Text(
                                                       widget.weatherModel
-                                                          .condition
+                                                          .condition_day2
                                                           .toString(),
                                                       style: Theme.of(context)
                                                           .textTheme

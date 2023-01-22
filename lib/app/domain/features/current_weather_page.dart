@@ -40,7 +40,7 @@ class CurrentWeatherWidget extends StatelessWidget {
           child: Column(
             children: [
               Image.network(
-                weatherModel.icon_url,
+                weatherModel.icon_url_day0,
                 scale: 0.7,
               ),
               Text('Temperature (°C / °F):',
@@ -67,7 +67,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                       text: ' Condition : ',
                       style: Theme.of(context).textTheme.headlineSmall),
                   TextSpan(
-                      text: weatherModel.condition.toString(),
+                      text: weatherModel.condition_day0.toString(),
                       style: Theme.of(context).textTheme.headlineSmall),
                 ]),
               ),
@@ -98,7 +98,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                     Text('[Local Time & Date] : ',
                         style: Theme.of(context).textTheme.overline),
                     Text(
-                      weatherModel.localtime.toString(),
+                      weatherModel.weekday0.toString(),
                       style: Theme.of(context).textTheme.overline,
                     ),
                   ],
