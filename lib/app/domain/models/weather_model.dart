@@ -8,6 +8,7 @@ class WeatherModel {
     required this.temperature_c,
     required this.temperature_f,
     required this.city,
+    required this.wind_day0,
     required this.condition_day0,
     required this.condition_day1,
     required this.condition_day2,
@@ -35,6 +36,7 @@ class WeatherModel {
   final double temperature_c;
   final double temperature_f;
   final String city;
+  final double wind_day0;
   final String condition_day0;
   final String condition_day1;
   final String condition_day2;
@@ -63,45 +65,33 @@ class WeatherModel {
             json['forecast']['forecastday'][1]['day']['condition']['icon'],
         icon_url_day2 = "http:" +
             json['forecast']['forecastday'][2]['day']['condition']['icon'],
-        temperature_c = json['current']['temp_c'] + 0.0 ?? "Unknown data",
-        temperature_f = json['current']['temp_f'] + 0.0 ?? "Unknown data",
+        temperature_c = json['current']['temp_c'] + 0.0,
+        temperature_f = json['current']['temp_f'] + 0.0,
         maxtemp_c_day1 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0 ??
-                "Unknown data",
+            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
         maxtemp_f_day1 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0 ??
-                "Unknown data",
+            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
         city = json['location']['name'],
+        wind_day0 = json['current']['wind_kph'],
         maxtemp_c_day2 =
-            json['forecast']['forecastday'][2]['day']['maxtemp_c'] + 0.0 ??
-                "Unknown data",
+            json['forecast']['forecastday'][2]['day']['maxtemp_c'] + 0.0,
         maxtemp_f_day2 =
-            json['forecast']['forecastday'][2]['day']['maxtemp_f'] + 0.0 ??
-                "Unknown data",
-        condition_day0 = json['current']['condition']['text'] ?? "Unknown data",
-        condition_day1 = json['forecast']['forecastday'][1]['day']['condition']
-                ['text'] ??
-            "Unknown data",
-        condition_day2 = json['forecast']['forecastday'][2]['day']['condition']
-                ['text'] ??
-            "Unknown data",
-        airquality =
-            json['current']['air_quality']['us-epa-index'] ?? "Unknown data",
-        pressure = json['current']['pressure_mb'] ?? "Unknown data",
-        weekday0 = json['location']['localtime'] ?? "Unknown data",
-        weekday1 = json['forecast']['forecastday'][1]['date'] ?? "Unknown data",
-        weekday2 = json['forecast']['forecastday'][2]['date'] ?? "Unknown data",
-        country = json['location']['country'] ?? "Unknown data",
-        sunriseday0 = json['forecast']['forecastday'][0]['astro']['sunrise'] ??
-            "Unknown data",
-        sunsetday0 = json['forecast']['forecastday'][0]['astro']['sunset'] ??
-            "Unknown data",
-        sunrise_day1 = json['forecast']['forecastday'][1]['astro']['sunrise'] ??
-            "Unknown data",
-        sunset_day1 = json['forecast']['forecastday'][1]['astro']['sunset'] ??
-            "Unknown data",
-        sunrise_day2 = json['forecast']['forecastday'][2]['astro']['sunrise'] ??
-            "Unknown data",
-        sunset_day2 = json['forecast']['forecastday'][2]['astro']['sunset'] ??
-            "Unknown data";
+            json['forecast']['forecastday'][2]['day']['maxtemp_f'] + 0.0,
+        condition_day0 = json['current']['condition']['text'],
+        condition_day1 =
+            json['forecast']['forecastday'][1]['day']['condition']['text'],
+        condition_day2 =
+            json['forecast']['forecastday'][2]['day']['condition']['text'],
+        airquality = json['current']['air_quality']['us-epa-index'],
+        pressure = json['current']['pressure_mb'],
+        weekday0 = json['location']['localtime'],
+        weekday1 = json['forecast']['forecastday'][1]['date'],
+        weekday2 = json['forecast']['forecastday'][2]['date'],
+        country = json['location']['country'],
+        sunriseday0 = json['forecast']['forecastday'][0]['astro']['sunrise'],
+        sunsetday0 = json['forecast']['forecastday'][0]['astro']['sunset'],
+        sunrise_day1 = json['forecast']['forecastday'][1]['astro']['sunrise'],
+        sunset_day1 = json['forecast']['forecastday'][1]['astro']['sunset'],
+        sunrise_day2 = json['forecast']['forecastday'][2]['astro']['sunrise'],
+        sunset_day2 = json['forecast']['forecastday'][2]['astro']['sunset'];
 }
