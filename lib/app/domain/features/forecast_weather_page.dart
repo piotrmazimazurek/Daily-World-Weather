@@ -142,6 +142,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(3.0),
                                     child: Container(
+                                      //FIRST WEATHER CONTAINER
                                       constraints: const BoxConstraints(
                                         maxHeight: double.infinity,
                                       ),
@@ -225,6 +226,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Container(
+                                        //SECOND WEATHER CONTAINER
                                         constraints: const BoxConstraints(
                                           maxHeight: double.infinity,
                                         ),
@@ -314,6 +316,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Container(
+                                //THIRD WEATHER CONTAINER
                                 constraints: const BoxConstraints(
                                   maxHeight: double.infinity,
                                 ),
