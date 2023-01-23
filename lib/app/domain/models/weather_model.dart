@@ -5,6 +5,8 @@ class WeatherModel {
     required this.icon_url_day0,
     required this.icon_url_day1,
     required this.icon_url_day2,
+    required this.icon_url_day3,
+    required this.icon_url_day4,
     required this.temperature_c,
     required this.temperature_f,
     required this.city,
@@ -35,6 +37,8 @@ class WeatherModel {
   final String icon_url_day0;
   final String icon_url_day1;
   final String icon_url_day2;
+  final String icon_url_day3;
+  final String icon_url_day4;
   final double temperature_c;
   final double temperature_f;
   final String city;
@@ -68,6 +72,10 @@ class WeatherModel {
         icon_url_day1 = "http:" +
             json['forecast']['forecastday'][1]['day']['condition']['icon'],
         icon_url_day2 = "http:" +
+            json['forecast']['forecastday'][2]['day']['condition']['icon'],
+        icon_url_day3 = "http:" +
+            json['forecast']['forecastday'][2]['day']['condition']['icon'],
+        icon_url_day4 = "http:" +
             json['forecast']['forecastday'][2]['day']['condition']['icon'],
         temperature_c = json['current']['temp_c'] + 0.0,
         temperature_f = json['current']['temp_f'] + 0.0,

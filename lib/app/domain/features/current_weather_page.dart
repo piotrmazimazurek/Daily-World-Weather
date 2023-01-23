@@ -157,7 +157,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 indent: 40,
                 endIndent: 40,
               ),
-              Text('✅ Air Quality [1-6 scale/Higher=Unhealthy]:',
+              Text('🟩 Air Quality [1-6 scale/Higher=Unhealthy]:',
                   style: Theme.of(context).textTheme.overline),
               Text(weatherModel.airquality.toString(),
                   style: Theme.of(context).textTheme.headline5),
