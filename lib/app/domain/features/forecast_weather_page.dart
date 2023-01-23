@@ -254,14 +254,6 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         child: Column(
                                           children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text('Sunrise:',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .titleSmall),
-                                            ),
                                             Row(
                                               children: [
                                                 const Text(' 🌞 '),
@@ -279,14 +271,6 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                 ),
                                               ],
                                             ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Text('Sunset:',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .titleSmall),
-                                            ),
                                             Row(
                                               children: [
                                                 const Text(' 🌛 '),
@@ -303,6 +287,22 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   ),
                                                 ),
                                               ],
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
+                                              child: Text('Pressure:',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleSmall),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text('Air Quality:',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleSmall),
                                             ),
                                           ],
                                         )),
