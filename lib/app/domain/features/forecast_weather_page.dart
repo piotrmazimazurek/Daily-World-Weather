@@ -142,7 +142,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(3.0),
                                     child: Container(
-                                      //FIRST WEATHER CONTAINER
+                                      //FIRST WEATHER CONTAINER FIRST WEATHER CONTAINER FIRST WEATHER CONTAINER WITH TOMORROW - > 1 DAY  1 DAY  1 DAY  1 DAY
                                       constraints: const BoxConstraints(
                                         maxHeight: double.infinity,
                                       ),
@@ -226,7 +226,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Container(
-                                        //SECOND WEATHER CONTAINER
+                                        //SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER
                                         constraints: const BoxConstraints(
                                           maxHeight: double.infinity,
                                         ),
@@ -324,7 +324,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Container(
-                                //THIRD WEATHER CONTAINER
+                                //THIRD WEATHER CONTAINER THIRD WEATHER CONTAINER THIRD WEATHER CONTAINER THIRD WEATHER CONTAINER THIRD WEATHER CONTAINER
                                 constraints: const BoxConstraints(
                                   maxHeight: double.infinity,
                                 ),
@@ -355,12 +355,13 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                 .textTheme
                                                 .subtitle1),
                                         Row(
+                                          // 2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY
                                           children: [
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                widget.weatherModel.weekday1
+                                                widget.weatherModel.weekday2
                                                     .toString(),
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -497,14 +498,14 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                           color: Colors.white12,
                                           indent: 10,
                                           endIndent: 10,
-                                        ),
+                                        ), // 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY - >
                                         Row(
                                           children: [
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                widget.weatherModel.weekday1
+                                                widget.weatherModel.weekday3
                                                     .toString(),
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -528,7 +529,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     TextSpan(
                                                         text: widget
                                                             .weatherModel
-                                                            .maxtemp_c_day1
+                                                            .maxtemp_c_day2
                                                             .toString(),
                                                         style: Theme.of(context)
                                                             .textTheme
@@ -641,14 +642,14 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                           color: Colors.white12,
                                           indent: 10,
                                           endIndent: 10,
-                                        ),
+                                        ), // 4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY - >
                                         Row(
                                           children: [
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                widget.weatherModel.weekday2
+                                                widget.weatherModel.weekday4
                                                     .toString(),
                                                 style: Theme.of(context)
                                                     .textTheme
