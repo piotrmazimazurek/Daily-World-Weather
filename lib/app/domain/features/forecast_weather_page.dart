@@ -69,7 +69,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                 backgroundColor: scaffoldBgcolor,
                 appBar: AppBar(
                   title: Text(
-                    "Daily World Weather",
+                    "Back to Today",
                     style: TextStyle(color: textColor, fontSize: 21),
                   ),
                   backgroundColor: appBarColor,
@@ -226,7 +226,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(1.0),
                                     child: Container(
-                                        //SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER
+                                        //SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER  WITH TOMORROW - > 1 DAY  1 DAY  1 DAY  1 DAY
                                         constraints: const BoxConstraints(
                                           maxHeight: double.infinity,
                                         ),
@@ -453,7 +453,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                               children: [
                                                 Image.network(
                                                   widget.weatherModel
-                                                      .icon_url_day1,
+                                                      .icon_url_day2,
                                                   scale: 1.0,
                                                 ),
                                                 Text(' Condition : ',
@@ -487,7 +487,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality ✅ :',
+                                          child: Text('Air Quality 🟩 :',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .overline),
@@ -597,7 +597,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                               children: [
                                                 Image.network(
                                                   widget.weatherModel
-                                                      .icon_url_day2,
+                                                      .icon_url_day3,
                                                   scale: 1.0,
                                                 ),
                                                 Text(' Condition : ',
@@ -631,7 +631,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality ✅ :',
+                                          child: Text('Air Quality 🟩 :',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .overline),
@@ -741,7 +741,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                               children: [
                                                 Image.network(
                                                   widget.weatherModel
-                                                      .icon_url_day2,
+                                                      .icon_url_day4,
                                                   scale: 1.0,
                                                 ),
                                                 Text(' Condition : ',
@@ -774,11 +774,38 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   .overline),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality ✅ : ',
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Text('Air Quality 🟩 : ',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .overline),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor: Colors.black,
+                                              shape: const StadiumBorder(),
+                                              side: const BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255, 255, 255, 255),
+                                                  width: 2),
+                                            ),
+                                            onPressed: () =>
+                                                Navigator.of(context)
+                                                    .push(MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const HomePage(),
+                                            )),
+                                            child: const Text(
+                                              'Check New Location',
+                                              style: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 255, 255, 255),
+                                                fontSize: 14,
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -788,37 +815,6 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                             ),
                           ),
                         ],
-                      ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.black,
-                                  shape: const StadiumBorder(),
-                                  side: const BorderSide(
-                                      color: Color.fromARGB(255, 255, 255, 255),
-                                      width: 2),
-                                ),
-                                onPressed: () => Navigator.of(context)
-                                    .push(MaterialPageRoute(
-                                  builder: (context) => const HomePage(),
-                                )),
-                                child: const Text(
-                                  'Check New Location',
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
                       ),
                     ],
                   ),
