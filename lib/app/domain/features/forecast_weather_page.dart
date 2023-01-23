@@ -291,10 +291,22 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(1.0),
-                                              child: Text('Wind Speed :',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .overline),
+                                              child: Row(
+                                                children: [
+                                                  Text('Wind Speed :',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                  Text(
+                                                    widget
+                                                        .weatherModel.wind_day1
+                                                        .toString(),
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .overline,
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                             Padding(
                                               padding:
@@ -477,10 +489,23 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(3.0),
-                                          child: Text('Wind Speed 💨 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Wind Speed 💨 :',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget.weatherModel.wind_day2
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(1.0),
@@ -625,10 +650,23 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(3.0),
-                                          child: Text('Wind Speed 💨 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Wind Speed 💨 :',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget.weatherModel.wind_day3
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(1.0),
@@ -773,10 +811,23 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(3.0),
-                                          child: Text('Wind Speed 💨 : ',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Wind Speed 💨 :',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget.weatherModel.wind_day4
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(1.0),
