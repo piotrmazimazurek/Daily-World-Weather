@@ -135,7 +135,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 indent: 40,
                 endIndent: 40,
               ),
-              Text("💨 Wind Speed [Today's max in KM/H]:",
+              Text("💨 Wind Speed [Actual in KM/H]:",
                   style: Theme.of(context).textTheme.overline),
               Text(weatherModel.wind_day0.toString(),
                   style: Theme.of(context).textTheme.headline5),
