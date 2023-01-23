@@ -30,10 +30,18 @@ class WeatherModel {
     required this.sunset_day1,
     required this.sunrise_day2,
     required this.sunset_day2,
+    required this.sunrise_day3,
+    required this.sunset_day3,
+    required this.sunrise_day4,
+    required this.sunset_day4,
     required this.maxtemp_c_day1,
     required this.maxtemp_f_day1,
     required this.maxtemp_c_day2,
     required this.maxtemp_f_day2,
+    required this.maxtemp_c_day3,
+    required this.maxtemp_f_day3,
+    required this.maxtemp_c_day4,
+    required this.maxtemp_f_day4,
   });
 
   final String icon_url_day0;
@@ -65,11 +73,19 @@ class WeatherModel {
   final String sunset_day1;
   final String sunrise_day2;
   final String sunset_day2;
+  final String sunrise_day3;
+  final String sunset_day3;
+  final String sunrise_day4;
+  final String sunset_day4;
 
   final double maxtemp_c_day1;
   final double maxtemp_f_day1;
   final double maxtemp_c_day2;
   final double maxtemp_f_day2;
+  final double maxtemp_c_day3;
+  final double maxtemp_f_day3;
+  final double maxtemp_c_day4;
+  final double maxtemp_f_day4;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
       : icon_url_day0 = "http:" + json['current']['condition']['icon'],
@@ -78,9 +94,9 @@ class WeatherModel {
         icon_url_day2 = "http:" +
             json['forecast']['forecastday'][2]['day']['condition']['icon'],
         icon_url_day3 = "http:" +
-            json['forecast']['forecastday'][2]['day']['condition']['icon'],
+            json['forecast']['forecastday'][3]['day']['condition']['icon'],
         icon_url_day4 = "http:" +
-            json['forecast']['forecastday'][2]['day']['condition']['icon'],
+            json['forecast']['forecastday'][4]['day']['condition']['icon'],
         temperature_c = json['current']['temp_c'] + 0.0,
         temperature_f = json['current']['temp_f'] + 0.0,
         maxtemp_c_day1 =
@@ -93,6 +109,14 @@ class WeatherModel {
             json['forecast']['forecastday'][2]['day']['maxtemp_c'] + 0.0,
         maxtemp_f_day2 =
             json['forecast']['forecastday'][2]['day']['maxtemp_f'] + 0.0,
+        maxtemp_c_day3 =
+            json['forecast']['forecastday'][3]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day3 =
+            json['forecast']['forecastday'][3]['day']['maxtemp_f'] + 0.0,
+        maxtemp_c_day4 =
+            json['forecast']['forecastday'][4]['day']['maxtemp_c'] + 0.0,
+        maxtemp_f_day4 =
+            json['forecast']['forecastday'][4]['day']['maxtemp_f'] + 0.0,
         condition_day0 = json['current']['condition']['text'],
         condition_day1 =
             json['forecast']['forecastday'][1]['day']['condition']['text'],
@@ -115,5 +139,9 @@ class WeatherModel {
         sunrise_day1 = json['forecast']['forecastday'][1]['astro']['sunrise'],
         sunset_day1 = json['forecast']['forecastday'][1]['astro']['sunset'],
         sunrise_day2 = json['forecast']['forecastday'][2]['astro']['sunrise'],
-        sunset_day2 = json['forecast']['forecastday'][2]['astro']['sunset'];
+        sunset_day2 = json['forecast']['forecastday'][2]['astro']['sunset'],
+        sunrise_day3 = json['forecast']['forecastday'][3]['astro']['sunrise'],
+        sunset_day3 = json['forecast']['forecastday'][3]['astro']['sunset'],
+        sunrise_day4 = json['forecast']['forecastday'][4]['astro']['sunrise'],
+        sunset_day4 = json['forecast']['forecastday'][4]['astro']['sunset'];
 }
