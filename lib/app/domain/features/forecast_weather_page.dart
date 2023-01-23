@@ -462,7 +462,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                         .overline),
                                                 Text(
                                                     widget.weatherModel
-                                                        .condition_day1
+                                                        .condition_day2
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -606,7 +606,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                         .overline),
                                                 Text(
                                                     widget.weatherModel
-                                                        .condition_day1
+                                                        .condition_day3
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -750,7 +750,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                         .overline),
                                                 Text(
                                                     widget.weatherModel
-                                                        .condition_day2
+                                                        .condition_day4
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
