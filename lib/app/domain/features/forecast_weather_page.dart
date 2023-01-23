@@ -374,295 +374,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   padding:
                                                       const EdgeInsets.all(3.0),
                                                   child: Text(
-                                                      'Max Temp (°C / °F):',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .overline),
-                                                ),
-                                                RichText(
-                                                  text: TextSpan(children: <
-                                                      TextSpan>[
-                                                    TextSpan(
-                                                        text: widget
-                                                            .weatherModel
-                                                            .maxtemp_c_day1
-                                                            .toString(),
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .overline),
-                                                    TextSpan(
-                                                        text: ' °C / ',
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .overline),
-                                                    TextSpan(
-                                                        text: widget
-                                                            .weatherModel
-                                                            .maxtemp_f_day1
-                                                            .toString(),
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .overline),
-                                                    TextSpan(
-                                                        text: ' °F',
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .overline),
-                                                  ]),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(3.0),
-                                                  child: Text(
-                                                      ' Sunrise / Sunset :',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .overline),
-                                                ),
-                                                RichText(
-                                                    text: TextSpan(
-                                                        children: <TextSpan>[
-                                                      TextSpan(
-                                                          text: widget
-                                                              .weatherModel
-                                                              .sunrise_day1
-                                                              .toString(),
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .overline),
-                                                      TextSpan(
-                                                          text: ' / ',
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .overline),
-                                                      TextSpan(
-                                                          text: widget
-                                                              .weatherModel
-                                                              .sunset_day1
-                                                              .toString(),
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .overline),
-                                                    ])),
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Image.network(
-                                                  widget.weatherModel
-                                                      .icon_url_day2,
-                                                  scale: 1.0,
-                                                ),
-                                                Text(' Condition : ',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .overline),
-                                                Text(
-                                                    widget.weatherModel
-                                                        .condition_day2
-                                                        .toString(),
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .overline),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Text('Wind Speed 💨 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Pressure 💤 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality 🟩 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
-                                        ),
-                                        const Divider(
-                                          height: 10,
-                                          thickness: 2,
-                                          color: Colors.white12,
-                                          indent: 10,
-                                          endIndent: 10,
-                                        ), // 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY - >
-                                        Row(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Text(
-                                                widget.weatherModel.weekday3
-                                                    .toString(),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .overline,
-                                              ),
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(3.0),
-                                                  child: Text(
-                                                      'Max Temp (°C / °F):',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .overline),
-                                                ),
-                                                RichText(
-                                                  text: TextSpan(children: <
-                                                      TextSpan>[
-                                                    TextSpan(
-                                                        text: widget
-                                                            .weatherModel
-                                                            .maxtemp_c_day2
-                                                            .toString(),
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .overline),
-                                                    TextSpan(
-                                                        text: ' °C / ',
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .overline),
-                                                    TextSpan(
-                                                        text: widget
-                                                            .weatherModel
-                                                            .maxtemp_f_day1
-                                                            .toString(),
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .overline),
-                                                    TextSpan(
-                                                        text: ' °F',
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .overline),
-                                                  ]),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(3.0),
-                                                  child: Text(
-                                                      ' Sunrise / Sunset :',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .overline),
-                                                ),
-                                                RichText(
-                                                    text: TextSpan(
-                                                        children: <TextSpan>[
-                                                      TextSpan(
-                                                          text: widget
-                                                              .weatherModel
-                                                              .sunrise_day2
-                                                              .toString(),
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .overline),
-                                                      TextSpan(
-                                                          text: ' / ',
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .overline),
-                                                      TextSpan(
-                                                          text: widget
-                                                              .weatherModel
-                                                              .sunset_day2
-                                                              .toString(),
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .overline),
-                                                    ])),
-                                              ],
-                                            ),
-                                            Column(
-                                              children: [
-                                                Image.network(
-                                                  widget.weatherModel
-                                                      .icon_url_day3,
-                                                  scale: 1.0,
-                                                ),
-                                                Text(' Condition : ',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .overline),
-                                                Text(
-                                                    widget.weatherModel
-                                                        .condition_day3
-                                                        .toString(),
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .overline),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Text('Wind Speed 💨 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Pressure 💤 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality 🟩 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
-                                        ),
-                                        const Divider(
-                                          height: 10,
-                                          thickness: 2,
-                                          color: Colors.white12,
-                                          indent: 10,
-                                          endIndent: 10,
-                                        ), // 4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY - >
-                                        Row(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Text(
-                                                widget.weatherModel.weekday4
-                                                    .toString(),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .overline,
-                                              ),
-                                            ),
-                                            Column(
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(3.0),
-                                                  child: Text(
-                                                      'Max Temp (°C / °F):',
+                                                      'Max Temp of Day:',
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .overline),
@@ -737,25 +449,325 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                     ])),
                                               ],
                                             ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Column(
+                                                children: [
+                                                  Image.network(
+                                                    widget.weatherModel
+                                                        .icon_url_day2,
+                                                    scale: 1.0,
+                                                  ),
+                                                  Text(' Condition : ',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                  Text(
+                                                      widget.weatherModel
+                                                          .condition_day2
+                                                          .toString(),
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Text('Wind Speed 💨 :',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .overline),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(1.0),
+                                          child: Text('Pressure 💤 :',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .overline),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(1.0),
+                                          child: Text('Air Quality 🟩 :',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .overline),
+                                        ),
+                                        const Divider(
+                                          height: 10,
+                                          thickness: 2,
+                                          color: Colors.white12,
+                                          indent: 10,
+                                          endIndent: 10,
+                                        ), // 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY - >
+                                        Row(
+                                          children: [
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                widget.weatherModel.weekday3
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ),
                                             Column(
                                               children: [
-                                                Image.network(
-                                                  widget.weatherModel
-                                                      .icon_url_day4,
-                                                  scale: 1.0,
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(3.0),
+                                                  child: Text(
+                                                      'Max Temp of Day:',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
                                                 ),
-                                                Text(' Condition : ',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .overline),
-                                                Text(
-                                                    widget.weatherModel
-                                                        .condition_day4
-                                                        .toString(),
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .overline),
+                                                RichText(
+                                                  text: TextSpan(children: <
+                                                      TextSpan>[
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .maxtemp_c_day3
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .overline),
+                                                    TextSpan(
+                                                        text: ' °C / ',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .overline),
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .maxtemp_f_day3
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .overline),
+                                                    TextSpan(
+                                                        text: ' °F',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .overline),
+                                                  ]),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(3.0),
+                                                  child: Text(
+                                                      ' Sunrise / Sunset :',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                ),
+                                                RichText(
+                                                    text: TextSpan(
+                                                        children: <TextSpan>[
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .sunrise_day3
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .overline),
+                                                      TextSpan(
+                                                          text: ' / ',
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .overline),
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .sunset_day3
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .overline),
+                                                    ])),
                                               ],
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Column(
+                                                children: [
+                                                  Image.network(
+                                                    widget.weatherModel
+                                                        .icon_url_day3,
+                                                    scale: 1.0,
+                                                  ),
+                                                  Text(' Condition : ',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                  Text(
+                                                      widget.weatherModel
+                                                          .condition_day3
+                                                          .toString(),
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Text('Wind Speed 💨 :',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .overline),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(1.0),
+                                          child: Text('Pressure 💤 :',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .overline),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(1.0),
+                                          child: Text('Air Quality 🟩 :',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .overline),
+                                        ),
+                                        const Divider(
+                                          height: 10,
+                                          thickness: 2,
+                                          color: Colors.white12,
+                                          indent: 10,
+                                          endIndent: 10,
+                                        ), // 4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY - >
+                                        Row(
+                                          children: [
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                widget.weatherModel.weekday4
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ),
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(3.0),
+                                                  child: Text(
+                                                      'Max Temp (°C / °F):',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                ),
+                                                RichText(
+                                                  text: TextSpan(children: <
+                                                      TextSpan>[
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .maxtemp_c_day4
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .overline),
+                                                    TextSpan(
+                                                        text: ' °C / ',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .overline),
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .maxtemp_f_day4
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .overline),
+                                                    TextSpan(
+                                                        text: ' °F',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .overline),
+                                                  ]),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(3.0),
+                                                  child: Text(
+                                                      ' Sunrise / Sunset :',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                ),
+                                                RichText(
+                                                    text: TextSpan(
+                                                        children: <TextSpan>[
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .sunrise_day4
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .overline),
+                                                      TextSpan(
+                                                          text: ' / ',
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .overline),
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .sunset_day4
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .overline),
+                                                    ])),
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Column(
+                                                children: [
+                                                  Image.network(
+                                                    widget.weatherModel
+                                                        .icon_url_day4,
+                                                    scale: 1.0,
+                                                  ),
+                                                  Text(' Condition : ',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                  Text(
+                                                      widget.weatherModel
+                                                          .condition_day4
+                                                          .toString(),
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                ],
+                                              ),
                                             ),
                                           ],
                                         ),
