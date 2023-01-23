@@ -14,6 +14,8 @@ class WeatherModel {
     required this.condition_day0,
     required this.condition_day1,
     required this.condition_day2,
+    required this.condition_day3,
+    required this.condition_day4,
     required this.pressure,
     required this.airquality,
     required this.weekday0,
@@ -46,6 +48,8 @@ class WeatherModel {
   final String condition_day0;
   final String condition_day1;
   final String condition_day2;
+  final String condition_day3;
+  final String condition_day4;
   final double pressure;
   final int airquality;
   final String weekday0;
@@ -94,6 +98,10 @@ class WeatherModel {
             json['forecast']['forecastday'][1]['day']['condition']['text'],
         condition_day2 =
             json['forecast']['forecastday'][2]['day']['condition']['text'],
+        condition_day3 =
+            json['forecast']['forecastday'][3]['day']['condition']['text'],
+        condition_day4 =
+            json['forecast']['forecastday'][4]['day']['condition']['text'],
         airquality = json['current']['air_quality']['us-epa-index'],
         pressure = json['current']['pressure_mb'],
         weekday0 = json['location']['localtime'],
