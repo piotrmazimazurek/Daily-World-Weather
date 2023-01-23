@@ -11,6 +11,10 @@ class WeatherModel {
     required this.temperature_f,
     required this.city,
     required this.wind_day0,
+    required this.wind_day1,
+    required this.wind_day2,
+    required this.wind_day3,
+    required this.wind_day4,
     required this.condition_day0,
     required this.condition_day1,
     required this.condition_day2,
@@ -53,6 +57,11 @@ class WeatherModel {
   final double temperature_f;
   final String city;
   final double wind_day0;
+  final double wind_day1;
+
+  final double wind_day2;
+  final double wind_day3;
+  final double wind_day4;
   final String condition_day0;
   final String condition_day1;
   final String condition_day2;
@@ -105,6 +114,10 @@ class WeatherModel {
             json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
         city = json['location']['name'],
         wind_day0 = json['current']['wind_kph'],
+        wind_day1 = json['forecast']['forecastday'][1]['day']['maxwind_kph'],
+        wind_day2 = json['forecast']['forecastday'][2]['day']['maxwind_kph'],
+        wind_day3 = json['forecast']['forecastday'][3]['day']['maxwind_kph'],
+        wind_day4 = json['forecast']['forecastday'][4]['day']['maxwind_kph'],
         maxtemp_c_day2 =
             json['forecast']['forecastday'][2]['day']['maxtemp_c'] + 0.0,
         maxtemp_f_day2 =
