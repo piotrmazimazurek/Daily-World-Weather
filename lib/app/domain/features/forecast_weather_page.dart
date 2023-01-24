@@ -293,7 +293,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   const EdgeInsets.all(1.0),
                                               child: Row(
                                                 children: [
-                                                  Text('Wind Speed :',
+                                                  Text('Wind Speed : ',
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .overline),
@@ -311,7 +311,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(1.0),
-                                              child: Text('Pressure :',
+                                              child: Text('Pressure : ',
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .overline),
@@ -319,10 +319,22 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(1.0),
-                                              child: Text('Air Quality :',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .overline),
+                                              child: Row(
+                                                children: [
+                                                  Text('Air Quality : ',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                  Text(
+                                                    widget.weatherModel
+                                                        .airquality_day0
+                                                        .toString(),
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .overline,
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ],
                                         )),
@@ -516,7 +528,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality 🟩 :',
+                                          child: Text('Air Quality 🍃 :',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .overline),
@@ -677,7 +689,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality 🟩 :',
+                                          child: Text('Air Quality 🍃 :',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .overline),
@@ -838,7 +850,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(3.0),
-                                          child: Text('Air Quality 🟩 : ',
+                                          child: Text('Air Quality 🍃 : ',
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .overline),
