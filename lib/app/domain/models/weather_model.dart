@@ -20,8 +20,16 @@ class WeatherModel {
     required this.condition_day2,
     required this.condition_day3,
     required this.condition_day4,
-    required this.pressure,
+    required this.pressure_day0,
+    required this.pressure_day1,
+    required this.pressure_day2,
+    required this.pressure_day3,
+    required this.pressure_day4,
     required this.airquality_day0,
+    required this.airquality_day1,
+    required this.airquality_day2,
+    required this.airquality_day3,
+    required this.airquality_day4,
     required this.weekday0,
     required this.weekday1,
     required this.weekday2,
@@ -67,8 +75,18 @@ class WeatherModel {
   final String condition_day2;
   final String condition_day3;
   final String condition_day4;
-  final double pressure;
-  final int airquality_day0;
+
+  final double pressure_day0;
+  final double pressure_day1;
+  final double pressure_day2;
+  final double pressure_day3;
+  final double pressure_day4;
+
+  final dynamic airquality_day0;
+  final dynamic airquality_day1;
+  final dynamic airquality_day2;
+  final dynamic airquality_day3;
+  final dynamic airquality_day4;
 
   final String weekday0;
   final String weekday1;
@@ -141,7 +159,27 @@ class WeatherModel {
         condition_day4 =
             json['forecast']['forecastday'][4]['day']['condition']['text'],
         airquality_day0 = json['current']['air_quality']['us-epa-index'],
-        pressure = json['current']['pressure_mb'],
+        airquality_day1 = json['forecast']['forecastday'][1]['day']
+                ['air_quality']['us-epa-index'] ??
+            "",
+        airquality_day2 = json['forecast']['forecastday'][2]['day']
+                ['air_quality']['us-epa-index'] ??
+            "",
+        airquality_day3 = json['forecast']['forecastday'][3]['day']
+                ['air_quality']['us-epa-index'] ??
+            "",
+        airquality_day4 = json['forecast']['forecastday'][4]['day']
+                ['air_quality']['us-epa-index'] ??
+            "",
+        pressure_day0 = json['current']['pressure_mb'],
+        pressure_day1 =
+            json['forecast']['forecastday'][1]['hour'][13]['pressure_mb'],
+        pressure_day2 =
+            json['forecast']['forecastday'][2]['hour'][13]['pressure_mb'],
+        pressure_day3 =
+            json['forecast']['forecastday'][3]['hour'][13]['pressure_mb'],
+        pressure_day4 =
+            json['forecast']['forecastday'][4]['hour'][13]['pressure_mb'],
         weekday0 = json['location']['localtime'],
         weekday1 = json['forecast']['forecastday'][1]['date'],
         weekday2 = json['forecast']['forecastday'][2]['date'],
