@@ -21,11 +21,7 @@ class WeatherModel {
     required this.condition_day3,
     required this.condition_day4,
     required this.pressure,
-    required this.airquality,
-    required this.airquality_day1,
-    required this.airquality_day2,
-    required this.airquality_day3,
-    required this.airquality_day4,
+    required this.airquality_day0,
     required this.weekday0,
     required this.weekday1,
     required this.weekday2,
@@ -72,11 +68,8 @@ class WeatherModel {
   final String condition_day3;
   final String condition_day4;
   final double pressure;
-  final int airquality;
-  final int airquality_day1;
-  final int airquality_day2;
-  final int airquality_day3;
-  final int airquality_day4;
+  final int airquality_day0;
+
   final String weekday0;
   final String weekday1;
   final String weekday2;
@@ -147,15 +140,7 @@ class WeatherModel {
             json['forecast']['forecastday'][3]['day']['condition']['text'],
         condition_day4 =
             json['forecast']['forecastday'][4]['day']['condition']['text'],
-        airquality = json['current']['air_quality']['us-epa-index'],
-        airquality_day1 =
-            json['forecast']['forecastday'][1]['air_quality']['us-epa-index'],
-        airquality_day2 =
-            json['forecast']['forecastday'][2]['air_quality']['us-epa-index'],
-        airquality_day3 =
-            json['forecast']['forecastday'][3]['air_quality']['us-epa-index'],
-        airquality_day4 =
-            json['forecast']['forecastday'][4]['air_quality']['us-epa-index'],
+        airquality_day0 = json['current']['air_quality']['us-epa-index'],
         pressure = json['current']['pressure_mb'],
         weekday0 = json['location']['localtime'],
         weekday1 = json['forecast']['forecastday'][1]['date'],
