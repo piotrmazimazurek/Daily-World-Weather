@@ -293,7 +293,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   const EdgeInsets.all(3.0),
                                               child: Row(
                                                 children: [
-                                                  Text('Wind Speed : ',
+                                                  Text('Wind Speed (max) : ',
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .overline),
@@ -313,7 +313,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                   const EdgeInsets.all(3.0),
                                               child: Row(
                                                 children: [
-                                                  Text('Pressure : ',
+                                                  Text('Pressure (noon) : ',
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .overline),
