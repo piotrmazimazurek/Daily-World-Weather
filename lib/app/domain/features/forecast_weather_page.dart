@@ -311,10 +311,22 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(1.0),
-                                              child: Text('Pressure : ',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .overline),
+                                              child: Row(
+                                                children: [
+                                                  Text('Pressure : ',
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .overline),
+                                                  Text(
+                                                    widget.weatherModel
+                                                        .pressure_day1
+                                                        .toString(),
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .overline,
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                             Padding(
                                               padding:
@@ -327,7 +339,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                                           .overline),
                                                   Text(
                                                     widget.weatherModel
-                                                        .airquality_day0
+                                                        .airquality_day1
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
@@ -505,7 +517,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              Text('Wind Speed 💨 :',
+                                              Text('Wind Speed 💨 : ',
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .overline),
@@ -520,18 +532,46 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Pressure 💤 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Pressure 💤 : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget
+                                                    .weatherModel.pressure_day2
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality 🍃 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Air Quality 🍃 : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget.weatherModel
+                                                    .airquality_day2
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         const Divider(
                                           height: 10,
@@ -666,7 +706,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              Text('Wind Speed 💨 :',
+                                              Text('Wind Speed 💨 : ',
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .overline),
@@ -681,18 +721,46 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Pressure 💤 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Pressure 💤 : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget
+                                                    .weatherModel.pressure_day3
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Air Quality 🍃 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Air Quality 🍃 : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget.weatherModel
+                                                    .airquality_day3
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         const Divider(
                                           height: 10,
@@ -827,7 +895,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              Text('Wind Speed 💨 :',
+                                              Text('Wind Speed 💨 : ',
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .overline),
@@ -842,18 +910,46 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(1.0),
-                                          child: Text('Pressure 💤 :',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Pressure 💤 : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget
+                                                    .weatherModel.pressure_day4
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(3.0),
-                                          child: Text('Air Quality 🍃 : ',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .overline),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text('Air Quality 🍃 : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .overline),
+                                              Text(
+                                                widget.weatherModel
+                                                    .airquality_day4
+                                                    .toString(),
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .overline,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(10.0),
