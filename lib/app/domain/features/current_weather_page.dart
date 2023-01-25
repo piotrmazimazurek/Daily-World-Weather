@@ -148,7 +148,7 @@ class CurrentWeatherWidget extends StatelessWidget {
               ),
               Text('💤 Pressure [1013,25 hPa = Most Healthy]:',
                   style: Theme.of(context).textTheme.overline),
-              Text(weatherModel.pressure.toString(),
+              Text(weatherModel.pressure_day0.toString(),
                   style: Theme.of(context).textTheme.headline5),
               const Divider(
                 height: 10,
