@@ -290,7 +290,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsets.all(1.0),
+                                                  const EdgeInsets.all(3.0),
                                               child: Row(
                                                 children: [
                                                   Text('Wind Speed : ',
@@ -310,7 +310,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsets.all(1.0),
+                                                  const EdgeInsets.all(3.0),
                                               child: Row(
                                                 children: [
                                                   Text('Pressure : ',
@@ -330,7 +330,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsets.all(1.0),
+                                                  const EdgeInsets.all(3.0),
                                               child: Row(
                                                 children: [
                                                   Text('Air Quality : ',
@@ -487,7 +487,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsets.all(8.0),
+                                                  const EdgeInsets.all(15.0),
                                               child: Column(
                                                 children: [
                                                   Image.network(
@@ -676,7 +676,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsets.all(8.0),
+                                                  const EdgeInsets.all(15.0),
                                               child: Column(
                                                 children: [
                                                   Image.network(
@@ -865,7 +865,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsets.all(8.0),
+                                                  const EdgeInsets.all(15.0),
                                               child: Column(
                                                 children: [
                                                   Image.network(
