@@ -8,7 +8,6 @@ class WeatherRemoteDataSource {
       final response = await Dio().get<Map<String, dynamic>>(
           'http://api.weatherapi.com/v1/forecast.json?key=4d8622f0488a4d36828100805232301&q=$city&days=5&aqi=yes&alerts=no');
       if (response.statusCode == 200) {
-        print(response.data);
         (response.data.toString());
         return response.data;
       } else {
