@@ -90,7 +90,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                           const Color.fromARGB(255, 117, 112, 112),
                       inactiveToggleColor: const Color(0xFF2F363D),
                       activeSwitchBorder: Border.all(
-                        color: const Color.fromARGB(188, 117, 112, 112),
+                        color: Color.fromARGB(160, 117, 112, 112),
                         width: 6.0,
                       ),
                       inactiveSwitchBorder: Border.all(
