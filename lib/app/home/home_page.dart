@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                   backgroundColor: scaffoldBgcolor,
                   appBar: AppBar(
                     title: Text(
-                      "Daily World Weather",
+                      "Daily World Forecast",
                       style: TextStyle(color: textColor, fontSize: 21),
                     ),
                     backgroundColor: appBarColor,
