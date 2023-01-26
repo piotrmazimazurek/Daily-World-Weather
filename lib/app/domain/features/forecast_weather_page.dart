@@ -375,7 +375,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                       width: 3, color: Colors.white30),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.7),
+                                      color: Colors.black.withOpacity(0.5),
                                       blurRadius: 20,
                                       spreadRadius: 5,
                                     ),
