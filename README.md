@@ -1,14 +1,18 @@
 Welcome !
 
-Introducing my new app which is simple but smart weather app checking not only standard features but also carring for your health and condition!
+Introducing my app which is smart weather & forecast app checking not only standard features but also carring for your health and condition!
 
 ✔ Enter your location
 
-✔ Check temperature
+✔ Check temperature in °C & °F
 
-✔ Check weather condition
+✔ Check weather condition with local time & date
 
-✔ Check air quality
+✔ Check sunrise & sunset of the day
+
+✔ Check wind speed, pressure & air quality
+
+✔ Check forecast & ALL this data for next days
 
 Stay Strong and Stay Healthy ! 💪 Wish You The Best Weather Of All ✈🗻🌍😉
 
