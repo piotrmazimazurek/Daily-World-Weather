@@ -130,6 +130,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                 body: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
                         children: [
