@@ -1,12 +1,10 @@
 part of 'home_cubit.dart';
 
-class HomeState {
-  const HomeState({
-    this.model,
-    this.status = Status.initial,
-    this.errorMessage,
-  });
-  final WeatherModel? model;
-  final Status status;
-  final String? errorMessage;
+@freezed
+class HomeState with _$HomeState {
+  const factory HomeState({
+    @Default(Status.initial) Status status,
+    WeatherModel? model,
+    String? errorMessage,
+  }) = _HomeState;
 }

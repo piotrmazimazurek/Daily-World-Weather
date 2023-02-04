@@ -3,7 +3,9 @@ import 'package:bloc/bloc.dart';
 import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/repositories/weather_repository.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_state.dart';
+part 'home_cubit.freezed.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this._weatherRepository) : super(const HomeState());
