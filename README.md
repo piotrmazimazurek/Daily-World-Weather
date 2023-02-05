@@ -30,6 +30,8 @@ Using:
 
 ⚒ Freezed
 
+⚒ Get_it
+
 🗝 Rest API
 
 🗃 Clean Architecture
