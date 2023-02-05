@@ -28,6 +28,8 @@ Using:
 
 ⚒ Dio
 
+⚒ Freezed
+
 🗝 Rest API
 
 🗃 Clean Architecture
