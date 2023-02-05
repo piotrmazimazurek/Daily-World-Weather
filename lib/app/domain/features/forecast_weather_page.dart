@@ -1,15 +1,10 @@
-// ignore_for_file: unused_local_variable, unused_import
-
 import 'package:dotestowania/app/core/enums.dart';
+import 'package:dotestowania/app/core/injection_container.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
-import 'package:dotestowania/app/domain/features/search_page.dart';
-import 'package:dotestowania/app/domain/features/current_weather_page.dart';
-import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import '../../../data/remote_data_sources/weather_remote_data_source.dart';
 import '../../home/home_page.dart';
 
 class ForecastWeatherWidget extends StatefulWidget {
@@ -36,9 +31,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(
-        WeatherRepository(WeatherRemoteDataSource()),
-      ),
+      create: (context) => getIt<HomeCubit>(),
       child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {
           if (state.status == Status.error) {
@@ -747,7 +740,7 @@ class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
                                             Padding(
                                               padding:
                                                   const EdgeInsets.all(3.0),
-                                              child: Text('Max Temp (°C / °F):',
+                                              child: Text('Max Temp of Day:',
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .overline),
