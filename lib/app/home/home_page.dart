@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          if (weatherModel == null) SearchWidget(),
+                          if (weatherModel == null) SearchPage(),
                           if (weatherModel != null)
                             CurrentWeatherWidget(
                               weatherModel: weatherModel,

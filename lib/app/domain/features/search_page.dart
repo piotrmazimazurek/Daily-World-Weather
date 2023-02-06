@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:rive/rive.dart';
 
-class SearchWidget extends StatelessWidget {
-  SearchWidget({
+class SearchPage extends StatelessWidget {
+  SearchPage({
     Key? key,
   }) : super(key: key);
 
