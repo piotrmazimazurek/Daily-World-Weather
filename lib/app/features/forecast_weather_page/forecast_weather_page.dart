@@ -7,8 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import '../../home/home_page.dart';
 
-class ForecastWeatherWidget extends StatefulWidget {
-  const ForecastWeatherWidget({
+class ForecastWeatherPage extends StatefulWidget {
+  const ForecastWeatherPage({
     Key? key,
     required this.weatherModel,
   }) : super(key: key);
@@ -16,17 +16,17 @@ class ForecastWeatherWidget extends StatefulWidget {
   final WeatherModel weatherModel;
 
   @override
-  State<ForecastWeatherWidget> createState() => _ForecastWeatherWidgetState();
+  State<ForecastWeatherPage> createState() => _ForecastWeatherPageState();
 }
 
-class _ForecastWeatherWidgetState extends State<ForecastWeatherWidget> {
+class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
   bool isSwitchOn = true;
 
   Color textColor = const Color.fromARGB(255, 255, 255, 255);
   Color appBarColor = Colors.black87;
   Color scaffoldBgcolor = Colors.transparent;
 
-  _ForecastWeatherWidgetState();
+  _ForecastWeatherPageState();
 
   @override
   Widget build(BuildContext context) {
