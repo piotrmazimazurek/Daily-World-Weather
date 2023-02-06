@@ -26,9 +26,9 @@ class HomeCubit extends Cubit<HomeState> {
       );
     } catch (error) {
       emit(
-        HomeState(
+        const HomeState(
           status: Status.error,
-          errorMessage: error.toString(),
+          errorMessage: " 💬 Whoopsy ... there's no such location ! ",
         ),
       );
     }
