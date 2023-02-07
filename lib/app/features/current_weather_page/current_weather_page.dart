@@ -44,21 +44,21 @@ class CurrentWeatherWidget extends StatelessWidget {
                 scale: 0.7,
               ),
               Text('Temperature (°C / °F):',
-                  style: Theme.of(context).textTheme.subtitle2),
+                  style: Theme.of(context).textTheme.titleSmall),
               RichText(
                 text: TextSpan(children: <TextSpan>[
                   TextSpan(
                       text: weatherModel.temperature_c.toString(),
-                      style: Theme.of(context).textTheme.headline3),
+                      style: Theme.of(context).textTheme.displaySmall),
                   TextSpan(
                       text: ' °C / ',
-                      style: Theme.of(context).textTheme.headline3),
+                      style: Theme.of(context).textTheme.displaySmall),
                   TextSpan(
                       text: weatherModel.temperature_f.toString(),
-                      style: Theme.of(context).textTheme.headline3),
+                      style: Theme.of(context).textTheme.displaySmall),
                   TextSpan(
                       text: ' °F',
-                      style: Theme.of(context).textTheme.headline3),
+                      style: Theme.of(context).textTheme.displaySmall),
                 ]),
               ),
               RichText(
@@ -78,14 +78,14 @@ class CurrentWeatherWidget extends StatelessWidget {
                 indent: 40,
                 endIndent: 40,
               ),
-              Text('City:', style: Theme.of(context).textTheme.subtitle2),
+              Text('City:', style: Theme.of(context).textTheme.titleSmall),
               Text(
                 weatherModel.city,
-                style: Theme.of(context).textTheme.headline3,
+                style: Theme.of(context).textTheme.displaySmall,
               ),
               Text(
                 weatherModel.country.toString(),
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
               const SizedBox(
                 height: 5,
@@ -96,10 +96,10 @@ class CurrentWeatherWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('[Local Time & Date] : ',
-                        style: Theme.of(context).textTheme.overline),
+                        style: Theme.of(context).textTheme.labelMedium),
                     Text(
                       weatherModel.weekday0.toString(),
-                      style: Theme.of(context).textTheme.overline,
+                      style: Theme.of(context).textTheme.labelMedium,
                     ),
                   ],
                 ),
@@ -112,7 +112,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text(' Sunrise / Sunset :',
-                  style: Theme.of(context).textTheme.headline6),
+                  style: Theme.of(context).textTheme.titleLarge),
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: RichText(
@@ -136,9 +136,9 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text("💨 Wind Speed [Actual in KM/H]:",
-                  style: Theme.of(context).textTheme.overline),
+                  style: Theme.of(context).textTheme.labelMedium),
               Text(weatherModel.wind_day0.toString(),
-                  style: Theme.of(context).textTheme.headline5),
+                  style: Theme.of(context).textTheme.headlineSmall),
               const Divider(
                 height: 10,
                 thickness: 2,
@@ -147,9 +147,9 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('💤 Pressure [1013,25 hPa = Most Healthy]:',
-                  style: Theme.of(context).textTheme.overline),
+                  style: Theme.of(context).textTheme.labelMedium),
               Text(weatherModel.pressure_day0.toString(),
-                  style: Theme.of(context).textTheme.headline5),
+                  style: Theme.of(context).textTheme.headlineSmall),
               const Divider(
                 height: 10,
                 thickness: 2,
@@ -158,9 +158,9 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('🍃 Air Quality [1-6 scale/Higher=Unhealthy]:',
-                  style: Theme.of(context).textTheme.overline),
+                  style: Theme.of(context).textTheme.labelMedium),
               Text(weatherModel.airquality_day0.toString(),
-                  style: Theme.of(context).textTheme.headline5),
+                  style: Theme.of(context).textTheme.headlineSmall),
             ],
           ),
         );
