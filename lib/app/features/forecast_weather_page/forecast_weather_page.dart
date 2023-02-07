@@ -373,13 +373,37 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                       // 2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            widget.weatherModel.weekday2
-                                                .toString(),
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .labelMedium,
+                                          padding: const EdgeInsets.all(15.0),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Text(
+                                                  widget.weatherModel.weekday2
+                                                      .toString(),
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium,
+                                                ),
+                                              ),
+                                              Image.network(
+                                                widget
+                                                    .weatherModel.icon_url_day2,
+                                                scale: 1.0,
+                                              ),
+                                              Text(' Condition : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium),
+                                              Text(
+                                                  widget.weatherModel
+                                                      .condition_day2
+                                                      .toString(),
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium),
+                                            ],
                                           ),
                                         ),
                                         Column(
@@ -454,29 +478,6 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                                 ])),
                                           ],
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(15.0),
-                                          child: Column(
-                                            children: [
-                                              Image.network(
-                                                widget
-                                                    .weatherModel.icon_url_day2,
-                                                scale: 1.0,
-                                              ),
-                                              Text(' Condition : ',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelMedium),
-                                              Text(
-                                                  widget.weatherModel
-                                                      .condition_day2
-                                                      .toString(),
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelMedium),
-                                            ],
-                                          ),
-                                        ),
                                       ],
                                     ),
                                     Padding(
@@ -549,13 +550,37 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                     Row(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            widget.weatherModel.weekday3
-                                                .toString(),
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .overline,
+                                          padding: const EdgeInsets.all(15.0),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Text(
+                                                  widget.weatherModel.weekday3
+                                                      .toString(),
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium,
+                                                ),
+                                              ),
+                                              Image.network(
+                                                widget
+                                                    .weatherModel.icon_url_day3,
+                                                scale: 1.0,
+                                              ),
+                                              Text(' Condition : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium),
+                                              Text(
+                                                  widget.weatherModel
+                                                      .condition_day3
+                                                      .toString(),
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium),
+                                            ],
                                           ),
                                         ),
                                         Column(
@@ -566,7 +591,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                               child: Text('Max Temp of Day:',
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .overline),
+                                                      .labelMedium),
                                             ),
                                             RichText(
                                               text:
@@ -577,24 +602,24 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .overline),
+                                                        .labelMedium),
                                                 TextSpan(
                                                     text: ' °C / ',
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .overline),
+                                                        .labelMedium),
                                                 TextSpan(
                                                     text: widget.weatherModel
                                                         .maxtemp_f_day3
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .overline),
+                                                        .labelMedium),
                                                 TextSpan(
                                                     text: ' °F',
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .overline),
+                                                        .labelMedium),
                                               ]),
                                             ),
                                             Padding(
@@ -603,7 +628,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                               child: Text(' Sunrise / Sunset :',
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .overline),
+                                                      .labelMedium),
                                             ),
                                             RichText(
                                                 text: TextSpan(
@@ -614,44 +639,21 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                                           .toString(),
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .overline),
+                                                          .labelMedium),
                                                   TextSpan(
                                                       text: ' / ',
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .overline),
+                                                          .labelMedium),
                                                   TextSpan(
                                                       text: widget.weatherModel
                                                           .sunset_day3
                                                           .toString(),
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .overline),
+                                                          .labelMedium),
                                                 ])),
                                           ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(15.0),
-                                          child: Column(
-                                            children: [
-                                              Image.network(
-                                                widget
-                                                    .weatherModel.icon_url_day3,
-                                                scale: 1.0,
-                                              ),
-                                              Text(' Condition : ',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .overline),
-                                              Text(
-                                                  widget.weatherModel
-                                                      .condition_day3
-                                                      .toString(),
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .overline),
-                                            ],
-                                          ),
                                         ),
                                       ],
                                     ),
@@ -664,13 +666,13 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           Text('Wind Speed 💨 : ',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .overline),
+                                                  .labelMedium),
                                           Text(
                                             widget.weatherModel.wind_day3
                                                 .toString(),
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .overline,
+                                                .labelMedium,
                                           ),
                                         ],
                                       ),
@@ -684,13 +686,13 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           Text('Pressure 💤 : ',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .overline),
+                                                  .labelMedium),
                                           Text(
                                             widget.weatherModel.pressure_day3
                                                 .toString(),
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .overline,
+                                                .labelMedium,
                                           ),
                                         ],
                                       ),
@@ -704,13 +706,13 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           Text('Air Quality 🍃 : ',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .overline),
+                                                  .labelMedium),
                                           Text(
                                             widget.weatherModel.airquality_day3
                                                 .toString(),
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .overline,
+                                                .labelMedium,
                                           ),
                                         ],
                                       ),
@@ -725,13 +727,37 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                     Row(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            widget.weatherModel.weekday4
-                                                .toString(),
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .overline,
+                                          padding: const EdgeInsets.all(15.0),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Text(
+                                                  widget.weatherModel.weekday4
+                                                      .toString(),
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium,
+                                                ),
+                                              ),
+                                              Image.network(
+                                                widget
+                                                    .weatherModel.icon_url_day4,
+                                                scale: 1.0,
+                                              ),
+                                              Text(' Condition : ',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium),
+                                              Text(
+                                                  widget.weatherModel
+                                                      .condition_day4
+                                                      .toString(),
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .labelMedium),
+                                            ],
                                           ),
                                         ),
                                         Column(
@@ -742,7 +768,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                               child: Text('Max Temp of Day:',
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .overline),
+                                                      .labelMedium),
                                             ),
                                             RichText(
                                               text:
@@ -753,24 +779,24 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .overline),
+                                                        .labelMedium),
                                                 TextSpan(
                                                     text: ' °C / ',
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .overline),
+                                                        .labelMedium),
                                                 TextSpan(
                                                     text: widget.weatherModel
                                                         .maxtemp_f_day4
                                                         .toString(),
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .overline),
+                                                        .labelMedium),
                                                 TextSpan(
                                                     text: ' °F',
                                                     style: Theme.of(context)
                                                         .textTheme
-                                                        .overline),
+                                                        .labelMedium),
                                               ]),
                                             ),
                                             Padding(
@@ -779,7 +805,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                               child: Text(' Sunrise / Sunset :',
                                                   style: Theme.of(context)
                                                       .textTheme
-                                                      .overline),
+                                                      .labelMedium),
                                             ),
                                             RichText(
                                                 text: TextSpan(
@@ -790,44 +816,21 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                                           .toString(),
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .overline),
+                                                          .labelMedium),
                                                   TextSpan(
                                                       text: ' / ',
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .overline),
+                                                          .labelMedium),
                                                   TextSpan(
                                                       text: widget.weatherModel
                                                           .sunset_day4
                                                           .toString(),
                                                       style: Theme.of(context)
                                                           .textTheme
-                                                          .overline),
+                                                          .labelMedium),
                                                 ])),
                                           ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(15.0),
-                                          child: Column(
-                                            children: [
-                                              Image.network(
-                                                widget
-                                                    .weatherModel.icon_url_day4,
-                                                scale: 1.0,
-                                              ),
-                                              Text(' Condition : ',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .overline),
-                                              Text(
-                                                  widget.weatherModel
-                                                      .condition_day4
-                                                      .toString(),
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .overline),
-                                            ],
-                                          ),
                                         ),
                                       ],
                                     ),
@@ -840,13 +843,13 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           Text('Wind Speed 💨 : ',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .overline),
+                                                  .labelMedium),
                                           Text(
                                             widget.weatherModel.wind_day4
                                                 .toString(),
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .overline,
+                                                .labelMedium,
                                           ),
                                         ],
                                       ),
@@ -860,13 +863,13 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           Text('Pressure 💤 : ',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .overline),
+                                                  .labelMedium),
                                           Text(
                                             widget.weatherModel.pressure_day4
                                                 .toString(),
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .overline,
+                                                .labelMedium,
                                           ),
                                         ],
                                       ),
@@ -880,13 +883,13 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           Text('Air Quality 🍃 : ',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .overline),
+                                                  .labelMedium),
                                           Text(
                                             widget.weatherModel.airquality_day4
                                                 .toString(),
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .overline,
+                                                .labelMedium,
                                           ),
                                         ],
                                       ),
