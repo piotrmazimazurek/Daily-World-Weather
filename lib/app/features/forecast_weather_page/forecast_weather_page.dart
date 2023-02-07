@@ -376,6 +376,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           padding: const EdgeInsets.all(15.0),
                                           child: Column(
                                             children: [
+                                              const Text('Date :'),
                                               Padding(
                                                 padding:
                                                     const EdgeInsets.all(8.0),
@@ -406,77 +407,89 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                             ],
                                           ),
                                         ),
-                                        Column(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text('Max Temp of Day:',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelMedium),
-                                            ),
-                                            RichText(
-                                              text:
-                                                  TextSpan(children: <TextSpan>[
-                                                TextSpan(
-                                                    text: widget.weatherModel
-                                                        .maxtemp_c_day2
-                                                        .toString(),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text('Max Temp of Day:',
                                                     style: Theme.of(context)
                                                         .textTheme
                                                         .labelMedium),
-                                                TextSpan(
-                                                    text: ' °C / ',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                                TextSpan(
-                                                    text: widget.weatherModel
-                                                        .maxtemp_f_day2
-                                                        .toString(),
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                                TextSpan(
-                                                    text: ' °F',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                              ]),
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text(' Sunrise / Sunset :',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelMedium),
-                                            ),
-                                            RichText(
+                                              ),
+                                              RichText(
                                                 text: TextSpan(
                                                     children: <TextSpan>[
-                                                  TextSpan(
-                                                      text: widget.weatherModel
-                                                          .sunrise_day2
-                                                          .toString(),
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                  TextSpan(
-                                                      text: ' / ',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                  TextSpan(
-                                                      text: widget.weatherModel
-                                                          .sunset_day2
-                                                          .toString(),
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                ])),
-                                          ],
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .maxtemp_c_day2
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: ' °C / ',
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .maxtemp_f_day2
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: ' °F',
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                    ]),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text(
+                                                    ' Sunrise / Sunset :',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .labelMedium),
+                                              ),
+                                              RichText(
+                                                  text: TextSpan(
+                                                      children: <TextSpan>[
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .sunrise_day2
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                    TextSpan(
+                                                        text: ' / ',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .sunset_day2
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                  ])),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -553,6 +566,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           padding: const EdgeInsets.all(15.0),
                                           child: Column(
                                             children: [
+                                              const Text('Date :'),
                                               Padding(
                                                 padding:
                                                     const EdgeInsets.all(8.0),
@@ -583,77 +597,89 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                             ],
                                           ),
                                         ),
-                                        Column(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text('Max Temp of Day:',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelMedium),
-                                            ),
-                                            RichText(
-                                              text:
-                                                  TextSpan(children: <TextSpan>[
-                                                TextSpan(
-                                                    text: widget.weatherModel
-                                                        .maxtemp_c_day3
-                                                        .toString(),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text('Max Temp of Day:',
                                                     style: Theme.of(context)
                                                         .textTheme
                                                         .labelMedium),
-                                                TextSpan(
-                                                    text: ' °C / ',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                                TextSpan(
-                                                    text: widget.weatherModel
-                                                        .maxtemp_f_day3
-                                                        .toString(),
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                                TextSpan(
-                                                    text: ' °F',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                              ]),
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text(' Sunrise / Sunset :',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelMedium),
-                                            ),
-                                            RichText(
+                                              ),
+                                              RichText(
                                                 text: TextSpan(
                                                     children: <TextSpan>[
-                                                  TextSpan(
-                                                      text: widget.weatherModel
-                                                          .sunrise_day3
-                                                          .toString(),
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                  TextSpan(
-                                                      text: ' / ',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                  TextSpan(
-                                                      text: widget.weatherModel
-                                                          .sunset_day3
-                                                          .toString(),
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                ])),
-                                          ],
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .maxtemp_c_day3
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: ' °C / ',
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .maxtemp_f_day3
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: ' °F',
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                    ]),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text(
+                                                    ' Sunrise / Sunset :',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .labelMedium),
+                                              ),
+                                              RichText(
+                                                  text: TextSpan(
+                                                      children: <TextSpan>[
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .sunrise_day3
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                    TextSpan(
+                                                        text: ' / ',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .sunset_day3
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                  ])),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -730,6 +756,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                           padding: const EdgeInsets.all(15.0),
                                           child: Column(
                                             children: [
+                                              const Text('Date :'),
                                               Padding(
                                                 padding:
                                                     const EdgeInsets.all(8.0),
@@ -760,77 +787,89 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                             ],
                                           ),
                                         ),
-                                        Column(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text('Max Temp of Day:',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelMedium),
-                                            ),
-                                            RichText(
-                                              text:
-                                                  TextSpan(children: <TextSpan>[
-                                                TextSpan(
-                                                    text: widget.weatherModel
-                                                        .maxtemp_c_day4
-                                                        .toString(),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text('Max Temp of Day:',
                                                     style: Theme.of(context)
                                                         .textTheme
                                                         .labelMedium),
-                                                TextSpan(
-                                                    text: ' °C / ',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                                TextSpan(
-                                                    text: widget.weatherModel
-                                                        .maxtemp_f_day4
-                                                        .toString(),
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                                TextSpan(
-                                                    text: ' °F',
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium),
-                                              ]),
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text(' Sunrise / Sunset :',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelMedium),
-                                            ),
-                                            RichText(
+                                              ),
+                                              RichText(
                                                 text: TextSpan(
                                                     children: <TextSpan>[
-                                                  TextSpan(
-                                                      text: widget.weatherModel
-                                                          .sunrise_day4
-                                                          .toString(),
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                  TextSpan(
-                                                      text: ' / ',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                  TextSpan(
-                                                      text: widget.weatherModel
-                                                          .sunset_day4
-                                                          .toString(),
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .labelMedium),
-                                                ])),
-                                          ],
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .maxtemp_c_day4
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: ' °C / ',
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: widget
+                                                              .weatherModel
+                                                              .maxtemp_f_day4
+                                                              .toString(),
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                      TextSpan(
+                                                          text: ' °F',
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .labelMedium),
+                                                    ]),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text(
+                                                    ' Sunrise / Sunset :',
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .labelMedium),
+                                              ),
+                                              RichText(
+                                                  text: TextSpan(
+                                                      children: <TextSpan>[
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .sunrise_day4
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                    TextSpan(
+                                                        text: ' / ',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                    TextSpan(
+                                                        text: widget
+                                                            .weatherModel
+                                                            .sunset_day4
+                                                            .toString(),
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .labelMedium),
+                                                  ])),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
