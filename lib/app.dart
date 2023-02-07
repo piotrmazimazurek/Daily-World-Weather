@@ -1,4 +1,3 @@
-import 'package:dotestowania/app/core/injection_container.dart';
 import 'package:dotestowania/app/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

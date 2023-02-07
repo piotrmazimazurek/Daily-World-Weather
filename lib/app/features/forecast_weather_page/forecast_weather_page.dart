@@ -45,7 +45,6 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
           }
         },
         builder: (context, state) {
-          final weatherModel = state.model;
           return Container(
               constraints: const BoxConstraints.expand(),
               decoration: BoxDecoration(
