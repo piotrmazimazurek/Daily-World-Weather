@@ -96,10 +96,10 @@ class CurrentWeatherWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('[Local Time & Date] : ',
-                        style: Theme.of(context).textTheme.labelMedium),
+                        style: Theme.of(context).textTheme.labelLarge),
                     Text(
                       weatherModel.weekday0.toString(),
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: Theme.of(context).textTheme.labelLarge,
                     ),
                   ],
                 ),
@@ -136,7 +136,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text("💨 Wind Speed [Actual in KM/H]:",
-                  style: Theme.of(context).textTheme.labelMedium),
+                  style: Theme.of(context).textTheme.labelLarge),
               Text(weatherModel.wind_day0.toString(),
                   style: Theme.of(context).textTheme.headlineSmall),
               const Divider(
@@ -147,7 +147,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('💤 Pressure [1013,25 hPa = Most Healthy]:',
-                  style: Theme.of(context).textTheme.labelMedium),
+                  style: Theme.of(context).textTheme.labelLarge),
               Text(weatherModel.pressure_day0.toString(),
                   style: Theme.of(context).textTheme.headlineSmall),
               const Divider(
@@ -158,7 +158,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 endIndent: 40,
               ),
               Text('🍃 Air Quality [1-6 scale/Higher=Unhealthy]:',
-                  style: Theme.of(context).textTheme.labelMedium),
+                  style: Theme.of(context).textTheme.labelLarge),
               Text(weatherModel.airquality_day0.toString(),
                   style: Theme.of(context).textTheme.headlineSmall),
             ],
