@@ -365,10 +365,13 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                               child: IntrinsicWidth(
                                 child: Column(
                                   children: [
-                                    Text(' Next Days :',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleMedium),
+                                    Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Text(' Next Days :',
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium),
+                                    ),
                                     Row(
                                       // 2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY  2 DAY
                                       children: [
