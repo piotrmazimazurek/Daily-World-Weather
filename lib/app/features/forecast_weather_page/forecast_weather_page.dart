@@ -345,8 +345,8 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                             ),
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomCenter,
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
                                 colors: [Colors.white60, Colors.white10],
                               ),
                               borderRadius: BorderRadius.circular(25),
