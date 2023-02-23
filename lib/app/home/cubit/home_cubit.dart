@@ -7,10 +7,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_state.dart';
 part 'home_cubit.freezed.dart';
 
-class NoLocationException implements Exception {}
-
-class WrongDataException implements Exception {}
-
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this._weatherRepository) : super(const HomeState());
 
@@ -29,11 +25,12 @@ class HomeCubit extends Cubit<HomeState> {
         ),
       );
     } catch (error) {
-      String errorMessage;
-      if (error is NoLocationException) {
-        errorMessage = "Please enter a valid location";
-      } else {
-        errorMessage = error.toString();
+      String errorMessage = error.toString();
+      if (errorMessage.contains("Parameter q is missing")) {
+        errorMessage = "You do not provide any location at all, do You ? 😏";
+      } else if (errorMessage.contains("No matching location found")) {
+        errorMessage =
+            "There's no place like this or I've misspelled something ? 😮";
       }
       emit(
         HomeState(
