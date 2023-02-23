@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:dotestowania/env/env.dart';
 
 class WeatherRemoteDataSource {
@@ -10,12 +9,10 @@ class WeatherRemoteDataSource {
       final response = await Dio().get<Map<String, dynamic>>(
           'http://api.weatherapi.com/v1/forecast.json?key=${Env.key1}&q=$city&days=5&aqi=yes&alerts=no');
       if (response.statusCode == 200) {
+        (response.data.toString());
         return response.data;
-      } else if (response.statusCode == 400 &&
-          response.data.toString().contains("parameter q is missing")) {
-        throw NoLocationException();
       } else {
-        throw WrongDataException();
+        throw Exception("Error: ${response.statusCode}");
       }
     } on DioError catch (error) {
       throw Exception(
