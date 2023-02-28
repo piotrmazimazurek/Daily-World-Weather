@@ -31,6 +31,8 @@ class HomeCubit extends Cubit<HomeState> {
       } else if (errorMessage.contains("No matching location found")) {
         errorMessage =
             "There's no place like this or I've misspelled something ? 😮";
+      } else if (errorMessage.contains("Unknown error")) {
+        errorMessage = "There is no network connection 👀";
       }
       emit(
         HomeState(
