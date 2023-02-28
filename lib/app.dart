@@ -10,14 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-        valueListenable: Hive.box(themeBox).listenable(),
+        valueListenable: Hive.box(darkModeBox).listenable(),
         builder: (context, box, widget) {
           //saving the value inside the hive box,
-          var darkMode =
-              Hive.box(themeBox).get('darkMode', defaultValue: false);
+          var darkMode = box.get('darkMode', defaultValue: false);
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
+            themeMode: darkMode ? ThemeMode.light : ThemeMode.dark,
             darkTheme: ThemeData(
               colorScheme: ColorScheme.fromSwatch(),
               textTheme: GoogleFonts.latoTextTheme(Theme.of(context)
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
                       bodyColor: const Color.fromARGB(255, 255, 255, 255),
                       displayColor: const Color.fromARGB(255, 255, 255, 255))),
             ),
-            home: HomePage(value: darkMode),
+            home: HomePage(),
           );
         });
   }
