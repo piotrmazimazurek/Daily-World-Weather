@@ -132,7 +132,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(1.0),
                                 child: Container(
                                   //FIRST WEATHER CONTAINER FIRST WEATHER CONTAINER FIRST WEATHER CONTAINER WITH TOMORROW - > 1 DAY  1 DAY  1 DAY  1 DAY
                                   constraints: const BoxConstraints(
@@ -173,7 +173,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                               .textTheme
                                               .labelLarge),
                                       Padding(
-                                        padding: const EdgeInsets.all(3.0),
+                                        padding: const EdgeInsets.all(6.0),
                                         child: RichText(
                                           text: TextSpan(children: <TextSpan>[
                                             TextSpan(
@@ -211,7 +211,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Padding(
-                                padding: const EdgeInsets.all(3.0),
+                                padding: const EdgeInsets.all(1.0),
                                 child: Container(
                                     //SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER  WITH TOMORROW - > 1 DAY  1 DAY  1 DAY  1 DAY
                                     constraints: const BoxConstraints(
