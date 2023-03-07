@@ -1,10 +1,9 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:rive/rive.dart';
+import 'package:provider/provider.dart';
 
 class SearchPage extends StatelessWidget {
   SearchPage({

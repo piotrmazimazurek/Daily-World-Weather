@@ -1,9 +1,8 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:dotestowania/app/domain/models/weather_model.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 class CurrentWeatherWidget extends StatelessWidget {
   const CurrentWeatherWidget({

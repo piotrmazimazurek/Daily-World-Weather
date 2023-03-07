@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import '../../home/home_page.dart';
+import 'package:provider/provider.dart';
 
 class ForecastWeatherPage extends StatefulWidget {
   const ForecastWeatherPage({
