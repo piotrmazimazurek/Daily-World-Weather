@@ -34,7 +34,11 @@ Using:
 
 🗝 Rest API
 
-🗃 Clean Architecture
+🗝 Envied
+
+🗃 Clean Architecture 
+
+& many more...
 
 Thank You For Visiting !
 
