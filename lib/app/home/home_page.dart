@@ -20,10 +20,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Color textColor = const Color.fromARGB(255, 255, 255, 255);
-  Color appBarColor = Colors.black87;
-  Color scaffoldBgcolor = Colors.transparent;
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -55,13 +51,15 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               child: Scaffold(
-                  backgroundColor: scaffoldBgcolor,
+                  backgroundColor: context.watch<SwitchModel>().scaffoldBgcolor,
                   appBar: AppBar(
                     title: Text(
                       "Daily World Forecast",
-                      style: TextStyle(color: textColor, fontSize: 21),
+                      style: TextStyle(
+                          color: context.watch<SwitchModel>().textColor,
+                          fontSize: 21),
                     ),
-                    backgroundColor: appBarColor,
+                    backgroundColor: context.watch<SwitchModel>().appBarColor,
                     automaticallyImplyLeading: false,
                     actions: [
                       Consumer<SwitchModel>(builder: (context, value, _) {
@@ -99,21 +97,7 @@ class _HomePageState extends State<HomePage> {
                             color: Color(0xFFFFDF5D),
                           ),
                           onToggle: (val) {
-                            setState(() {
-                              value.isSwitchOn = val;
-
-                              if (val) {
-                                textColor = Colors.white;
-                                appBarColor = Colors.black87;
-                                scaffoldBgcolor = Colors.transparent;
-                              } else {
-                                textColor = Colors.black87;
-                                appBarColor =
-                                    const Color.fromARGB(197, 255, 255, 255);
-                                scaffoldBgcolor =
-                                    const Color.fromARGB(169, 255, 255, 255);
-                              }
-                            });
+                            value.isSwitchOn = val;
                           },
                         );
                       })
