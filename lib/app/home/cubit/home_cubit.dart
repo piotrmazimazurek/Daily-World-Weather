@@ -30,7 +30,7 @@ class HomeCubit extends Cubit<HomeState> {
         errorMessage = "You do not provide any location at all, do You ? 😏";
       } else if (errorMessage.contains("No matching location found")) {
         errorMessage =
-            "There's no place like this or I've misspelled something ? 😮";
+            "There's no place like this, something is misspelled or just use only english letters. Thank You 🧐";
       } else if (errorMessage.contains("Unknown error")) {
         errorMessage = "There is no network connection 👀";
       }
