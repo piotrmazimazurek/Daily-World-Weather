@@ -12,7 +12,6 @@ class FirstDayContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //FIRST WEATHER CONTAINER FIRST WEATHER CONTAINER FIRST WEATHER CONTAINER WITH TOMORROW - > 1 DAY  1 DAY  1 DAY  1 DAY
       constraints: const BoxConstraints(
         maxHeight: double.infinity,
       ),
