@@ -2,6 +2,7 @@ import 'package:dotestowania/app/core/enums.dart';
 import 'package:dotestowania/app/core/injection_container.dart';
 import 'package:dotestowania/app/domain/models/switch_model.dart';
 import 'package:dotestowania/app/domain/models/weather_model.dart';
+import 'package:dotestowania/app/features/forecast_weather_page/widgets/first_day_container.dart';
 import 'package:dotestowania/app/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -117,16 +118,18 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                           children: [
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
-                              child: Padding(
-                                padding: const EdgeInsets.all(1.0),
-                                child: Container(
-                                  //FIRST WEATHER CONTAINER FIRST WEATHER CONTAINER FIRST WEATHER CONTAINER WITH TOMORROW - > 1 DAY  1 DAY  1 DAY  1 DAY
+                              child: FirstDayContainer(widget: widget),
+                            ),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Container(
+                                  //SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER  WITH TOMORROW - > 1 DAY  1 DAY  1 DAY  1 DAY
                                   constraints: const BoxConstraints(
                                     maxHeight: double.infinity,
                                   ),
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
-                                      begin: Alignment.topLeft,
+                                      begin: Alignment.topRight,
                                       end: Alignment.bottomCenter,
                                       colors: [Colors.white60, Colors.white10],
                                     ),
@@ -143,179 +146,93 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                   ),
                                   child: Column(
                                     children: [
+                                      Row(
+                                        children: [
+                                          const Text(' 🌞 '),
+                                          Padding(
+                                            padding: const EdgeInsets.all(5.0),
+                                            child: Text(
+                                              widget.weatherModel.sunrise_day1
+                                                  .toString(),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .headlineSmall,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          const Text(' 🌛 '),
+                                          Padding(
+                                            padding: const EdgeInsets.all(3.0),
+                                            child: Text(
+                                              widget.weatherModel.sunset_day1
+                                                  .toString(),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .headlineSmall,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                       Padding(
                                         padding: const EdgeInsets.all(3.0),
-                                        child: Text('Tomorrow:',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .labelLarge),
+                                        child: Row(
+                                          children: [
+                                            Text('Wind Speed (max) : ',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelLarge),
+                                            Text(
+                                              widget.weatherModel.wind_day1
+                                                  .toString(),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .labelLarge,
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      Image.network(
-                                        widget.weatherModel.icon_url_day1,
-                                        scale: 0.9,
-                                      ),
-                                      Text('Max Temperature :',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .labelLarge),
                                       Padding(
-                                        padding: const EdgeInsets.all(6.0),
-                                        child: RichText(
-                                          text: TextSpan(children: <TextSpan>[
-                                            TextSpan(
-                                                text: widget
-                                                    .weatherModel.maxtemp_c_day1
-                                                    .toString(),
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Row(
+                                          children: [
+                                            Text('Pressure (noon) : ',
                                                 style: Theme.of(context)
                                                     .textTheme
-                                                    .headlineSmall),
-                                            TextSpan(
-                                                text: ' °C / ',
+                                                    .labelLarge),
+                                            Text(
+                                              widget.weatherModel.pressure_day1
+                                                  .toString(),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .labelLarge,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Row(
+                                          children: [
+                                            Text('Air Quality : ',
                                                 style: Theme.of(context)
                                                     .textTheme
-                                                    .headlineSmall),
-                                            TextSpan(
-                                                text: widget
-                                                    .weatherModel.maxtemp_f_day1
-                                                    .toString(),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .headlineSmall),
-                                            TextSpan(
-                                                text: ' °F',
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .headlineSmall),
-                                          ]),
+                                                    .labelLarge),
+                                            Text(
+                                              widget
+                                                  .weatherModel.airquality_day1
+                                                  .toString(),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .labelLarge,
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Padding(
-                                padding: const EdgeInsets.all(1.0),
-                                child: Container(
-                                    //SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER SECOND WEATHER CONTAINER  WITH TOMORROW - > 1 DAY  1 DAY  1 DAY  1 DAY
-                                    constraints: const BoxConstraints(
-                                      maxHeight: double.infinity,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      gradient: const LinearGradient(
-                                        begin: Alignment.topRight,
-                                        end: Alignment.bottomCenter,
-                                        colors: [
-                                          Colors.white60,
-                                          Colors.white10
-                                        ],
-                                      ),
-                                      borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(
-                                          width: 3, color: Colors.white30),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.5),
-                                          blurRadius: 20,
-                                          spreadRadius: 5,
-                                        ),
-                                      ],
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            const Text(' 🌞 '),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(5.0),
-                                              child: Text(
-                                                widget.weatherModel.sunrise_day1
-                                                    .toString(),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .headlineSmall,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            const Text(' 🌛 '),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
-                                              child: Text(
-                                                widget.weatherModel.sunset_day1
-                                                    .toString(),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .headlineSmall,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Row(
-                                            children: [
-                                              Text('Wind Speed (max) : ',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelLarge),
-                                              Text(
-                                                widget.weatherModel.wind_day1
-                                                    .toString(),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Row(
-                                            children: [
-                                              Text('Pressure (noon) : ',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelLarge),
-                                              Text(
-                                                widget
-                                                    .weatherModel.pressure_day1
-                                                    .toString(),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(3.0),
-                                          child: Row(
-                                            children: [
-                                              Text('Air Quality : ',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .labelLarge),
-                                              Text(
-                                                widget.weatherModel
-                                                    .airquality_day1
-                                                    .toString(),
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    )),
-                              ),
+                                  )),
                             )
                           ],
                         ),
