@@ -136,7 +136,6 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Container(
-                            //THIRD WEATHER CONTAINER THIRD WEATHER CONTAINER THIRD WEATHER CONTAINER THIRD WEATHER CONTAINER THIRD WEATHER CONTAINER
                             constraints: const BoxConstraints(
                               maxHeight: double.infinity,
                             ),
@@ -176,7 +175,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                       color: Colors.white12,
                                       indent: 10,
                                       endIndent: 10,
-                                    ), // 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY 3 DAY - >
+                                    ),
                                     ThirdDayWidget(widget: widget),
                                     const Divider(
                                       height: 10,
@@ -184,7 +183,7 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                                       color: Colors.white12,
                                       indent: 10,
                                       endIndent: 10,
-                                    ), // 4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY  4 DAY - >
+                                    ),
                                     FourthDayWidget(widget: widget),
                                     Padding(
                                       padding: const EdgeInsets.all(10.0),
