@@ -46,20 +46,21 @@ class FirstDayContainer extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelLarge),
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(4.0),
             child: RichText(
               text: TextSpan(children: <TextSpan>[
                 TextSpan(
                     text: widget.weatherModel.maxtemp_c_day1.toString(),
-                    style: Theme.of(context).textTheme.titleLarge),
+                    style: Theme.of(context).textTheme.headlineSmall),
                 TextSpan(
                     text: ' °C / ',
-                    style: Theme.of(context).textTheme.titleLarge),
+                    style: Theme.of(context).textTheme.headlineSmall),
                 TextSpan(
                     text: widget.weatherModel.maxtemp_f_day1.toString(),
-                    style: Theme.of(context).textTheme.titleLarge),
+                    style: Theme.of(context).textTheme.headlineSmall),
                 TextSpan(
-                    text: ' °F', style: Theme.of(context).textTheme.titleLarge),
+                    text: ' °F',
+                    style: Theme.of(context).textTheme.headlineSmall),
               ]),
             ),
           ),
