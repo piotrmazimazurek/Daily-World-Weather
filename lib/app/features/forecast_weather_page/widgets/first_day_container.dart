@@ -40,13 +40,10 @@ class FirstDayContainer extends StatelessWidget {
             widget.weatherModel.icon_url_day1,
             scale: 0.9,
           ),
+          Text('Max Temperature :',
+              style: Theme.of(context).textTheme.labelLarge),
           Padding(
-            padding: const EdgeInsets.all(1.0),
-            child: Text('Max Temperature :',
-                style: Theme.of(context).textTheme.labelLarge),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: const EdgeInsets.all(3.0),
             child: RichText(
               text: TextSpan(children: <TextSpan>[
                 TextSpan(

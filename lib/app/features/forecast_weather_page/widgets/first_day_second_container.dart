@@ -31,29 +31,29 @@ class FirstDaySecondContainer extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Row(
-              children: [
-                const Text(' 🌞 '),
-                Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Text(
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Row(
+                children: [
+                  const Text(' 🌞 '),
+                  Text(
                     widget.weatherModel.sunrise_day1.toString(),
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            Row(
-              children: [
-                const Text(' 🌛 '),
-                Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Text(
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Row(
+                children: [
+                  const Text(' 🌛 '),
+                  Text(
                     widget.weatherModel.sunset_day1.toString(),
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(5.0),
