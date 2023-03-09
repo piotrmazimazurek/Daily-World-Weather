@@ -12,9 +12,7 @@ class FirstDayContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(
-        maxHeight: double.infinity,
-      ),
+      constraints: const BoxConstraints(),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
@@ -42,24 +40,26 @@ class FirstDayContainer extends StatelessWidget {
             widget.weatherModel.icon_url_day1,
             scale: 0.9,
           ),
-          Text('Max Temperature :',
-              style: Theme.of(context).textTheme.labelLarge),
           Padding(
-            padding: const EdgeInsets.all(6.0),
+            padding: const EdgeInsets.all(1.0),
+            child: Text('Max Temperature :',
+                style: Theme.of(context).textTheme.labelLarge),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
             child: RichText(
               text: TextSpan(children: <TextSpan>[
                 TextSpan(
                     text: widget.weatherModel.maxtemp_c_day1.toString(),
-                    style: Theme.of(context).textTheme.headlineSmall),
+                    style: Theme.of(context).textTheme.titleLarge),
                 TextSpan(
                     text: ' °C / ',
-                    style: Theme.of(context).textTheme.headlineSmall),
+                    style: Theme.of(context).textTheme.titleLarge),
                 TextSpan(
                     text: widget.weatherModel.maxtemp_f_day1.toString(),
-                    style: Theme.of(context).textTheme.headlineSmall),
+                    style: Theme.of(context).textTheme.titleLarge),
                 TextSpan(
-                    text: ' °F',
-                    style: Theme.of(context).textTheme.headlineSmall),
+                    text: ' °F', style: Theme.of(context).textTheme.titleLarge),
               ]),
             ),
           ),
