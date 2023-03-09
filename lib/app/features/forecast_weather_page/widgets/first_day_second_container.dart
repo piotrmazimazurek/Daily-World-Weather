@@ -12,9 +12,7 @@ class FirstDaySecondContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        constraints: const BoxConstraints(
-          maxHeight: double.infinity,
-        ),
+        constraints: const BoxConstraints(),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             begin: Alignment.topRight,
@@ -37,7 +35,7 @@ class FirstDaySecondContainer extends StatelessWidget {
               children: [
                 const Text(' 🌞 '),
                 Padding(
-                  padding: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(2.0),
                   child: Text(
                     widget.weatherModel.sunrise_day1.toString(),
                     style: Theme.of(context).textTheme.headlineSmall,
@@ -49,7 +47,7 @@ class FirstDaySecondContainer extends StatelessWidget {
               children: [
                 const Text(' 🌛 '),
                 Padding(
-                  padding: const EdgeInsets.all(3.0),
+                  padding: const EdgeInsets.all(2.0),
                   child: Text(
                     widget.weatherModel.sunset_day1.toString(),
                     style: Theme.of(context).textTheme.headlineSmall,
@@ -58,7 +56,7 @@ class FirstDaySecondContainer extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(3.0),
+              padding: const EdgeInsets.all(5.0),
               child: Row(
                 children: [
                   Text('Wind Speed (max) : ',
