@@ -38,12 +38,14 @@ Using:
 
 🗝 Envied
 
+🗃 Clean architecture
+
 & many more...
 
 Thank You For Visiting !
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/105658444/215318337-5030b803-72cb-4a9d-9478-59278c1e8057.gif">
+<img src="https://user-images.githubusercontent.com/105658444/224031413-517afa4b-01ea-445b-958e-48e3fb84f5d3.gif">
 </p>,
 
 
