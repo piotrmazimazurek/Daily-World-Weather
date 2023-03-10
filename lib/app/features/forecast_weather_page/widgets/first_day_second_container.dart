@@ -44,7 +44,7 @@ class FirstDaySecondContainer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(4.0),
+              padding: const EdgeInsets.all(2.0),
               child: Row(
                 children: [
                   const Text(' 🌛 '),
@@ -56,10 +56,10 @@ class FirstDaySecondContainer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(2.0),
               child: Row(
                 children: [
-                  Text('Wind Speed (max) : ',
+                  Text('Wind Speed(max): ',
                       style: Theme.of(context).textTheme.labelLarge),
                   Text(
                     widget.weatherModel.wind_day1.toString(),
@@ -69,10 +69,10 @@ class FirstDaySecondContainer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(2.0),
               child: Row(
                 children: [
-                  Text('Pressure (noon) : ',
+                  Text('Pressure(noon): ',
                       style: Theme.of(context).textTheme.labelLarge),
                   Text(
                     widget.weatherModel.pressure_day1.toString(),
@@ -82,10 +82,10 @@ class FirstDaySecondContainer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(2.0),
               child: Row(
                 children: [
-                  Text('Air Quality : ',
+                  Text('Air Quality: ',
                       style: Theme.of(context).textTheme.labelLarge),
                   Text(
                     widget.weatherModel.airquality_day1.toString(),
