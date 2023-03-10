@@ -69,7 +69,7 @@ class FirstDaySecondContainer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(3.0),
+              padding: const EdgeInsets.all(5.0),
               child: Row(
                 children: [
                   Text('Pressure (noon) : ',
@@ -82,7 +82,7 @@ class FirstDaySecondContainer extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(3.0),
+              padding: const EdgeInsets.all(5.0),
               child: Row(
                 children: [
                   Text('Air Quality : ',
