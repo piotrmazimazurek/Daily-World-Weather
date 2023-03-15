@@ -7,6 +7,7 @@ final getIt = GetIt.instance;
 
 void configureDependencies() {
   getIt.registerFactory(() => HomeCubit(getIt()));
-  getIt.registerFactory(() => WeatherRepository(getIt()));
+  getIt.registerFactory(
+      () => WeatherRepository(weatherRemoteDataSource: getIt()));
   getIt.registerFactory(() => WeatherRemoteDataSource());
 }
