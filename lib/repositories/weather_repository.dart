@@ -3,14 +3,14 @@ import 'package:dotestowania/data/remote_data_sources/weather_remote_data_source
 import 'dart:core';
 
 class WeatherRepository {
-  WeatherRepository(this._weatherRemoteDataSource);
+  WeatherRepository({required this.weatherRemoteDataSource});
 
-  final WeatherRemoteDataSource _weatherRemoteDataSource;
+  final WeatherRemoteDataSource weatherRemoteDataSource;
 
   Future<WeatherModel?> getWeatherModel({
     required String city,
   }) async {
-    final json = await _weatherRemoteDataSource.getWeatherData(
+    final json = await weatherRemoteDataSource.getWeatherData(
       city: city,
     );
 
