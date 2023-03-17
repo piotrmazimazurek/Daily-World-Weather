@@ -6,7 +6,7 @@ import 'package:get_it/get_it.dart';
 final getIt = GetIt.instance;
 
 void configureDependencies() {
-  getIt.registerFactory(() => HomeCubit(getIt()));
+  getIt.registerFactory(() => HomeCubit(weatherRepository: getIt()));
   getIt.registerFactory(
       () => WeatherRepository(weatherRemoteDataSource: getIt()));
   getIt.registerFactory(() => WeatherRemoteDataSource());
