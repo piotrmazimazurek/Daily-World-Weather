@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:bloc_test/bloc_test.dart';
 
-import '../../test_helpers/sample_weather_model.dart';
+import '../../helpers/sample_weather_model.dart';
 
 class MockWeatherRepository extends Mock implements WeatherRepository {}
 
@@ -28,7 +28,7 @@ void main() {
         });
 
     blocTest<HomeCubit, HomeState>(
-      'emits [MyState] when MyEvent is added.',
+      'emits Status.loading and then Status.success with model',
       build: () => sut,
       act: (cubit) => cubit.getWeatherModel(city: 'city'),
       expect: () => [
