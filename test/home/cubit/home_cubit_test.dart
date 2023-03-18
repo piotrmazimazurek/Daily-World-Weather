@@ -20,26 +20,51 @@ void main() {
   });
 
   group('getWeatherModel', () {
-    WeatherModel weatherModel = getSampleWeatherModel();
+    group('success', () {
+      WeatherModel weatherModel = getSampleWeatherModel();
 
-    setUp(() => {
-          when(() => repository.getWeatherModel(city: 'city'))
-              .thenAnswer((_) async => Future.value(getSampleWeatherModel()))
-        });
+      setUp(() => {
+            when(() => repository.getWeatherModel(city: 'city'))
+                .thenAnswer((_) async => Future.value(getSampleWeatherModel()))
+          });
 
-    blocTest<HomeCubit, HomeState>(
-      'emits Status.loading and then Status.success with model',
-      build: () => sut,
-      act: (cubit) => cubit.getWeatherModel(city: 'city'),
-      expect: () => [
-        const HomeState(
-          status: Status.loading,
-        ),
-        HomeState(
-          status: Status.success,
-          model: weatherModel,
-        ),
-      ],
-    );
+      blocTest<HomeCubit, HomeState>(
+        'Emits Status.loading and then Status.success with model',
+        build: () => sut,
+        act: (cubit) => cubit.getWeatherModel(city: 'city'),
+        expect: () => [
+          const HomeState(
+            status: Status.loading,
+          ),
+          HomeState(
+            status: Status.success,
+            model: weatherModel,
+          ),
+        ],
+      );
+    });
+
+    group('failure', () {
+      setUp(() => {
+            when(() => repository.getWeatherModel(city: 'city')).thenThrow(
+              Exception("test-exception-error"),
+            )
+          });
+
+      blocTest<HomeCubit, HomeState>(
+        'Emits Status.loading and then Status.error with error message',
+        build: () => sut,
+        act: (cubit) => cubit.getWeatherModel(city: 'city'),
+        expect: () => [
+          const HomeState(
+            status: Status.loading,
+          ),
+          const HomeState(
+            status: Status.error,
+            errorMessage: 'Exception: test-exception-error',
+          ),
+        ],
+      );
+    });
   });
 }
