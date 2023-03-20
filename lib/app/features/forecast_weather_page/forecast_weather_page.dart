@@ -115,12 +115,18 @@ class _ForecastWeatherPageState extends State<ForecastWeatherPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          FirstDayContainer(widget: widget),
-                          FirstDaySecondContainer(widget: widget)
-                        ],
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FirstDayContainer(widget: widget),
+                              FirstDaySecondContainer(widget: widget)
+                            ],
+                          ),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(1.0),
