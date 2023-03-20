@@ -18,6 +18,17 @@ void main() {
 
   group('getWeatherModel', () {
     test(
+        'Should call weatherRemoteDataSource.getWeatherData(city: city) method',
+        () async {
+      when(() => dataSource.getWeatherData(city: 'city'))
+          .thenAnswer((_) async => sampleweatherData);
+
+      await sut.getWeatherModel(city: 'city');
+
+      verify(() => dataSource.getWeatherData(city: 'city')).called(1);
+    });
+
+    test(
         'Should return data source with specific weather data depended on what city user provides',
         () async {
       when(() => dataSource.getWeatherData(city: 'city'))
