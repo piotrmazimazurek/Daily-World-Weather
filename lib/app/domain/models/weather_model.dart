@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_interpolation_to_compose_strings, non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_interpolation_to_compose_strings
 
-class WeatherModel {
+import 'package:equatable/equatable.dart';
+
+class WeatherModel extends Equatable {
   const WeatherModel({
     required this.icon_url_day0,
     required this.icon_url_day1,
@@ -115,85 +117,133 @@ class WeatherModel {
   final double maxtemp_c_day4;
   final double maxtemp_f_day4;
 
-  WeatherModel.fromJson(Map<String, dynamic> json)
-      : icon_url_day0 = "http:" + json['current']['condition']['icon'],
-        icon_url_day1 = "http:" +
+  @override
+  List<Object> get props => [
+        icon_url_day0,
+        icon_url_day1,
+        icon_url_day2,
+        icon_url_day3,
+        icon_url_day4,
+        temperature_c,
+        temperature_f,
+        city,
+        wind_day0,
+        wind_day1,
+        wind_day2,
+        wind_day3,
+        wind_day4,
+        condition_day0,
+        condition_day1,
+        condition_day2,
+        condition_day3,
+        condition_day4,
+        pressure_day0,
+        pressure_day1,
+        pressure_day2,
+        pressure_day3,
+        pressure_day4,
+        airquality_day0,
+        airquality_day1,
+        airquality_day2,
+        airquality_day3,
+        airquality_day4,
+        weekday0,
+        weekday1,
+        weekday2,
+        weekday3,
+        weekday4,
+        country,
+        sunriseday0,
+        sunsetday0,
+        sunrise_day1,
+        sunset_day1,
+        sunrise_day2,
+        sunset_day2,
+        sunrise_day3,
+        sunset_day3,
+        sunrise_day4,
+        sunset_day4,
+        maxtemp_c_day1,
+        maxtemp_f_day1,
+        maxtemp_c_day2,
+        maxtemp_f_day2,
+        maxtemp_c_day3,
+        maxtemp_f_day3,
+        maxtemp_c_day4,
+        maxtemp_f_day4
+      ];
+
+  factory WeatherModel.fromJson(Map<String, dynamic> json) {
+    return WeatherModel(
+        icon_url_day0: "http:" + json['current']['condition']['icon'],
+        icon_url_day1: "http:" +
             json['forecast']['forecastday'][1]['day']['condition']['icon'],
-        icon_url_day2 = "http:" +
+        icon_url_day2: "http:" +
             json['forecast']['forecastday'][2]['day']['condition']['icon'],
-        icon_url_day3 = "http:" +
+        icon_url_day3: "http:" +
             json['forecast']['forecastday'][3]['day']['condition']['icon'],
-        icon_url_day4 = "http:" +
+        icon_url_day4: "http:" +
             json['forecast']['forecastday'][4]['day']['condition']['icon'],
-        temperature_c = json['current']['temp_c'] + 0.0,
-        temperature_f = json['current']['temp_f'] + 0.0,
-        maxtemp_c_day1 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0,
-        maxtemp_f_day1 =
-            json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0,
-        city = json['location']['name'],
-        wind_day0 = json['current']['wind_kph'],
-        wind_day1 = json['forecast']['forecastday'][1]['day']['maxwind_kph'],
-        wind_day2 = json['forecast']['forecastday'][2]['day']['maxwind_kph'],
-        wind_day3 = json['forecast']['forecastday'][3]['day']['maxwind_kph'],
-        wind_day4 = json['forecast']['forecastday'][4]['day']['maxwind_kph'],
-        maxtemp_c_day2 =
-            json['forecast']['forecastday'][2]['day']['maxtemp_c'] + 0.0,
-        maxtemp_f_day2 =
-            json['forecast']['forecastday'][2]['day']['maxtemp_f'] + 0.0,
-        maxtemp_c_day3 =
-            json['forecast']['forecastday'][3]['day']['maxtemp_c'] + 0.0,
-        maxtemp_f_day3 =
-            json['forecast']['forecastday'][3]['day']['maxtemp_f'] + 0.0,
-        maxtemp_c_day4 =
-            json['forecast']['forecastday'][4]['day']['maxtemp_c'] + 0.0,
-        maxtemp_f_day4 =
-            json['forecast']['forecastday'][4]['day']['maxtemp_f'] + 0.0,
-        condition_day0 = json['current']['condition']['text'],
-        condition_day1 =
-            json['forecast']['forecastday'][1]['day']['condition']['text'],
-        condition_day2 =
-            json['forecast']['forecastday'][2]['day']['condition']['text'],
-        condition_day3 =
-            json['forecast']['forecastday'][3]['day']['condition']['text'],
-        condition_day4 =
-            json['forecast']['forecastday'][4]['day']['condition']['text'],
-        airquality_day0 = json['current']['air_quality']['us-epa-index'],
-        airquality_day1 = json['forecast']['forecastday'][1]['day']
+        temperature_c: (json['current']['temp_c'] + 0.0),
+        temperature_f: (json['current']['temp_f'] + 0.0),
+        maxtemp_c_day1:
+            (json['forecast']['forecastday'][1]['day']['maxtemp_c'] + 0.0),
+        maxtemp_f_day1:
+            (json['forecast']['forecastday'][1]['day']['maxtemp_f'] + 0.0),
+        city: json['location']['name'],
+        wind_day0: json['current']['wind_kph'],
+        wind_day1: json['forecast']['forecastday'][1]['day']['maxwind_kph'],
+        wind_day2: json['forecast']['forecastday'][2]['day']['maxwind_kph'],
+        wind_day3: json['forecast']['forecastday'][3]['day']['maxwind_kph'],
+        wind_day4: json['forecast']['forecastday'][4]['day']['maxwind_kph'],
+        maxtemp_c_day2:
+            (json['forecast']['forecastday'][2]['day']['maxtemp_c'] + 0.0),
+        maxtemp_f_day2:
+            (json['forecast']['forecastday'][2]['day']['maxtemp_f'] + 0.0),
+        maxtemp_c_day3:
+            (json['forecast']['forecastday'][3]['day']['maxtemp_c'] + 0.0),
+        maxtemp_f_day3:
+            (json['forecast']['forecastday'][3]['day']['maxtemp_f'] + 0.0),
+        maxtemp_c_day4:
+            (json['forecast']['forecastday'][4]['day']['maxtemp_c'] + 0.0),
+        maxtemp_f_day4:
+            (json['forecast']['forecastday'][4]['day']['maxtemp_f'] + 0.0),
+        condition_day0: json['current']['condition']['text'],
+        condition_day1: json['forecast']['forecastday'][1]['day']['condition']
+            ['text'],
+        condition_day2: json['forecast']['forecastday'][2]['day']['condition']
+            ['text'],
+        condition_day3: json['forecast']['forecastday'][3]['day']['condition']
+            ['text'],
+        condition_day4: json['forecast']['forecastday'][4]['day']['condition']
+            ['text'],
+        airquality_day0: json['current']['air_quality']['us-epa-index'],
+        airquality_day1: json['forecast']['forecastday'][1]['day']
                 ['air_quality']['us-epa-index'] ??
             "",
-        airquality_day2 = json['forecast']['forecastday'][2]['day']
-                ['air_quality']['us-epa-index'] ??
-            "",
-        airquality_day3 = json['forecast']['forecastday'][3]['day']
-                ['air_quality']['us-epa-index'] ??
-            "",
-        airquality_day4 = json['forecast']['forecastday'][4]['day']
-                ['air_quality']['us-epa-index'] ??
-            "",
-        pressure_day0 = json['current']['pressure_mb'],
-        pressure_day1 =
-            json['forecast']['forecastday'][1]['hour'][13]['pressure_mb'],
-        pressure_day2 =
-            json['forecast']['forecastday'][2]['hour'][13]['pressure_mb'],
-        pressure_day3 =
-            json['forecast']['forecastday'][3]['hour'][13]['pressure_mb'],
-        pressure_day4 =
-            json['forecast']['forecastday'][4]['hour'][13]['pressure_mb'],
-        weekday0 = json['location']['localtime'],
-        weekday1 = json['forecast']['forecastday'][1]['date'],
-        weekday2 = json['forecast']['forecastday'][2]['date'],
-        weekday3 = json['forecast']['forecastday'][3]['date'],
-        weekday4 = json['forecast']['forecastday'][4]['date'],
-        country = json['location']['country'],
-        sunriseday0 = json['forecast']['forecastday'][0]['astro']['sunrise'],
-        sunsetday0 = json['forecast']['forecastday'][0]['astro']['sunset'],
-        sunrise_day1 = json['forecast']['forecastday'][1]['astro']['sunrise'],
-        sunset_day1 = json['forecast']['forecastday'][1]['astro']['sunset'],
-        sunrise_day2 = json['forecast']['forecastday'][2]['astro']['sunrise'],
-        sunset_day2 = json['forecast']['forecastday'][2]['astro']['sunset'],
-        sunrise_day3 = json['forecast']['forecastday'][3]['astro']['sunrise'],
-        sunset_day3 = json['forecast']['forecastday'][3]['astro']['sunset'],
-        sunrise_day4 = json['forecast']['forecastday'][4]['astro']['sunrise'],
-        sunset_day4 = json['forecast']['forecastday'][4]['astro']['sunset'];
+        airquality_day2: json['forecast']['forecastday'][2]['day']['air_quality']['us-epa-index'] ?? "",
+        airquality_day3: json['forecast']['forecastday'][3]['day']['air_quality']['us-epa-index'] ?? "",
+        airquality_day4: json['forecast']['forecastday'][4]['day']['air_quality']['us-epa-index'] ?? "",
+        pressure_day0: json['current']['pressure_mb'],
+        pressure_day1: json['forecast']['forecastday'][1]['hour'][13]['pressure_mb'],
+        pressure_day2: json['forecast']['forecastday'][2]['hour'][13]['pressure_mb'],
+        pressure_day3: json['forecast']['forecastday'][3]['hour'][13]['pressure_mb'],
+        pressure_day4: json['forecast']['forecastday'][4]['hour'][13]['pressure_mb'],
+        weekday0: json['location']['localtime'],
+        weekday1: json['forecast']['forecastday'][1]['date'],
+        weekday2: json['forecast']['forecastday'][2]['date'],
+        weekday3: json['forecast']['forecastday'][3]['date'],
+        weekday4: json['forecast']['forecastday'][4]['date'],
+        country: json['location']['country'],
+        sunriseday0: json['forecast']['forecastday'][0]['astro']['sunrise'],
+        sunsetday0: json['forecast']['forecastday'][0]['astro']['sunset'],
+        sunrise_day1: json['forecast']['forecastday'][1]['astro']['sunrise'],
+        sunset_day1: json['forecast']['forecastday'][1]['astro']['sunset'],
+        sunrise_day2: json['forecast']['forecastday'][2]['astro']['sunrise'],
+        sunset_day2: json['forecast']['forecastday'][2]['astro']['sunset'],
+        sunrise_day3: json['forecast']['forecastday'][3]['astro']['sunrise'],
+        sunset_day3: json['forecast']['forecastday'][3]['astro']['sunset'],
+        sunrise_day4: json['forecast']['forecastday'][4]['astro']['sunrise'],
+        sunset_day4: json['forecast']['forecastday'][4]['astro']['sunset']);
+  }
 }
