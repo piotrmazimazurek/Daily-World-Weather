@@ -5,8 +5,7 @@ import 'package:dotestowania/repositories/weather_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:bloc_test/bloc_test.dart';
-
-import '../../helpers/sample_weather_model.dart';
+import '../../helpers/test_helpers.dart';
 
 class MockWeatherRepository extends Mock implements WeatherRepository {}
 
