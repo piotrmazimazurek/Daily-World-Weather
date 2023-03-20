@@ -38,6 +38,8 @@ Using:
 
 🗝 Envied
 
+✅ Unit tests
+
 🗃 Clean architecture
 
 & many more...
