@@ -38,7 +38,7 @@ Using:
 
 🗝 Envied
 
-✅ Unit tests
+⚙ Unit tests
 
 🗃 Clean architecture
 
