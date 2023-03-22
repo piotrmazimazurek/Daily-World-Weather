@@ -38,11 +38,9 @@ Using:
 
 🗝 Envied
 
-✅ Unit tests
+⚙ Unit tests
 
-🗃 Clean architecture
-
-& many more...
+Clean architecture & many more...
 
 Thank You For Visiting !
 
