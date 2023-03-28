@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:dotestowania/env/env.dart';
 
 class WeatherRemoteDataSource {
   Future<Map<String, dynamic>?> getWeatherData({
@@ -7,7 +6,7 @@ class WeatherRemoteDataSource {
   }) async {
     try {
       final response = await Dio().get<Map<String, dynamic>>(
-          'http://api.weatherapi.com/v1/forecast.json?key=${Env.key1}&q=$city&days=5&aqi=yes&alerts=no');
+          'http://api.weatherapi.com/v1/forecast.json?key=fe0da2592b344f6c9e4124509231102&q=$city&days=5&aqi=yes&alerts=no');
       if (response.statusCode == 200) {
         (response.data.toString());
         return response.data;
