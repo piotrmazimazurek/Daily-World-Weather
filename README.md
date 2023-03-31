@@ -38,6 +38,8 @@ Using:
 
 🗝 Envied
 
+⚖ Equatable
+
 ⚙ Unit tests
 
 Clean architecture & many more...
